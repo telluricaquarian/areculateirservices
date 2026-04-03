@@ -20,15 +20,13 @@ export function BottomCTA() {
         <div className="relative z-10 px-6 py-12 flex flex-col gap-6">
           {/* Profile */}
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary/30">
-              <Image
-                src="/profile.png"
-                alt="Llewellyn Y. Fisher"
-                width={56}
-                height={56}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <Image
+              src="/displaytypebeats.png"
+              alt="Llewellyn Y. Fisher"
+              width={56}
+              height={56}
+              className="rounded-full object-cover"
+            />
             <div>
               <p className="text-foreground font-medium">Llewellyn Y. Fisher</p>
               <p className="text-primary italic text-sm">Service Provider</p>
@@ -56,15 +54,13 @@ export function BottomCTA() {
         <div className="flex flex-col gap-6 pb-8">
           {/* Profile */}
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary/30">
-              <Image
-                src="/profile.png"
-                alt="Llewellyn Y. Fisher"
-                width={56}
-                height={56}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <Image
+              src="/displaytypebeats.png"
+              alt="Llewellyn Y. Fisher"
+              width={56}
+              height={56}
+              className="rounded-full object-cover"
+            />
             <div>
               <p className="text-foreground font-medium">Llewellyn Y. Fisher</p>
               <p className="text-primary italic text-sm">Service Provider</p>
