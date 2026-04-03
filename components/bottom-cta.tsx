@@ -5,17 +5,6 @@ export function BottomCTA() {
     <section className="relative mt-7 md:mt-20">
       {/* Mobile: Spartan as background */}
       <div className="md:hidden relative">
-        {/* Spartan Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/aalogoholdingspartan.png"
-            alt="Armored figure"
-            fill
-            className="object-cover object-top opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-        </div>
-
         {/* Content */}
         <div className="relative z-10 px-6 py-8 flex flex-col gap-4">
           {/* Profile */}

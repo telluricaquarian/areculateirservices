@@ -14,19 +14,19 @@ export default function Home() {
           ============================================================ */}
       <div className="hidden md:flex relative h-screen overflow-hidden">
 
-        {/* === ZONE 3: Right-side full-bleed Spartan visual === */}
-        <div className="absolute inset-y-0 right-0 w-[52%] pointer-events-none select-none">
+        {/* === ZONE 3: Bottom-right Spartan visual anchor === */}
+        <div className="absolute bottom-0 right-0 w-[44%] h-[88%] pointer-events-none select-none">
           <Image
             src="/aalogoholdingspartan.png"
             alt="Armored figure"
             fill
-            className="object-cover object-top"
+            className="object-contain object-bottom"
             priority
           />
           {/* Left-edge fade so center text stays legible */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/55 to-transparent" />
-          {/* Bottom vignette */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+          {/* Top fade — blends figure into dark background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-transparent" />
         </div>
 
         {/* === ZONE 1: Left rail — logo + compliance footer === */}
