@@ -81,8 +81,9 @@ export default function Home() {
                 </span>
                 {" "}Services Your Business Actually Needs.
               </h1>
+              <p className="text-foreground/35 italic text-xs mt-0.5">( Backed by Research &amp; Studies )</p>
               {/* Keyboard image — desktop hero centerpiece */}
-              <div className="img-protected-wrap my-4">
+              <div className="img-protected-wrap mt-5">
                 <Image
                   src="/keyboard.png"
                   alt="Keyboard"
@@ -92,7 +93,6 @@ export default function Home() {
                   draggable={false}
                 />
               </div>
-              <p className="text-foreground/35 italic text-xs">( Backed by Research &amp; Studies )</p>
             </div>
             {/* Sparkle glow layer */}
             <div className="absolute inset-x-0 top-[-12px] flex justify-center pointer-events-none z-0">
