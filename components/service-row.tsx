@@ -11,21 +11,21 @@ interface ServiceRowProps {
 export function ServiceRow({ icon, title, subtitle, description, showDivider = true }: ServiceRowProps) {
   return (
     <div className="flex flex-col">
-      <div className="flex gap-6 md:gap-8 py-6 md:py-8">
+      <div className="flex gap-5 md:gap-5 py-4 md:py-2.5">
         {/* Icon */}
-        <div className="flex-shrink-0 w-8 md:w-10 text-foreground/90">
+        <div className="flex-shrink-0 w-7 md:w-7 text-foreground/90">
           {icon}
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-2">
-          <h3 className="text-foreground font-medium text-base md:text-lg italic">
+        <div className="flex flex-col gap-1 md:gap-0.5">
+          <h3 className="text-foreground font-medium text-base md:text-sm italic">
             {title}
           </h3>
-          <p className="text-primary text-sm">
+          <p className="text-primary text-sm md:text-xs">
             {subtitle}
           </p>
-          <p className="text-foreground/70 text-xs md:text-sm leading-relaxed max-w-lg">
+          <p className="text-foreground/70 text-xs leading-relaxed max-w-lg md:line-clamp-2">
             {description}
           </p>
         </div>

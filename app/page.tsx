@@ -11,7 +11,7 @@ export default function Home() {
       {/* ============================================================
           DESKTOP LAYOUT — 3-zone cinematic composition
           ============================================================ */}
-      <div className="hidden md:flex relative min-h-screen overflow-hidden">
+      <div className="hidden md:flex relative h-screen overflow-hidden">
 
         {/* === ZONE 3: Right-side full-bleed Spartan visual === */}
         <div className="absolute inset-y-0 right-0 w-[52%] pointer-events-none select-none">
@@ -47,21 +47,21 @@ export default function Home() {
         </div>
 
         {/* === ZONE 2: Center editorial column === */}
-        <div className="relative z-10 flex flex-col py-12 px-8 lg:px-10 w-full max-w-[560px]">
+        <div className="relative z-10 flex flex-col py-6 px-6 lg:px-8 w-full max-w-[520px]">
 
           {/* Intro text */}
-          <div className="flex flex-col gap-2 mb-12">
-            <p className="text-foreground/60 text-sm font-normal tracking-wide">
+          <div className="flex flex-col gap-1 mb-5">
+            <p className="text-foreground/60 text-xs font-normal tracking-wide">
               A-La-Carte Automation Workflow Services
             </p>
-            <h1 className="text-primary font-serif italic text-xl font-medium leading-snug">
+            <h1 className="text-primary font-serif italic text-lg font-medium leading-snug">
               5 Extremely Boring Services Your Business Actually Needs.
             </h1>
             <p className="text-foreground/35 italic text-xs">( Backed by Research &amp; Studies )</p>
           </div>
 
           {/* The Big 5 heading */}
-          <h2 className="font-serif italic text-primary text-5xl lg:text-6xl mb-8 tracking-tight">
+          <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-4 tracking-tight">
             <span className="font-normal">The</span> Big 5
           </h2>
 
