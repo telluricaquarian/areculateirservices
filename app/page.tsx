@@ -3,6 +3,7 @@ import { IntroBlock } from "@/components/intro-block"
 import { ServicesList } from "@/components/services-list"
 import { BottomCTA } from "@/components/bottom-cta"
 import { FooterMeta } from "@/components/footer-meta"
+import { SparklesCore } from "@/components/ui/sparkles"
 
 export default function Home() {
   return (
@@ -50,14 +51,35 @@ export default function Home() {
         <div className="relative z-10 flex flex-col py-6 px-6 lg:px-8 w-full max-w-[520px]">
 
           {/* Intro text */}
-          <div className="flex flex-col gap-1 mb-5">
-            <p className="text-foreground/60 text-xs font-normal tracking-wide">
-              A-La-Carte Automation Workflow Services
-            </p>
-            <h1 className="text-primary font-serif italic text-lg font-medium leading-snug">
-              5 Extremely Boring Services Your Business Actually Needs.
-            </h1>
-            <p className="text-foreground/35 italic text-xs">( Backed by Research &amp; Studies )</p>
+          <div className="relative mb-5">
+            <div className="relative z-10 flex flex-col gap-1">
+              <p className="text-foreground/60 text-xs font-normal tracking-wide">
+                A-La-Carte Automation Workflow Services
+              </p>
+              <h1 className="text-primary font-serif italic text-lg font-medium leading-snug">
+                5 Extremely Boring Services Your Business Actually Needs.
+              </h1>
+              <p className="text-foreground/35 italic text-xs">( Backed by Research &amp; Studies )</p>
+            </div>
+
+            {/* Sparkle glow layer */}
+            <div className="absolute inset-x-0 top-[100px] flex justify-center pointer-events-none z-0">
+              <div className="w-[420px] h-[100px] relative">
+                <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-px w-3/4" />
+                <div className="absolute inset-x-32 top-0 bg-gradient-to-r from-transparent via-orange-400 to-transparent h-[4px] w-1/4 blur-sm" />
+                <div className="absolute inset-x-32 top-0 bg-gradient-to-r from-transparent via-orange-400 to-transparent h-px w-1/4" />
+                <SparklesCore
+                  background="transparent"
+                  minSize={0.4}
+                  maxSize={1}
+                  particleDensity={700}
+                  className="w-full h-full"
+                  particleColor="#f97316"
+                />
+                <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(300px_100px_at_top,transparent_20%,white)]" />
+              </div>
+            </div>
           </div>
 
           {/* The Big 5 heading */}
