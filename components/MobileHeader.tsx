@@ -53,15 +53,15 @@ export function MobileHeader() {
   const dots = useAnimatedDots()
 
   return (
-    <div className="md:hidden fixed top-0 inset-x-0 z-50 flex items-center justify-between px-5 h-10 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-primary/25">
+    <div className="md:hidden fixed top-0 inset-x-0 z-50 flex items-center justify-between px-5 h-10 bg-background/50 border-b border-primary/10">
       {/* Left — animated status text */}
-      <span className="font-mono text-primary text-[10px] tracking-wide leading-none">
+      <span className="text-primary text-xs font-normal tracking-tight leading-none">
         Currently Designing &amp; Building
         <span className="inline-block w-[14px] text-left">{dots}</span>
       </span>
 
       {/* Right — live Sydney clock */}
-      <span className="font-mono text-foreground/80 text-[10px] tracking-wide tabular-nums leading-none">
+      <span className="text-foreground/50 text-xs font-normal tracking-tight tabular-nums leading-none">
         {sydneyTime ? `Syd. ${sydneyTime.tz}: ${sydneyTime.time}` : ''}
       </span>
     </div>
