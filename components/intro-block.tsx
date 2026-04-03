@@ -2,17 +2,18 @@ import Image from "next/image"
 
 export function IntroBlock() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-1 md:gap-2">
       {/* Logo */}
       <Image
         src="/neworange.png"
         alt="Logo"
-        width={32}
-        height={32}
+        width={28}
+        height={28}
+        className="mb-0.5"
       />
 
       {/* Company Name */}
-      <h2 className="text-foreground text-base md:text-lg font-normal tracking-tight">
+      <h2 className="text-foreground text-sm md:text-lg font-normal tracking-tight">
         A-La-Carte Automation Workflow Services
       </h2>
 
@@ -22,7 +23,7 @@ export function IntroBlock() {
       </h1>
 
       {/* Subline */}
-      <p className="text-muted-foreground italic text-sm">
+      <p className="text-muted-foreground italic text-xs md:text-sm">
         ( Backed by Research &amp; Studies )
       </p>
     </div>
