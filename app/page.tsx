@@ -63,7 +63,7 @@ export default function Home() {
             </div>
 
             {/* Sparkle glow layer */}
-            <div className="absolute inset-x-0 top-[100px] flex justify-center pointer-events-none z-0">
+            <div className="absolute inset-x-0 top-[-12px] flex justify-center pointer-events-none z-0">
               <div className="w-[420px] h-[100px] relative">
                 <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-[2px] w-3/4 blur-sm" />
                 <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-px w-3/4" />
