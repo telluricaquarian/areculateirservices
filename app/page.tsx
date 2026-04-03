@@ -29,7 +29,7 @@ export default function Home() {
         </div>
 
         {/* === ZONE 1: Left rail — logo + compliance footer === */}
-        <div className="relative z-10 flex flex-col justify-between w-[76px] flex-shrink-0 py-10 px-5 border-r border-white/[0.05]">
+        <div className="relative z-10 flex flex-col justify-between w-[140px] flex-shrink-0 py-10 px-7 border-r border-white/[0.05]">
           <Image src="/neworange.png" alt="Logo" width={28} height={28} />
           <div className="flex flex-col gap-0.5 text-[10px] text-foreground/30 leading-tight">
             <span>Compliance</span>
