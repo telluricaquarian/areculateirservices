@@ -94,13 +94,20 @@ export default function Home() {
         {/* === ZONE 4: Bottom-right floating glass card === */}
         <div className="absolute bottom-10 right-10 z-20 w-[288px] rounded-2xl border border-primary/20 bg-background/55 backdrop-blur-md shadow-[0_0_48px_rgba(255,122,0,0.10),inset_0_0_0_1px_rgba(255,122,0,0.08)] p-5 flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <Image
-              src="/displaytypebeats.png"
-              alt="Llewellyn Y. Fisher"
-              width={48}
-              height={48}
-              className="rounded-full object-cover flex-shrink-0"
-            />
+            <div className="relative inline-flex flex-shrink-0">
+              <Image
+                src="/displaytypebeats.png"
+                alt="Llewellyn Y. Fisher"
+                width={48}
+                height={48}
+                className="rounded-full object-cover"
+              />
+              {/* Status dot — top-right edge */}
+              <span className="absolute top-0.5 right-0.5 flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF7900] opacity-35" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#FF7900]" />
+              </span>
+            </div>
             <div>
               <p className="text-foreground font-medium text-sm">Llewellyn Y. Fisher</p>
               <p className="text-primary italic text-xs">Service Provider</p>

@@ -8,13 +8,20 @@ export function BottomCTA() {
         {/* Content */}
         <div className="relative z-10 px-6 py-8 flex flex-col items-center gap-3 text-center">
           {/* Profile image */}
-          <Image
-            src="/displaytypebeats.png"
-            alt="Llewellyn Y. Fisher"
-            width={56}
-            height={56}
-            className="rounded-full object-cover"
-          />
+          <div className="relative inline-flex">
+            <Image
+              src="/displaytypebeats.png"
+              alt="Llewellyn Y. Fisher"
+              width={56}
+              height={56}
+              className="rounded-full object-cover"
+            />
+            {/* Status dot — top-right edge */}
+            <span className="absolute top-0.5 right-0.5 flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF7900] opacity-35" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-[#FF7900]" />
+            </span>
+          </div>
 
           {/* Name + role */}
           <div className="flex flex-col gap-0.5">
