@@ -122,7 +122,7 @@ export default function Home() {
           ============================================================ */}
       <MobileHeader />
 
-      <div className="md:hidden px-6 pt-[52px] pb-5">
+      <div className="md:hidden px-6 pt-[52px] pb-20">
 
         {/* Atmospheric sparkle zone — spans hero + services, stops before Service Provider */}
         <div className="relative">
@@ -160,8 +160,10 @@ export default function Home() {
         </div>
 
         <BottomCTA />
-        <FooterMeta />
       </div>
+
+      {/* Sticky glass footer — mobile only, fixed at bottom */}
+      <FooterMeta />
 
     </main>
   )
