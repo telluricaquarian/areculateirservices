@@ -99,10 +99,10 @@ export default function Home() {
       {/* ============================================================
           MOBILE LAYOUT — unchanged
           ============================================================ */}
-      <div className="md:hidden px-6 py-8">
+      <div className="md:hidden px-6 py-5">
         <IntroBlock />
 
-        <div className="mt-12">
+        <div className="mt-6">
           <ServicesList />
         </div>
 

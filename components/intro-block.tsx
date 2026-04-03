@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function IntroBlock() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       {/* Logo */}
       <Image
         src="/neworange.png"

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function BottomCTA() {
   return (
-    <section className="relative mt-12 md:mt-20">
+    <section className="relative mt-7 md:mt-20">
       {/* Mobile: Spartan as background */}
       <div className="md:hidden relative">
         {/* Spartan Background */}
@@ -17,7 +17,7 @@ export function BottomCTA() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 py-12 flex flex-col gap-6">
+        <div className="relative z-10 px-6 py-8 flex flex-col gap-4">
           {/* Profile */}
           <div className="flex items-center gap-4">
             <Image
@@ -34,7 +34,7 @@ export function BottomCTA() {
           </div>
 
           {/* CTA Text */}
-          <p className="text-foreground/90 text-base leading-relaxed">
+          <p className="text-foreground/90 text-sm leading-snug">
             Speak with Llewellyn to find out how to get this set-up / implemented.
           </p>
 
