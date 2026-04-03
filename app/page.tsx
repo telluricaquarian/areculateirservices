@@ -59,11 +59,9 @@ export default function Home() {
               minSize={0.3}
               maxSize={0.9}
               particleDensity={120}
-              className="w-full h-full"
+              className="w-full h-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_40%,white_60%,white_82%,transparent_100%)]"
               particleColor="#f97316"
             />
-            {/* Mask: hide particles in top half, reveal in lower section, fade at very bottom */}
-            <div className="absolute inset-0 bg-black [mask-image:linear-gradient(to_bottom,black_0%,black_45%,transparent_65%,transparent_85%,black_100%)]" />
           </div>
 
           {/* Hero intro */}
