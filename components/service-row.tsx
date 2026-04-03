@@ -2,13 +2,14 @@ import { ReactNode } from "react"
 
 interface ServiceRowProps {
   icon: ReactNode
+  price?: string
   title: string
   subtitle: string
   description: string
   showDivider?: boolean
 }
 
-export function ServiceRow({ icon, title, subtitle, description, showDivider = true }: ServiceRowProps) {
+export function ServiceRow({ icon, price, title, subtitle, description, showDivider = true }: ServiceRowProps) {
   return (
     <div className="flex flex-col md:rounded-xl md:border md:border-primary/20 md:bg-background/60">
       {/* Mobile: icon above text, centered | Desktop: card column layout */}
@@ -18,6 +19,14 @@ export function ServiceRow({ icon, title, subtitle, description, showDivider = t
         <div className="w-11 h-11 rounded-xl border border-primary/25 flex items-center justify-center text-foreground/80 flex-shrink-0">
           {icon}
         </div>
+
+        {/* Pricing pill — below icon, above title */}
+        {price && (
+          <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-[#FF7900]/40 bg-white/95 shadow-[0_0_8px_rgba(255,121,0,0.08)] cursor-default select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF7900] flex-shrink-0" />
+            <span className="text-[#111] text-[10px] font-medium tracking-wide leading-none">{price}</span>
+          </div>
+        )}
 
         {/* Content — centered on mobile, left-aligned on desktop */}
         <div className="flex flex-col gap-0.5 items-center text-center md:items-start md:text-left">
