@@ -102,7 +102,16 @@ export default function Home() {
       <div className="md:hidden px-6 py-5">
         <IntroBlock />
 
-        <div className="mt-6">
+        {/* Orange gradient divider — header / service grid break */}
+        <div
+          className="mt-4 mb-2 h-px w-full"
+          style={{
+            background: "linear-gradient(to right, transparent, rgba(255,121,0,0.55), transparent)",
+            boxShadow: "0 0 6px 0 rgba(255,121,0,0.2)",
+          }}
+        />
+
+        <div className="mt-0">
           <ServicesList />
         </div>
 
