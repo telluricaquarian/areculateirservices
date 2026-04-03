@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 
 function useSydneyTime() {
-  const [display, setDisplay] = useState<{ time: string; tz: string } | null>(null)
+  const [time, setTime] = useState<string | null>(null)
 
   useEffect(() => {
-    const timeFmt = new Intl.DateTimeFormat('en-AU', {
+    const fmt = new Intl.DateTimeFormat('en-AU', {
       timeZone: 'Australia/Sydney',
       hour: '2-digit',
       minute: '2-digit',
@@ -14,22 +14,14 @@ function useSydneyTime() {
       hour12: false,
     })
 
-    const tick = () => {
-      const now = new Date()
-      const parts = new Intl.DateTimeFormat('en-AU', {
-        timeZone: 'Australia/Sydney',
-        timeZoneName: 'short',
-      }).formatToParts(now)
-      const tz = parts.find(p => p.type === 'timeZoneName')?.value ?? 'AEST'
-      setDisplay({ time: timeFmt.format(now), tz })
-    }
+    const tick = () => setTime(fmt.format(new Date()))
 
     tick()
     const id = setInterval(tick, 1000)
     return () => clearInterval(id)
   }, [])
 
-  return display
+  return time
 }
 
 function useAnimatedDots() {
@@ -62,7 +54,7 @@ export function MobileHeader() {
 
       {/* Right — live Sydney clock */}
       <span className="text-foreground/50 text-xs font-normal tracking-tight tabular-nums leading-none">
-        {sydneyTime ? `Syd. ${sydneyTime.tz}: ${sydneyTime.time}` : ''}
+        {sydneyTime ? `Syd. AEST: ${sydneyTime}` : ''}
       </span>
     </div>
   )
