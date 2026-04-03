@@ -19,7 +19,7 @@ export default function Home() {
       <div className="hidden md:flex min-h-screen">
 
         {/* === LEFT RAIL === */}
-        <div className="flex flex-col justify-between w-[270px] flex-shrink-0 py-10 px-8 border-r border-white/[0.05]">
+        <div className="flex flex-col justify-between w-[270px] flex-shrink-0 py-10 px-8 border-r border-primary/20 shadow-[1px_0_6px_rgba(255,122,0,0.06)]">
           {/* Top: logo + nav */}
           <div className="flex flex-col gap-6">
             <div className="img-protected-wrap">
