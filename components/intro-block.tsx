@@ -8,13 +8,16 @@ export function IntroBlock() {
       {/* Text — z-10 keeps it above the sparkle layer */}
       <div className="relative z-10 flex flex-col gap-1 md:gap-2 items-center md:items-start text-center md:text-left">
         {/* Logo */}
-        <Image
-          src="/neworange.png"
-          alt="Logo"
-          width={28}
-          height={28}
-          className="mb-0.5"
-        />
+        <div className="img-protected-wrap mb-0.5">
+          <Image
+            src="/neworange.png"
+            alt="Logo"
+            width={28}
+            height={28}
+            className="img-protected"
+            draggable={false}
+          />
+        </div>
 
         {/* Company Name */}
         <h2 className="text-foreground text-sm md:text-lg font-normal tracking-tight">
@@ -36,13 +39,16 @@ export function IntroBlock() {
 
         {/* Keyboard image — mobile only, floats between headline and research line */}
         <div className="md:hidden flex justify-center py-3 relative z-10">
-          <Image
-            src="/keyboard.png"
-            alt="Keyboard"
-            width={200}
-            height={120}
-            className="animate-float object-contain"
-          />
+          <div className="img-protected-wrap">
+            <Image
+              src="/keyboard.png"
+              alt="Keyboard"
+              width={200}
+              height={120}
+              className="animate-float object-contain img-protected"
+              draggable={false}
+            />
+          </div>
         </div>
 
         {/* Subline */}

@@ -20,7 +20,9 @@ export default function Home() {
         <div className="flex flex-col justify-between w-[160px] flex-shrink-0 py-10 px-7 border-r border-white/[0.05]">
           {/* Top: logo + nav */}
           <div className="flex flex-col gap-6">
-            <Image src="/neworange.png" alt="Logo" width={28} height={28} />
+            <div className="img-protected-wrap">
+              <Image src="/neworange.png" alt="Logo" width={28} height={28} className="img-protected" draggable={false} />
+            </div>
             <div className="flex flex-col gap-1">
               <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-1">Services</p>
               <div className="flex items-center gap-1.5">

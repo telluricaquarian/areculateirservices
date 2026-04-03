@@ -132,4 +132,20 @@
   body {
     @apply bg-background text-foreground;
   }
+  .img-protected {
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
+  }
+  .img-protected-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .img-protected-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
 }

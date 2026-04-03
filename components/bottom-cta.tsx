@@ -8,13 +8,14 @@ export function BottomCTA() {
         {/* Content */}
         <div className="relative z-10 px-6 py-8 flex flex-col items-center gap-3 text-center">
           {/* Profile image */}
-          <div className="relative inline-flex">
+          <div className="relative inline-flex img-protected-wrap">
             <Image
               src="/displaytypebeats.png"
               alt="Llewellyn Y. Fisher"
               width={56}
               height={56}
-              className="rounded-full object-cover"
+              className="rounded-full object-cover img-protected"
+              draggable={false}
             />
             {/* Status dot — top-right edge */}
             <span className="absolute top-0.5 right-0.5 flex h-3 w-3">
