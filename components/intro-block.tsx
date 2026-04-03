@@ -25,6 +25,17 @@ export function IntroBlock() {
           5 Extremely Boring Services Your Business Actually Needs.
         </h1>
 
+        {/* Keyboard image — mobile only, floats between headline and research line */}
+        <div className="md:hidden flex justify-center py-3 relative z-10">
+          <Image
+            src="/keyboard.png"
+            alt="Keyboard"
+            width={200}
+            height={120}
+            className="animate-float object-contain"
+          />
+        </div>
+
         {/* Subline */}
         <p className="text-muted-foreground italic text-xs md:text-sm">
           ( Backed by Research &amp; Studies )
