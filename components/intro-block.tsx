@@ -4,15 +4,12 @@ export function IntroBlock() {
   return (
     <div className="flex flex-col gap-4">
       {/* Logo */}
-      <div className="w-14 h-14 md:w-16 md:h-16">
-        <Image
-          src="/aa-logo.png"
-          alt="Aa Logo"
-          width={64}
-          height={64}
-          className="w-full h-full object-contain"
-        />
-      </div>
+      <Image
+        src="/neworange.png"
+        alt="Logo"
+        width={32}
+        height={32}
+      />
 
       {/* Company Name */}
       <h2 className="text-foreground text-base md:text-lg font-normal tracking-tight">
