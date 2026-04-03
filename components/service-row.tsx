@@ -11,21 +11,23 @@ interface ServiceRowProps {
 export function ServiceRow({ icon, title, subtitle, description, showDivider = true }: ServiceRowProps) {
   return (
     <div className="flex flex-col">
-      <div className="flex gap-0 md:gap-5 py-2 md:py-2.5">
-        {/* Icon — with vertical right divider on mobile */}
-        <div className="flex-shrink-0 w-9 md:w-7 text-foreground/90 pr-3 md:pr-0 border-r border-primary/20 md:border-r-0">
+      {/* Mobile: icon above text, centered | Desktop: icon left, row */}
+      <div className="flex flex-col items-center gap-2.5 py-4 md:flex-row md:items-start md:gap-5 md:py-2.5">
+
+        {/* Icon — rounded stroke box on mobile, plain column on desktop */}
+        <div className="w-11 h-11 rounded-xl border border-primary/25 flex items-center justify-center text-foreground/80 flex-shrink-0 md:w-7 md:h-auto md:rounded-none md:border-0 md:justify-start">
           {icon}
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col gap-0.5 pl-3 md:pl-0">
-          <h3 className="text-foreground font-medium text-sm md:text-sm italic leading-snug">
+        {/* Content — centered on mobile, left-aligned on desktop */}
+        <div className="flex flex-col gap-0.5 items-center text-center md:items-start md:text-left">
+          <h3 className="text-foreground font-medium text-sm italic leading-snug">
             {title}
           </h3>
-          <p className="text-primary text-xs md:text-xs">
+          <p className="text-primary text-xs">
             {subtitle}
           </p>
-          <p className="text-foreground/70 text-xs leading-snug md:leading-relaxed max-w-lg md:line-clamp-2">
+          <p className="text-foreground/70 text-xs leading-snug max-w-[272px] md:max-w-lg md:leading-relaxed md:line-clamp-2">
             {description}
           </p>
         </div>
