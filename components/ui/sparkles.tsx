@@ -46,7 +46,7 @@ export function SparklesCore({
 
     const buildParticles = (): Particle[] => {
       const area = canvas.width * canvas.height
-      const count = Math.max(1, Math.floor((area / 100_000) * (particleDensity / 100)))
+      const count = Math.max(40, Math.floor(Math.sqrt(area) * (particleDensity / 500)))
       return Array.from({ length: count }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,

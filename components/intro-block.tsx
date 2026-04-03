@@ -32,7 +32,7 @@ export function IntroBlock() {
       </div>
 
       {/* Sparkle glow layer — absolute, does not affect layout */}
-      <div className="absolute inset-x-0 top-[-24px] flex justify-center pointer-events-none z-0">
+      <div className="absolute inset-x-0 top-[-10px] flex justify-center pointer-events-none z-0">
         <div className="w-[260px] md:w-[420px] h-[80px] md:h-[120px] relative">
 
           {/* Glow lines — orange theme */}
