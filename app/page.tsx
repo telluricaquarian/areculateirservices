@@ -62,8 +62,8 @@ export default function Home() {
               className="w-full h-full"
               particleColor="#f97316"
             />
-            {/* Fade: transparent at top (glow lines take over), solid mask at sides/bottom */}
-            <div className="absolute inset-0 bg-black [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_90%)]" />
+            {/* Mask: hide particles in top half, reveal in lower section, fade at very bottom */}
+            <div className="absolute inset-0 bg-black [mask-image:linear-gradient(to_bottom,black_0%,black_45%,transparent_65%,transparent_85%,black_100%)]" />
           </div>
 
           {/* Hero intro */}
