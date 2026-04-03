@@ -17,7 +17,7 @@ export default function Home() {
       <div className="hidden md:flex min-h-screen">
 
         {/* === LEFT RAIL === */}
-        <div className="flex flex-col justify-between w-[160px] flex-shrink-0 py-10 px-7 border-r border-white/[0.05]">
+        <div className="flex flex-col justify-between w-[200px] flex-shrink-0 py-10 px-8 border-r border-white/[0.05]">
           {/* Top: logo + nav */}
           <div className="flex flex-col gap-6">
             <div className="img-protected-wrap">
@@ -51,7 +51,21 @@ export default function Home() {
         </div>
 
         {/* === MAIN CONTENT === */}
-        <div className="flex flex-col flex-1 py-10 px-10 lg:px-14 overflow-y-auto">
+        <div className="relative flex flex-col flex-1 py-10 px-10 lg:px-14 overflow-y-auto">
+
+          {/* Ambient particle field — fills main content column, behind all content */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+            <SparklesCore
+              background="transparent"
+              minSize={0.3}
+              maxSize={0.9}
+              particleDensity={120}
+              className="w-full h-full"
+              particleColor="#f97316"
+            />
+            {/* Fade: transparent at top (glow lines take over), solid mask at sides/bottom */}
+            <div className="absolute inset-0 bg-black [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_90%)]" />
+          </div>
 
           {/* Hero intro */}
           <div className="relative mb-2">
