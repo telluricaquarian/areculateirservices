@@ -35,22 +35,23 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* Bottom: compliance footer with orange ambient glow */}
-          <div className="relative flex flex-col gap-0.5 text-[10px] text-foreground/30 leading-tight">
-            {/* Orange footer glow — anchored to this footer region */}
-            <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none -z-10">
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-500/[0.07] via-orange-500/[0.03] to-transparent rounded-sm" />
-            </div>
+          {/* Bottom: compliance footer */}
+          <div className="relative flex flex-col gap-1.5 text-[10px] leading-tight">
+            {/* Barely-there orange ambient — bottom-anchored */}
+            <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none -z-10 bg-gradient-to-t from-orange-500/[0.04] to-transparent" />
             <ComplianceModal />
-            <a
-              href="https://areculateir.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 text-primary/50 underline underline-offset-2 hover:text-primary/70 transition-colors"
-            >
-              Areculateir.com
-            </a>
-            <span className="mt-0.5">©2026</span>
+            <p className="text-foreground/30">
+              Brought to you by{" "}
+              <a
+                href="https://areculateir.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary/50 underline underline-offset-2 hover:text-primary/70 transition-colors"
+              >
+                Areculateir.com
+              </a>
+            </p>
+            <span className="text-foreground/20">©2026</span>
           </div>
         </div>
 

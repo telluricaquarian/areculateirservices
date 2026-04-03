@@ -23,9 +23,9 @@ export default function ComplianceModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="inline-flex items-center gap-1.5 text-foreground/40 text-[11px] md:text-xs tracking-wide hover:text-primary transition-colors">
-          <Shield className="w-3 h-3" />
-          Compliance Infrastructure
+        <button className="inline-flex items-center gap-1.5 text-foreground/50 text-[10px] md:text-xs tracking-wide hover:text-foreground/80 transition-colors group">
+          <Shield className="w-3 h-3 fill-[#FF7900] text-[#FF7900] flex-shrink-0" />
+          View Compliance Infrastructure
         </button>
       </DialogTrigger>
 
