@@ -4,6 +4,7 @@ import { ServicesList } from "@/components/services-list"
 import { BottomCTA } from "@/components/bottom-cta"
 import { FooterMeta } from "@/components/footer-meta"
 import { SparklesCore } from "@/components/ui/sparkles"
+import { FlipWords } from "@/components/ui/flip-words"
 import { MobileHeader } from "@/components/MobileHeader"
 
 export default function Home() {
@@ -57,7 +58,15 @@ export default function Home() {
                 A-La-Carte Automation Workflow Services
               </p>
               <h1 className="text-primary font-serif italic text-lg font-medium leading-snug">
-                5 Extremely Boring Services Your Business Actually Needs.
+                5 Extremely{" "}
+                <span className="inline-flex items-baseline">
+                  <FlipWords
+                    words={["boring", "useful", "functional", "convenient", "nifty", "fruitful"]}
+                    duration={3000}
+                    className="text-primary italic"
+                  />
+                </span>
+                {" "}Services Your Business Actually Needs.
               </h1>
               <p className="text-foreground/35 italic text-xs">( Backed by Research &amp; Studies )</p>
             </div>

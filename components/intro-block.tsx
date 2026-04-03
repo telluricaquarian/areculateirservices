@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { SparklesCore } from "@/components/ui/sparkles"
+import { FlipWords } from "@/components/ui/flip-words"
 
 export function IntroBlock() {
   return (
@@ -22,7 +23,15 @@ export function IntroBlock() {
 
         {/* Headline */}
         <h1 className="text-primary font-serif italic text-lg md:text-xl font-medium leading-snug max-w-md">
-          5 Extremely Boring Services Your Business Actually Needs.
+          5 Extremely{" "}
+          <span className="inline-flex items-baseline">
+            <FlipWords
+              words={["boring", "useful", "functional", "convenient", "nifty", "fruitful"]}
+              duration={3000}
+              className="text-primary italic"
+            />
+          </span>
+          {" "}Services Your Business Actually Needs.
         </h1>
 
         {/* Keyboard image — mobile only, floats between headline and research line */}
