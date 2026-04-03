@@ -1,7 +1,9 @@
+import ComplianceModal from "@/components/ComplianceModal"
+
 export function FooterMeta() {
   return (
     <footer className="mt-12 md:mt-16 pb-8 flex flex-col gap-1 text-xs text-foreground/50">
-      <p>Compliance Infrastructure</p>
+      <ComplianceModal />
       <p>
         Brought to you by{" "}
         <a 
