@@ -68,7 +68,7 @@ export default function Home() {
 
           {/* Hero intro */}
           <div className="relative mb-2">
-            <div className="relative z-10 flex flex-col gap-1">
+            <div className="relative z-10 flex flex-col gap-1 items-center text-center">
               <p className="text-foreground/60 text-xs font-normal tracking-wide">
                 A-La-Carte Automation Workflow Services
               </p>
@@ -83,6 +83,17 @@ export default function Home() {
                 </span>
                 {" "}Services Your Business Actually Needs.
               </h1>
+              {/* Keyboard image — desktop hero centerpiece */}
+              <div className="img-protected-wrap my-4">
+                <Image
+                  src="/keyboard.png"
+                  alt="Keyboard"
+                  width={340}
+                  height={200}
+                  className="object-contain img-protected animate-float"
+                  draggable={false}
+                />
+              </div>
               <p className="text-foreground/35 italic text-xs">( Backed by Research &amp; Studies )</p>
             </div>
             {/* Sparkle glow layer */}
