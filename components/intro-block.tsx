@@ -31,8 +31,8 @@ export function IntroBlock() {
         </p>
       </div>
 
-      {/* Sparkle glow layer — absolute, does not affect layout */}
-      <div className="absolute inset-x-0 top-[-10px] flex justify-center pointer-events-none z-0">
+      {/* Sparkle glow layer — desktop only; mobile atmosphere handled in page.tsx */}
+      <div className="hidden md:flex absolute inset-x-0 top-[-10px] justify-center pointer-events-none z-0">
         <div className="w-[260px] md:w-[420px] h-[80px] md:h-[120px] relative">
 
           {/* Glow lines — orange theme */}
