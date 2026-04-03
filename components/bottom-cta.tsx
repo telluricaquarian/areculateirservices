@@ -8,7 +8,7 @@ export function BottomCTA() {
         {/* Spartan Background */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/spartan.png"
+            src="/aalogoholdingspartan.png"
             alt="Armored figure"
             fill
             className="object-cover object-top opacity-60"
@@ -84,7 +84,7 @@ export function BottomCTA() {
         {/* Spartan Image - positioned to the right */}
         <div className="relative w-64 h-80 flex-shrink-0">
           <Image
-            src="/spartan.png"
+            src="/aalogoholdingspartan.png"
             alt="Armored figure"
             fill
             className="object-contain object-bottom"
