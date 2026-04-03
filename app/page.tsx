@@ -6,6 +6,7 @@ import { FooterMeta } from "@/components/footer-meta"
 import { SparklesCore } from "@/components/ui/sparkles"
 import { FlipWords } from "@/components/ui/flip-words"
 import { MobileHeader } from "@/components/MobileHeader"
+import ComplianceModal from "@/components/ComplianceModal"
 
 export default function Home() {
   return (
@@ -34,10 +35,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* Bottom: compliance footer */}
-          <div className="flex flex-col gap-0.5 text-[10px] text-foreground/30 leading-tight">
-            <span>View Compliance</span>
-            <span>Infrastructure</span>
+          {/* Bottom: compliance footer with orange ambient glow */}
+          <div className="relative flex flex-col gap-0.5 text-[10px] text-foreground/30 leading-tight">
+            {/* Orange footer glow — anchored to this footer region */}
+            <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none -z-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-500/[0.07] via-orange-500/[0.03] to-transparent rounded-sm" />
+            </div>
+            <ComplianceModal />
             <a
               href="https://areculateir.com"
               target="_blank"
