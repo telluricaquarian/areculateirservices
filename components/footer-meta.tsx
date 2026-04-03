@@ -1,4 +1,5 @@
 import ComplianceModal from "@/components/ComplianceModal"
+import AreculateirHoverPreview from "@/components/AreculateirHoverPreview"
 
 export function FooterMeta() {
   return (
@@ -6,14 +7,7 @@ export function FooterMeta() {
       <ComplianceModal />
       <p>
         Brought to you by{" "}
-        <a 
-          href="https://areculateir.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
-        >
-          Areculateir.com
-        </a>
+        <AreculateirHoverPreview />
       </p>
       <p>&copy;2026</p>
     </footer>
