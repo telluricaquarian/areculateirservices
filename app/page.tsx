@@ -4,6 +4,7 @@ import { ServicesList } from "@/components/services-list"
 import { BottomCTA } from "@/components/bottom-cta"
 import { FooterMeta } from "@/components/footer-meta"
 import { SparklesCore } from "@/components/ui/sparkles"
+import { MobileHeader } from "@/components/MobileHeader"
 
 export default function Home() {
   return (
@@ -121,7 +122,9 @@ export default function Home() {
       {/* ============================================================
           MOBILE LAYOUT — unchanged
           ============================================================ */}
-      <div className="md:hidden px-6 py-5">
+      <MobileHeader />
+
+      <div className="md:hidden px-6 pt-[52px] pb-5">
         <IntroBlock />
 
         {/* Orange gradient divider — header / service grid break */}
