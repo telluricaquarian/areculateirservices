@@ -11,15 +11,29 @@ export default function Home() {
     <main className="min-h-screen bg-background">
 
       {/* ============================================================
-          DESKTOP LAYOUT — 3-zone cinematic composition
+          DESKTOP LAYOUT — sidebar + full-width content
           ============================================================ */}
-      <div className="hidden md:flex relative h-screen overflow-hidden">
+      <div className="hidden md:flex min-h-screen">
 
-        {/* === ZONE 1: Left rail — logo + compliance footer === */}
-        <div className="relative z-10 flex flex-col justify-between w-[140px] flex-shrink-0 py-10 px-7 border-r border-white/[0.05]">
-          <Image src="/neworange.png" alt="Logo" width={28} height={28} />
+        {/* === LEFT RAIL === */}
+        <div className="flex flex-col justify-between w-[160px] flex-shrink-0 py-10 px-7 border-r border-white/[0.05]">
+          {/* Top: logo + nav */}
+          <div className="flex flex-col gap-6">
+            <Image src="/neworange.png" alt="Logo" width={28} height={28} />
+            <div className="flex flex-col gap-1">
+              <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-1">Services</p>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1 h-1 rounded-full bg-primary" />
+                <span className="text-foreground/60 text-[10px]">The Big 5</span>
+              </div>
+              <div className="flex items-center gap-1.5 pl-[10px]">
+                <span className="text-foreground/25 text-[10px]">Overview</span>
+              </div>
+            </div>
+          </div>
+          {/* Bottom: compliance footer */}
           <div className="flex flex-col gap-0.5 text-[10px] text-foreground/30 leading-tight">
-            <span>Compliance</span>
+            <span>View Compliance</span>
             <span>Infrastructure</span>
             <a
               href="https://areculateir.com"
@@ -33,11 +47,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* === ZONE 2: Center editorial column === */}
-        <div className="relative z-10 flex flex-col py-6 px-6 lg:px-8 w-full max-w-[520px]">
+        {/* === MAIN CONTENT === */}
+        <div className="flex flex-col flex-1 py-10 px-10 lg:px-14 overflow-y-auto">
 
-          {/* Intro text */}
-          <div className="relative mb-5">
+          {/* Hero intro */}
+          <div className="relative mb-2">
             <div className="relative z-10 flex flex-col gap-1">
               <p className="text-foreground/60 text-xs font-normal tracking-wide">
                 A-La-Carte Automation Workflow Services
@@ -47,10 +61,9 @@ export default function Home() {
               </h1>
               <p className="text-foreground/35 italic text-xs">( Backed by Research &amp; Studies )</p>
             </div>
-
             {/* Sparkle glow layer */}
             <div className="absolute inset-x-0 top-[-12px] flex justify-center pointer-events-none z-0">
-              <div className="w-[420px] h-[100px] relative">
+              <div className="w-[520px] h-[100px] relative">
                 <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-[2px] w-3/4 blur-sm" />
                 <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-px w-3/4" />
                 <div className="absolute inset-x-32 top-0 bg-gradient-to-r from-transparent via-orange-400 to-transparent h-[4px] w-1/4 blur-sm" />
@@ -69,44 +82,26 @@ export default function Home() {
           </div>
 
           {/* The Big 5 heading */}
-          <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-4 tracking-tight">
+          <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-5 tracking-tight">
             <span className="font-normal">The</span> Big 5
           </h2>
 
+          {/* Service card grid */}
           <ServicesList />
-        </div>
 
-        {/* === ZONE 4: Bottom-right floating glass card === */}
-        <div className="absolute bottom-10 right-10 z-20 w-[288px] rounded-2xl border border-primary/20 bg-background/55 backdrop-blur-md shadow-[0_0_48px_rgba(255,122,0,0.10),inset_0_0_0_1px_rgba(255,122,0,0.08)] p-5 flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <div className="relative inline-flex flex-shrink-0">
-              <Image
-                src="/displaytypebeats.png"
-                alt="Llewellyn Y. Fisher"
-                width={48}
-                height={48}
-                className="rounded-full object-cover"
-              />
-              {/* Status dot — top-right edge */}
-              <span className="absolute top-0.5 right-0.5 flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF7900] opacity-35" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#FF7900]" />
-              </span>
-            </div>
-            <div>
-              <p className="text-foreground font-medium text-sm">Llewellyn Y. Fisher</p>
-              <p className="text-primary italic text-xs">Service Provider</p>
-            </div>
+          {/* Desktop CTA */}
+          <div className="mt-8 flex flex-col gap-3">
+            <p className="text-foreground/65 text-sm leading-relaxed">
+              Speak with Lara to find out how to get this set-up / implemented.
+            </p>
+            <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Inquire Now
+            </button>
           </div>
-          <p className="text-foreground/65 text-xs leading-relaxed">
-            Speak with Llewellyn to find out how to get this set-up / implemented.
-          </p>
-          <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            Inquire Now
-          </button>
+
         </div>
 
       </div>

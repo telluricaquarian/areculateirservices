@@ -42,17 +42,34 @@ const services = [
 
 export function ServicesList() {
   return (
-    <div className="flex flex-col">
-      {services.map((service, index) => (
-        <ServiceRow
-          key={service.title}
-          icon={service.icon}
-          title={service.title}
-          subtitle={service.subtitle}
-          description={service.description}
-          showDivider={index < services.length - 1}
-        />
-      ))}
-    </div>
+    <>
+      {/* Mobile: stacked list */}
+      <div className="md:hidden flex flex-col">
+        {services.map((service, index) => (
+          <ServiceRow
+            key={service.title}
+            icon={service.icon}
+            title={service.title}
+            subtitle={service.subtitle}
+            description={service.description}
+            showDivider={index < services.length - 1}
+          />
+        ))}
+      </div>
+
+      {/* Desktop: 3-2 card grid */}
+      <div className="hidden md:grid md:grid-cols-3 gap-3">
+        {services.map((service) => (
+          <ServiceRow
+            key={service.title}
+            icon={service.icon}
+            title={service.title}
+            subtitle={service.subtitle}
+            description={service.description}
+            showDivider={false}
+          />
+        ))}
+      </div>
+    </>
   )
 }
