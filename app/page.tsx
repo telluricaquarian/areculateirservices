@@ -7,6 +7,7 @@ import { SparklesCore } from "@/components/ui/sparkles"
 import { FlipWords } from "@/components/ui/flip-words"
 import { MobileHeader } from "@/components/MobileHeader"
 import ComplianceModal from "@/components/ComplianceModal"
+import AreculateirHoverPreview from "@/components/AreculateirHoverPreview"
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <div className="hidden md:flex min-h-screen">
 
         {/* === LEFT RAIL === */}
-        <div className="flex flex-col justify-between w-[200px] flex-shrink-0 py-10 px-8 border-r border-white/[0.05]">
+        <div className="flex flex-col justify-between w-[240px] flex-shrink-0 py-10 px-8 border-r border-white/[0.05]">
           {/* Top: logo + nav */}
           <div className="flex flex-col gap-6">
             <div className="img-protected-wrap">
@@ -40,16 +41,9 @@ export default function Home() {
             {/* Barely-there orange ambient — bottom-anchored */}
             <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none -z-10 bg-gradient-to-t from-orange-500/[0.04] to-transparent" />
             <ComplianceModal />
-            <p className="text-foreground/30">
+            <p className="text-foreground/30 whitespace-nowrap">
               Brought to you by{" "}
-              <a
-                href="https://areculateir.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary/50 underline underline-offset-2 hover:text-primary/70 transition-colors"
-              >
-                Areculateir.com
-              </a>
+              <AreculateirHoverPreview popupPosition="right" />
             </p>
             <span className="text-foreground/20">©2026</span>
           </div>

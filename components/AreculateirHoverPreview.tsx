@@ -12,8 +12,16 @@ const HREF = 'https://www.areculateir.com'
  * Mobile:  first tap opens preview, second tap navigates.
  *          Tapping outside closes preview.
  *          A "Visit site →" button inside the card also navigates.
+ *
+ * popupPosition:
+ *   'above' (default) — card appears above the link, centered. Use in footer rows.
+ *   'right'           — card appears to the right of the link. Use in left-rail sidebars.
  */
-export default function AreculateirHoverPreview() {
+interface Props {
+  popupPosition?: 'above' | 'right'
+}
+
+export default function AreculateirHoverPreview({ popupPosition = 'above' }: Props) {
   const [visible, setVisible]   = useState(false)
   const tapCount                = useRef(0)
   const videoRef                = useRef<HTMLVideoElement>(null)
@@ -99,8 +107,10 @@ export default function AreculateirHoverPreview() {
       {/* ── Preview card ───────────────────────────────────────────────── */}
       <div
         className={[
-          // Positioning — above the link, centered on anchor
-          'absolute bottom-[calc(100%+14px)] left-1/2 -translate-x-1/2',
+          // Positioning — above+centered (default) or to the right of the link (sidebar)
+          popupPosition === 'right'
+            ? 'absolute left-[calc(100%+14px)] bottom-0'
+            : 'absolute bottom-[calc(100%+14px)] left-1/2 -translate-x-1/2',
           // Sizing
           'w-[min(320px,calc(100vw-2rem))]',
           // Chrome
@@ -112,8 +122,11 @@ export default function AreculateirHoverPreview() {
           'z-50',
         ].join(' ')}
       >
-        {/* Tail / pointer toward footer link */}
-        <div className="absolute -bottom-[7px] left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border-r border-b border-white/10 bg-[#080808]" />
+        {/* Tail / pointer — points left toward link when sidebar, down when above */}
+        {popupPosition === 'right'
+          ? <div className="absolute top-4 -left-[7px] w-3 h-3 rotate-45 border-l border-b border-white/10 bg-[#080808]" />
+          : <div className="absolute -bottom-[7px] left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border-r border-b border-white/10 bg-[#080808]" />
+        }
 
         {/* Orange-framed video */}
         <div className="p-2">
