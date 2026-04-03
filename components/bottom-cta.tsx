@@ -6,24 +6,24 @@ export function BottomCTA() {
       {/* Mobile: Spartan as background */}
       <div className="md:hidden relative">
         {/* Content */}
-        <div className="relative z-10 px-6 py-8 flex flex-col gap-4">
-          {/* Profile */}
-          <div className="flex items-center gap-4">
-            <Image
-              src="/displaytypebeats.png"
-              alt="Llewellyn Y. Fisher"
-              width={56}
-              height={56}
-              className="rounded-full object-cover"
-            />
-            <div>
-              <p className="text-foreground font-medium">Llewellyn Y. Fisher</p>
-              <p className="text-primary italic text-sm">Service Provider</p>
-            </div>
+        <div className="relative z-10 px-6 py-8 flex flex-col items-center gap-3 text-center">
+          {/* Profile image */}
+          <Image
+            src="/displaytypebeats.png"
+            alt="Llewellyn Y. Fisher"
+            width={56}
+            height={56}
+            className="rounded-full object-cover"
+          />
+
+          {/* Name + role */}
+          <div className="flex flex-col gap-0.5">
+            <p className="text-foreground font-medium">Llewellyn Y. Fisher</p>
+            <p className="text-primary italic text-sm">Service Provider</p>
           </div>
 
           {/* CTA Text */}
-          <p className="text-foreground/90 text-sm leading-snug">
+          <p className="text-foreground/90 text-sm leading-snug max-w-[260px]">
             Speak with Llewellyn to find out how to get this set-up / implemented.
           </p>
 
