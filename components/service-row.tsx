@@ -33,9 +33,12 @@ export function ServiceRow({ icon, title, subtitle, description, showDivider = t
         </div>
       </div>
 
-      {/* Horizontal divider — always shown between rows, full width */}
       {showDivider && (
-        <div className="h-px bg-primary/20" />
+        <div className="flex items-center justify-center gap-2 py-1">
+          <div className="h-px w-6 bg-orange-500/40" />
+          <div className="h-px w-16 bg-orange-500/70" />
+          <div className="h-px w-6 bg-orange-500/40" />
+        </div>
       )}
     </div>
   )
