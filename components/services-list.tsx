@@ -10,7 +10,7 @@ import {
 const services = [
   {
     icon: <SpeedToLeadIcon />,
-    price: "From $5,000",
+    price: "Investment from $5,000",
     title: "Speed to Lead",
     subtitle: "Instantly Capture and Route New Leads",
     description: "A system that immediately responds to, qualifies, and routes new leads the moment they fill out a form or send an inquiry. Because businesses are up to 10 times more likely to convert a lead if they respond within 5 minutes, this removes the average 47-hour delay that costs businesses money"
@@ -54,7 +54,7 @@ export function ServicesList() {
           <ServiceRow
             key={service.title}
             icon={service.icon}
-            price={service.price}
+            price={index === 0 ? service.price : undefined}
             title={service.title}
             subtitle={service.subtitle}
             description={service.description}
@@ -65,10 +65,11 @@ export function ServicesList() {
 
       {/* Desktop: 3-2 card grid */}
       <div className="hidden md:grid md:grid-cols-3 gap-3">
-        {services.map((service) => (
+        {services.map((service, index) => (
           <ServiceRow
             key={service.title}
             icon={service.icon}
+            price={index === 0 ? service.price : undefined}
             title={service.title}
             subtitle={service.subtitle}
             description={service.description}
