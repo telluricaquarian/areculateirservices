@@ -133,7 +133,7 @@ export default function Home() {
           </div>
 
           {/* The Big 5 heading */}
-          <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-5 tracking-tight text-center">
+          <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-10 lg:mb-14 tracking-tight text-center">
             <span className="font-normal">The</span> Big 5
           </h2>
 
