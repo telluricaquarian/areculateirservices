@@ -1,7 +1,7 @@
 'use client'
 
 import * as RadixDialog from '@radix-ui/react-dialog'
-import { ExternalLink, ShieldCheck, X } from 'lucide-react'
+import { ExternalLink, X } from 'lucide-react'
 
 import {
   Dialog,
@@ -24,7 +24,12 @@ export default function ComplianceModal() {
     <Dialog>
       <DialogTrigger asChild>
         <button className="inline-flex items-center gap-1.5 text-foreground/50 text-[10px] md:text-xs tracking-wide hover:text-foreground/80 transition-colors group">
-          <ShieldCheck className="w-3 h-3 fill-[#FF7900] text-[#FF7900] flex-shrink-0" />
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="flex-shrink-0" aria-hidden="true">
+            {/* Shield body — orange fill */}
+            <path d="M12 2L4 5.5V11c0 5.25 3.5 10.15 8 11.35C16.5 21.15 20 16.25 20 11V5.5L12 2Z" fill="#FF7900" />
+            {/* Checkmark — black, bold */}
+            <path d="M8.5 12l2.5 2.5 4.5-4.5" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
           View Compliance Infrastructure
         </button>
       </DialogTrigger>
