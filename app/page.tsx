@@ -19,10 +19,10 @@ export default function Home() {
       <div className="hidden md:flex h-screen overflow-hidden">
 
         {/* === LEFT RAIL === */}
-        <div className="relative overflow-hidden flex flex-col justify-between w-[270px] flex-shrink-0 py-10 px-8 border-r border-primary/20 shadow-[1px_0_6px_rgba(255,122,0,0.06)]">
+        <div className="relative flex flex-col justify-between w-[270px] flex-shrink-0 py-10 px-8 border-r border-primary/20 shadow-[1px_0_6px_rgba(255,122,0,0.06)]">
 
-          {/* Sidebar atmosphere — scoped to rail only */}
-          <div className="absolute inset-0 pointer-events-none z-0">
+          {/* Sidebar atmosphere — overflow-hidden scoped to this layer only so popup can escape */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             {/* Base: dark charcoal gradient, slightly lighter at top */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] via-[#080808] to-[#050505]" />
             {/* Warm orange radial — bottom-left anchor, very faint */}
