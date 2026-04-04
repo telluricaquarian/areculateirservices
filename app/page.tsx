@@ -58,8 +58,6 @@ export default function Home() {
           </div>
           {/* Bottom: compliance footer */}
           <div className="relative z-10 flex flex-col gap-1.5 text-[10px] leading-tight">
-            {/* Barely-there orange ambient — bottom-anchored */}
-            <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none -z-10 bg-gradient-to-t from-orange-500/[0.04] to-transparent" />
             <ComplianceModal />
             <p className="text-foreground/30 whitespace-nowrap">
               Brought to you by{" "}
