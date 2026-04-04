@@ -68,12 +68,20 @@ interface Meta {
   pricing: string
 }
 
+interface StarterCTA {
+  label: string
+  /** Swap this for the real Stripe payment link when ready */
+  href: string
+}
+
 interface Offer {
   icon: ReactNode
   title: string
   valueProps: string
   description: string
   meta: Meta
+  /** If set, renders a secondary productized purchase CTA on the card */
+  starterCTA?: StarterCTA
 }
 
 // ── Data ───────────────────────────────────────────────────────────────────
@@ -134,6 +142,10 @@ const offers: Offer[] = [
       tools: "n8n / Make.com · OpenAI / Claude · Google Sheets / Airtable · Buffer / Hootsuite",
       pricing: "$1,500–$5,000 setup",
     },
+    starterCTA: {
+      label: "Start with Fixed Scope",
+      href: "https://buy.stripe.com/placeholder-content-dashboards", // TODO: replace with live Stripe link
+    },
   },
   {
     icon: <HiringIcon />,
@@ -161,6 +173,10 @@ const offers: Offer[] = [
       target: "E-commerce companies running paid ads on Meta or TikTok.",
       tools: "Sora · n8n · Product review tool",
       pricing: "$1,500–$4,000/mo retainer · or $100–$300 per creative",
+    },
+    starterCTA: {
+      label: "Buy Starter Package",
+      href: "https://buy.stripe.com/placeholder-ai-ugc-creatives", // TODO: replace with live Stripe link
     },
   },
 ]
@@ -199,6 +215,24 @@ function Agency6Card({ offer }: { offer: Offer }) {
         <MetaRow label="Stack" value={offer.meta.tools} />
         <MetaRow label="Pricing" value={offer.meta.pricing} highlight />
       </div>
+
+      {/* Productized CTA — only on eligible offers */}
+      {offer.starterCTA && (
+        <div className="border-t border-white/[0.06] pt-3">
+          <a
+            href={offer.starterCTA.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[10px] font-medium tracking-wide text-[#FF7900]/70 hover:text-[#FF7900] transition-colors group"
+          >
+            <span className="w-1 h-1 rounded-full bg-[#FF7900]/50 group-hover:bg-[#FF7900] transition-colors flex-shrink-0" />
+            {offer.starterCTA.label}
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-2.5 h-2.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">
+              <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
+      )}
     </div>
   )
 }
