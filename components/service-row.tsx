@@ -11,7 +11,7 @@ interface ServiceRowProps {
 
 export function ServiceRow({ icon, price, title, subtitle, description, showDivider = true }: ServiceRowProps) {
   return (
-    <div className="flex flex-col md:rounded-xl md:border md:border-primary/20 md:bg-background/60">
+    <div className="relative isolate flex flex-col md:rounded-xl md:border md:border-primary/20 md:bg-background/60 md:hover:outline md:hover:outline-1 md:hover:outline-[#FF7900]/25 transition-[outline]">
       {/* Mobile: icon above text, centered | Desktop: card column layout */}
       <div className="flex flex-col items-center gap-2.5 py-4 md:flex-col md:items-start md:gap-3 md:p-5">
 
