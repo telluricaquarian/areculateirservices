@@ -48,16 +48,18 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-0.5">Services</p>
 
-              {/* Active pill — The Big 5 */}
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#FF7900]/55 w-full">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF7900] flex-shrink-0" />
-                <span className="text-foreground/80 text-[10px] leading-none">The Big 5</span>
-              </div>
+              {/* Inline pill row */}
+              <div className="flex items-center gap-2">
+                {/* Active pill — The Big 5 */}
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-[#FF7900]/55 w-fit">
+                  <span className="w-1 h-1 rounded-full bg-[#FF7900] flex-shrink-0" />
+                  <span className="text-foreground/80 text-[10px] leading-none whitespace-nowrap">The Big 5</span>
+                </div>
 
-              {/* Inactive pill — Agency 6 */}
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-foreground/15 w-full">
-                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" />{/* spacer — no dot */}
-                <span className="text-foreground/30 text-[10px] leading-none">Agency 6</span>
+                {/* Inactive pill — Agency 6 */}
+                <div className="flex items-center px-2.5 py-1 rounded-full border border-foreground/15 w-fit">
+                  <span className="text-foreground/30 text-[10px] leading-none whitespace-nowrap">Agency 6</span>
+                </div>
               </div>
             </div>
           </div>
