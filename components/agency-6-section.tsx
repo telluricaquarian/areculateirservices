@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { ReactNode } from "react"
 
 // ── Icons ──────────────────────────────────────────────────────────────────
@@ -144,7 +145,7 @@ const offers: Offer[] = [
     },
     starterCTA: {
       label: "Start with Fixed Scope",
-      href: "https://buy.stripe.com/placeholder-content-dashboards", // TODO: replace with live Stripe link
+      href: "/agency6/content-dashboards",
     },
   },
   {
@@ -176,7 +177,7 @@ const offers: Offer[] = [
     },
     starterCTA: {
       label: "Buy Starter Package",
-      href: "https://buy.stripe.com/placeholder-ai-ugc-creatives", // TODO: replace with live Stripe link
+      href: "/agency6/ai-ugc-creatives",
     },
   },
 ]
@@ -219,10 +220,8 @@ function Agency6Card({ offer }: { offer: Offer }) {
       {/* Productized CTA — only on eligible offers */}
       {offer.starterCTA && (
         <div className="border-t border-white/[0.06] pt-3">
-          <a
+          <Link
             href={offer.starterCTA.href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[10px] font-medium tracking-wide text-[#FF7900]/70 hover:text-[#FF7900] transition-colors group"
           >
             <span className="w-1 h-1 rounded-full bg-[#FF7900]/50 group-hover:bg-[#FF7900] transition-colors flex-shrink-0" />
@@ -230,7 +229,7 @@ function Agency6Card({ offer }: { offer: Offer }) {
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-2.5 h-2.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">
               <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </Link>
         </div>
       )}
     </div>
