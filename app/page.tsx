@@ -5,6 +5,7 @@ import { FooterMeta } from "@/components/footer-meta"
 import { SparklesCore } from "@/components/ui/sparkles"
 import { MobileHeader } from "@/components/MobileHeader"
 import { DesktopMain } from "@/components/DesktopMain"
+import { FloatingCTA } from "@/components/FloatingCTA"
 
 export default function Home() {
   return (
@@ -59,6 +60,9 @@ export default function Home() {
 
         <BottomCTA />
       </div>
+
+      {/* Floating inquiry CTA — mobile only, hides when BottomCTA is in view */}
+      <FloatingCTA />
 
       {/* Sticky glass footer — mobile only, fixed at bottom */}
       <FooterMeta />

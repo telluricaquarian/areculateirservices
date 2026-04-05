@@ -5,7 +5,7 @@ import { InquireModal } from "@/components/InquireModal"
 
 export function BottomCTA() {
   return (
-    <section className="relative mt-7 md:mt-20">
+    <section id="bottom-cta-section" className="relative mt-7 md:mt-20">
       {/* Mobile: Spartan as background */}
       <div className="md:hidden relative">
         {/* Content */}
