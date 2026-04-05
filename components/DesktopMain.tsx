@@ -8,6 +8,7 @@ import ComplianceModal from "@/components/ComplianceModal"
 import AreculateirHoverPreview from "@/components/AreculateirHoverPreview"
 import { ServicesList } from "@/components/services-list"
 import { Agency6Section } from "@/components/agency-6-section"
+import { InquireModal } from "@/components/InquireModal"
 
 type Tab = 'big5' | 'agency6'
 
@@ -189,12 +190,16 @@ export function DesktopMain() {
           <p className="text-foreground/65 text-sm leading-relaxed">
             Speak with Lara to find out how to get this set-up / implemented.
           </p>
-          <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            Inquire Now
-          </button>
+          <InquireModal
+            trigger={
+              <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                Inquire Now
+              </button>
+            }
+          />
         </div>
 
       </div>

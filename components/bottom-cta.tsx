@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image"
+import { InquireModal } from "@/components/InquireModal"
 
 export function BottomCTA() {
   return (
@@ -36,17 +39,16 @@ export function BottomCTA() {
           </p>
 
           {/* CTA Button */}
-          <a
-            href="https://ig.me/m/thethinkingspirit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-6 py-3 rounded-full w-fit shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#FF7900]">
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            <span className="font-bold italic text-sm">Inquire Now</span>
-          </a>
+          <InquireModal
+            trigger={
+              <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-6 py-3 rounded-full w-fit shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#FF7900]">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                <span className="font-bold italic text-sm">Inquire Now</span>
+              </button>
+            }
+          />
         </div>
       </div>
 
