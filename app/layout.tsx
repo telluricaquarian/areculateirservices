@@ -17,11 +17,6 @@ export const metadata: Metadata = {
   title: 'A-La-Carte Automation Workflow Services',
   description: '5 Extremely Boring Services Your Business Actually Needs. Backed by Research & Studies.',
   generator: 'v0.app',
-  icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
-  },
 }
 
 export const viewport: Viewport = {
