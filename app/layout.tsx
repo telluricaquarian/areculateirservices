@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { PageLoader } from '@/components/PageLoader'
 import './globals.css'
 
 const geist = Geist({ 
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geist.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground`}>
+        <PageLoader />
         {children}
         <Analytics />
       </body>
