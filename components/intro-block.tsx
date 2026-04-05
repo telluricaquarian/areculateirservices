@@ -1,23 +1,15 @@
 import Image from "next/image"
 import { SparklesCore } from "@/components/ui/sparkles"
 import { FlipWords } from "@/components/ui/flip-words"
+import { AaParticleLogo } from "@/components/aa-particle-logo"
 
 export function IntroBlock() {
   return (
     <div className="relative">
       {/* Text — z-10 keeps it above the sparkle layer */}
       <div className="relative z-10 flex flex-col gap-1 md:gap-2 items-center md:items-start text-center md:text-left">
-        {/* Logo */}
-        <div className="img-protected-wrap mb-0.5">
-          <Image
-            src="/neworange.png"
-            alt="Logo"
-            width={28}
-            height={28}
-            className="img-protected"
-            draggable={false}
-          />
-        </div>
+        {/* Particle Aa logo — tweak width/height here for the mobile/desktop intro slot */}
+        <AaParticleLogo width={64} height={40} className="mb-0.5" />
 
         {/* Company Name */}
         <h2 className="text-foreground text-sm md:text-lg font-normal tracking-tight">

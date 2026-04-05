@@ -9,6 +9,7 @@ import AreculateirHoverPreview from "@/components/AreculateirHoverPreview"
 import { ServicesList } from "@/components/services-list"
 import { Agency6Section } from "@/components/agency-6-section"
 import { InquireModal } from "@/components/InquireModal"
+import { AaParticleLogo } from "@/components/aa-particle-logo"
 
 type Tab = 'big5' | 'agency6'
 
@@ -42,9 +43,8 @@ export function DesktopMain() {
 
         {/* Top: logo + nav */}
         <div className="relative z-10 flex flex-col gap-6">
-          <div className="img-protected-wrap">
-            <Image src="/neworange.png" alt="Logo" width={28} height={28} className="img-protected" draggable={false} />
-          </div>
+          {/* Particle Aa logo — tweak width/height here for the sidebar slot */}
+          <AaParticleLogo width={64} height={40} />
           <div className="flex flex-col gap-2">
             <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-0.5">Services</p>
 
