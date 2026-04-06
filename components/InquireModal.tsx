@@ -13,7 +13,7 @@ const SERVICES = [
   "Document Processing",
   "Follow Up & Nurture Sequence",
   "Database Reactivation",
-  "Internal Reporting and Status Notification",
+  "Internal Reporting and Status Notifications",
 ]
 
 // ── Payload ────────────────────────────────────────────────────────────────
@@ -28,14 +28,39 @@ interface InquiryPayload {
   sourcePage: string
 }
 
-// ── Submission handler (placeholder) ──────────────────────────────────────
-// TODO: Replace body of this function with your real endpoint:
-//   - API route:      await fetch('/api/inquire', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-//   - Server action:  await submitInquiryAction(payload)
-//   - Google Sheets:  await fetch(SHEETS_WEBHOOK_URL, { method: 'POST', body: JSON.stringify(payload) })
+// ── Submission handler ─────────────────────────────────────────────────────
 async function submitInquiry(payload: InquiryPayload): Promise<void> {
-  console.log('[InquireModal] Inquiry payload:', payload)
-  await new Promise((r) => setTimeout(r, 1200)) // simulated latency — remove when wired
+  const url = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL
+  if (!url) throw new Error('NEXT_PUBLIC_APPS_SCRIPT_URL is not set')
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'text/plain;charset=utf-8',
+    },
+    body: JSON.stringify({
+      services:    payload.selectedServices,
+      name:        payload.name,
+      email:       payload.email,
+      socialMedia: payload.socialMedia,
+      website:     payload.website,
+    }),
+  })
+
+  if (!res.ok) throw new Error(`Submission failed: ${res.status}`)
+
+  const text = await res.text()
+
+  let data: { success?: boolean; error?: string } = {}
+  try {
+    data = JSON.parse(text)
+  } catch {
+    throw new Error('Submission failed: invalid server response')
+  }
+
+  if (!data.success) {
+    throw new Error(data.error || 'Submission failed')
+  }
 }
 
 // ── Types ──────────────────────────────────────────────────────────────────
