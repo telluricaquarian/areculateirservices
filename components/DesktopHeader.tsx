@@ -24,13 +24,18 @@ export function DesktopHeader() {
 
   return (
     <header
-      className="hidden lg:flex fixed top-0 inset-x-0 z-50 items-center"
+      className="hidden lg:flex fixed top-0 z-50 items-center"
       style={{
+        left: '270px',
+        width: 'calc(100% - 270px)',
         height: '36px',
-        background: '#0a0a0a',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
         fontSize: '11px',
         color: 'rgba(255,255,255,0.5)',
+        borderBottom: '1px solid transparent',
+        backgroundImage:
+          'linear-gradient(#0a0a0a, #0a0a0a), linear-gradient(90deg, transparent, #f97316, #ea580c, transparent)',
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'padding-box, border-box',
       }}
     >
       <div
