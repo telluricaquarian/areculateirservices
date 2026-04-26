@@ -17,6 +17,8 @@ export function MobileContent() {
         <Agency6Section />
       ) : activeTab === 'waas' ? (
         <WaasKlarnaSection />
+      ) : activeTab === 'big5' ? (
+        <ServicesList />
       ) : (
         <div className="relative">
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -45,7 +47,7 @@ export function MobileContent() {
         </div>
       )}
 
-      {(activeTab === 'home' || activeTab === 'big5') && <BottomCTA />}
+      {activeTab === 'home' && <BottomCTA />}
     </div>
   )
 }
