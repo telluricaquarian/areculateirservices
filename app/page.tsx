@@ -7,10 +7,12 @@ import { MobileHeader } from "@/components/MobileHeader"
 import { DesktopMain } from "@/components/DesktopMain"
 import { DesktopHeader } from "@/components/DesktopHeader"
 import { FloatingCTA } from "@/components/FloatingCTA"
+import { TabProvider } from "@/components/TabProvider"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden">
+      <TabProvider>
 
       {/* Desktop sticky header — lg+ only */}
       <DesktopHeader />
@@ -71,6 +73,7 @@ export default function Home() {
       {/* Sticky glass footer — mobile only, fixed at bottom */}
       <FooterMeta />
 
+      </TabProvider>
     </main>
   )
 }
