@@ -8,10 +8,11 @@ import ComplianceModal from "@/components/ComplianceModal"
 import AreculateirHoverPreview from "@/components/AreculateirHoverPreview"
 import { ServicesList } from "@/components/services-list"
 import { Agency6Section } from "@/components/agency-6-section"
+import { WaasKlarnaSection } from "@/components/waas-klarna-section"
 import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
 
-type Tab = 'big5' | 'agency6'
+type Tab = 'big5' | 'agency6' | 'waas'
 
 export function DesktopMain() {
   const [activeTab, setActiveTab] = useState<Tab>('big5')
@@ -87,6 +88,25 @@ export function DesktopMain() {
                   activeTab === 'agency6' ? "text-foreground/80" : "text-foreground/30",
                 ].join(' ')}>Agency 6</span>
               </button>
+
+              {/* WaaS + Klarna pill */}
+              <button
+                onClick={() => setActiveTab('waas')}
+                className={[
+                  "flex items-center gap-1.5 px-2.5 py-1 rounded-full border w-fit transition-colors",
+                  activeTab === 'waas'
+                    ? "border-[#FF7900]/55"
+                    : "border-foreground/15 hover:border-foreground/30",
+                ].join(' ')}
+              >
+                {activeTab === 'waas' && (
+                  <span className="w-1 h-1 rounded-full bg-[#FF7900] flex-shrink-0" />
+                )}
+                <span className={[
+                  "text-[10px] leading-none whitespace-nowrap",
+                  activeTab === 'waas' ? "text-foreground/80" : "text-foreground/30",
+                ].join(' ')}>WaaS + Klarna</span>
+              </button>
             </div>
           </div>
         </div>
@@ -136,8 +156,10 @@ export function DesktopMain() {
                   </span>
                   {" "}Services Your Business Actually Needs.
                 </>
-              ) : (
+              ) : activeTab === 'agency6' ? (
                 <>6 AI Systems Built for Agencies That Sell Automation.</>
+              ) : (
+                <>Premium Sites That Convert at the Payment Screen.</>
               )}
             </h1>
             <p className="text-foreground/35 italic text-xs mt-0.5">( Backed by Research &amp; Studies )</p>
@@ -177,13 +199,21 @@ export function DesktopMain() {
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-10 lg:mb-14 tracking-tight text-center">
           {activeTab === 'big5' ? (
             <><span className="font-normal">The</span> Big 5</>
-          ) : (
+          ) : activeTab === 'agency6' ? (
             <><span className="font-normal">Agency</span> 6</>
+          ) : (
+            <><span className="font-normal">WaaS</span> + Klarna</>
           )}
         </h2>
 
         {/* Service card grid */}
-        {activeTab === 'big5' ? <ServicesList /> : <Agency6Section />}
+        {activeTab === 'big5' ? (
+          <ServicesList />
+        ) : activeTab === 'agency6' ? (
+          <Agency6Section />
+        ) : (
+          <WaasKlarnaSection />
+        )}
 
         {/* Desktop CTA */}
         <div className="mt-8 flex flex-col items-center gap-4 text-center">
