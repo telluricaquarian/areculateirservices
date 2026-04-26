@@ -6,43 +6,44 @@ export function StartHereSection() {
   return (
     <div className="flex flex-col">
 
-      {/* Keyframe for rotating gradient border */}
       <style>{`
-        @keyframes video-border-spin {
-          from { transform: rotate(0deg); }
-          to   { transform: rotate(360deg); }
+        @property --angle {
+          syntax: '<angle>';
+          initial-value: 0deg;
+          inherits: false;
         }
-        .video-border-spin {
-          animation: video-border-spin 3s linear infinite;
+        @keyframes borderRotate {
+          to { --angle: 360deg; }
+        }
+        .video-gradient-border {
+          background: linear-gradient(var(--angle), #f97316, #ea580c, #000000, #f97316);
+          animation: borderRotate 3s linear infinite;
         }
       `}</style>
 
       {/* Outer wrapper — max-width + centering + side padding */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%' }}>
 
-        {/* Spin-border + video card */}
-        <div style={{ position: 'relative' }}>
-
-          {/* Rotating gradient border — sits behind the card */}
+        {/* Animated gradient border wrapper */}
+        <div
+          className="video-gradient-border"
+          style={{
+            position: 'relative',
+            display: 'inline-block',
+            width: '100%',
+            borderRadius: '14px',
+            padding: '2px',
+          }}
+        >
+          {/* Video card */}
           <div
-            className="video-border-spin"
             style={{
-              position: 'absolute',
-              inset: '-2px',
-              borderRadius: '14px',
-              background: 'conic-gradient(from 0deg, transparent 0deg, #f97316 60deg, #ea580c 120deg, #ff6b00 180deg, transparent 240deg)',
-              zIndex: 0,
-            }}
-          />
-
-          {/* Video card — sits on top */}
-          <div
-            className="relative"
-            style={{
-              aspectRatio: '16/9',
               borderRadius: '12px',
               overflow: 'hidden',
-              zIndex: 1,
+              background: '#000',
+              width: '100%',
+              aspectRatio: '16/9',
+              position: 'relative',
             }}
           >
             <video
@@ -78,8 +79,8 @@ export function StartHereSection() {
               </p>
             </div>
           </div>
-
         </div>
+
       </div>
 
       {/* Below-video content */}
