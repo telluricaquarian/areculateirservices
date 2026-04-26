@@ -6,49 +6,79 @@ export function StartHereSection() {
   return (
     <div className="flex flex-col">
 
-      {/* Video hero — contained card, centred */}
-      <div
-        className="relative overflow-hidden"
-        style={{
-          maxWidth: '900px',
-          margin: '0 auto',
-          padding: '0 2rem',
-          aspectRatio: '16/9',
-          borderRadius: '12px',
-          width: '100%',
-        }}
-      >
-        <video
-          src="/herovideo.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-        />
+      {/* Keyframe for rotating gradient border */}
+      <style>{`
+        @keyframes video-border-spin {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+        .video-border-spin {
+          animation: video-border-spin 3s linear infinite;
+        }
+      `}</style>
 
-        {/* Overlay */}
-        <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
+      {/* Outer wrapper — max-width + centering + side padding */}
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%' }}>
 
-        {/* Quote block — bottom-left */}
-        <div
-          className="absolute bottom-6 left-6 max-w-[480px]"
-          style={{
-            background: 'rgba(0,0,0,0.62)',
-            backdropFilter: 'blur(8px)',
-            borderRadius: '8px',
-            padding: '1.5rem',
-          }}
-        >
-          <blockquote className="text-white text-sm leading-relaxed font-light italic mb-3">
-            &ldquo;We don&rsquo;t pitch websites. We identify exactly which businesses are losing revenue right now — and we fix it.&rdquo;
-          </blockquote>
-          <p
-            className="text-white/50 text-[10px] not-italic"
-            style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+        {/* Spin-border + video card */}
+        <div style={{ position: 'relative' }}>
+
+          {/* Rotating gradient border — sits behind the card */}
+          <div
+            className="video-border-spin"
+            style={{
+              position: 'absolute',
+              inset: '-2px',
+              borderRadius: '14px',
+              background: 'conic-gradient(from 0deg, transparent 0deg, #f97316 60deg, #ea580c 120deg, #ff6b00 180deg, transparent 240deg)',
+              zIndex: 0,
+            }}
+          />
+
+          {/* Video card — sits on top */}
+          <div
+            className="relative"
+            style={{
+              aspectRatio: '16/9',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              zIndex: 1,
+            }}
           >
-            — Llewellyn Y. Fisher, Founder, Areculateir
-          </p>
+            <video
+              src="/herovideo.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
+
+            {/* Quote block — bottom-left */}
+            <div
+              className="absolute bottom-6 left-6 max-w-[480px]"
+              style={{
+                background: 'rgba(0,0,0,0.62)',
+                backdropFilter: 'blur(8px)',
+                borderRadius: '8px',
+                padding: '1.5rem',
+              }}
+            >
+              <blockquote className="text-white text-sm leading-relaxed font-light italic mb-3">
+                &ldquo;We don&rsquo;t pitch websites. We identify exactly which businesses are losing revenue right now — and we fix it.&rdquo;
+              </blockquote>
+              <p
+                className="text-white/50 text-[10px] not-italic"
+                style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+              >
+                — Llewellyn Y. Fisher, Founder, Areculateir
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
 
