@@ -24,7 +24,7 @@ export function DesktopHeader() {
 
   return (
     <header
-      className="hidden lg:flex fixed top-0 inset-x-0 z-50 items-center justify-center gap-3"
+      className="hidden lg:flex fixed top-0 inset-x-0 z-50 items-center"
       style={{
         height: '36px',
         background: '#0a0a0a',
@@ -33,6 +33,11 @@ export function DesktopHeader() {
         color: 'rgba(255,255,255,0.5)',
       }}
     >
+      {/* Inner content — aligned to the video container width */}
+      <div
+        className="flex items-center gap-3"
+        style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%' }}
+      >
       <span className="flex items-center gap-1.5">
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 flex-shrink-0" style={{ color: '#f97316' }}>
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -46,6 +51,7 @@ export function DesktopHeader() {
         </svg>
         {time}
       </span>
+      </div>
     </header>
   )
 }

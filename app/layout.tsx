@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${geist.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground lg:h-screen lg:overflow-hidden`}>
         <PageLoader />
         {children}
         <Analytics />
