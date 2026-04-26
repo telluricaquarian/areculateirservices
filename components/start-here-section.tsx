@@ -1,8 +1,38 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { InquireModal } from '@/components/InquireModal'
 
+const QUOTES = [
+  {
+    text: 'We build premium sites for businesses that deserve to look as good as they actually are.',
+    attribution: '— Llewellyn Y. Fisher, Founder, Areculateir',
+  },
+  {
+    text: 'Your website should be your best salesperson. Most aren\'t even trying.',
+    attribution: '— Llewellyn Y. Fisher, Founder, Areculateir',
+  },
+  {
+    text: 'We don\'t build websites. We build first impressions that convert.',
+    attribution: '— Llewellyn Y. Fisher, Founder, Areculateir',
+  },
+]
+
 export function StartHereSection() {
+  const [index, setIndex] = useState(0)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => {
+        setIndex((i) => (i + 1) % QUOTES.length)
+        setVisible(true)
+      }, 500)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div className="flex flex-col">
 
@@ -58,7 +88,7 @@ export function StartHereSection() {
             {/* Overlay */}
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
 
-            {/* Quote block — bottom-left */}
+            {/* Quote carousel — bottom-left, box stays visible, text fades */}
             <div
               className="absolute bottom-6 left-6 max-w-[480px]"
               style={{
@@ -68,15 +98,22 @@ export function StartHereSection() {
                 padding: '1.5rem',
               }}
             >
-              <blockquote className="text-white text-sm leading-relaxed font-light italic mb-3">
-                &ldquo;We don&rsquo;t pitch websites. We identify exactly which businesses are losing revenue right now — and we fix it.&rdquo;
-              </blockquote>
-              <p
-                className="text-white/50 text-[10px] not-italic"
-                style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+              <div
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transition: 'opacity 500ms ease',
+                }}
               >
-                — Llewellyn Y. Fisher, Founder, Areculateir
-              </p>
+                <blockquote className="text-white text-sm leading-relaxed font-light italic mb-3">
+                  &ldquo;{QUOTES[index].text}&rdquo;
+                </blockquote>
+                <p
+                  className="text-white/50 text-[10px] not-italic"
+                  style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+                >
+                  {QUOTES[index].attribution}
+                </p>
+              </div>
             </div>
           </div>
         </div>
