@@ -52,7 +52,7 @@ export function StartHereSection() {
       `}</style>
 
       {/* Outer wrapper — max-width + centering + side padding */}
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%' }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%', marginTop: '1.5rem' }}>
 
         {/* Animated gradient border wrapper */}
         <div
