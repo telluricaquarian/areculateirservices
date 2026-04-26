@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from "react"
 import Image from "next/image"
 import { SparklesCore } from "@/components/ui/sparkles"
 import { FlipWords } from "@/components/ui/flip-words"
@@ -12,11 +11,10 @@ import { WaasKlarnaSection } from "@/components/waas-klarna-section"
 import { StartHereSection } from "@/components/start-here-section"
 import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
-
-type Tab = 'home' | 'big5' | 'agency6' | 'waas'
+import { useTab } from "@/components/TabProvider"
 
 export function DesktopMain() {
-  const [activeTab, setActiveTab] = useState<Tab>('home')
+  const { activeTab, setActiveTab } = useTab()
 
   return (
     <div className="hidden md:flex h-screen overflow-hidden">
