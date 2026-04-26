@@ -33,10 +33,8 @@ export function DesktopHeader() {
         color: 'rgba(255,255,255,0.5)',
       }}
     >
-      {/* Inner content — aligned to the video container width */}
       <div
-        className="flex items-center gap-3"
-        style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%' }}
+        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.5rem', width: '100%' }}
       >
       <span className="flex items-center gap-1.5">
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 flex-shrink-0" style={{ color: '#f97316' }}>
