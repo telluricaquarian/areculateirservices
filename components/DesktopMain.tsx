@@ -9,13 +9,14 @@ import AreculateirHoverPreview from "@/components/AreculateirHoverPreview"
 import { ServicesList } from "@/components/services-list"
 import { Agency6Section } from "@/components/agency-6-section"
 import { WaasKlarnaSection } from "@/components/waas-klarna-section"
+import { StartHereSection } from "@/components/start-here-section"
 import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
 
-type Tab = 'big5' | 'agency6' | 'waas'
+type Tab = 'home' | 'big5' | 'agency6' | 'waas'
 
 export function DesktopMain() {
-  const [activeTab, setActiveTab] = useState<Tab>('big5')
+  const [activeTab, setActiveTab] = useState<Tab>('home')
 
   return (
     <div className="hidden md:flex h-screen overflow-hidden">
@@ -46,6 +47,26 @@ export function DesktopMain() {
         <div className="relative z-10 flex flex-col gap-6">
           {/* Particle Aa logo — tweak width/height here for the sidebar slot */}
           <AaParticleLogo width={64} height={40} />
+
+          {/* HOME section */}
+          <div className="flex flex-col gap-2">
+            <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-0.5">Home</p>
+            <button
+              onClick={() => setActiveTab('home')}
+              className={[
+                "flex items-center gap-1.5 px-2.5 py-1 rounded-full border w-fit transition-colors",
+                activeTab === 'home'
+                  ? "border-[#FF7900]/55"
+                  : "border-foreground/15 hover:border-foreground/30",
+              ].join(' ')}
+            >
+              <span className={[
+                "text-[10px] leading-none whitespace-nowrap",
+                activeTab === 'home' ? "text-foreground/80" : "text-foreground/30",
+              ].join(' ')}>Start Here</span>
+            </button>
+          </div>
+
           <div className="flex flex-col gap-2">
             <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-0.5">Services</p>
 
@@ -140,100 +161,106 @@ export function DesktopMain() {
           />
         </div>
 
-        {/* Hero intro */}
-        <div className="relative mb-2">
-          <div className="relative z-10 flex flex-col gap-1 items-center text-center">
-            <p className="text-foreground/60 text-xs font-normal tracking-wide">
-              A-La-Carte Automation Workflow Services
-            </p>
-            <h1 className="text-primary font-serif italic text-lg font-medium leading-snug">
-              {activeTab === 'big5' ? (
-                <>
-                  5 Extremely{" "}
-                  <span className="inline-flex items-baseline">
-                    <FlipWords
-                      words={["boring", "useful", "functional", "convenient", "nifty", "fruitful"]}
-                      duration={3000}
-                      className="text-primary italic"
-                    />
-                  </span>
-                  {" "}Services Your Business Actually Needs.
-                </>
-              ) : activeTab === 'agency6' ? (
-                <>6 AI Systems Built for Agencies That Sell Automation.</>
-              ) : (
-                <>Premium Sites That Convert at the Payment Screen.</>
-              )}
-            </h1>
-            <p className="text-foreground/35 italic text-xs mt-0.5">( Backed by Research &amp; Studies )</p>
-            {/* Keyboard image — desktop hero centerpiece */}
-            <div className="img-protected-wrap mt-5">
-              <Image
-                src="/keyboard.png"
-                alt="Keyboard"
-                width={340}
-                height={200}
-                className="object-contain img-protected animate-float"
-                draggable={false}
-              />
-            </div>
-          </div>
-          {/* Sparkle glow layer */}
-          <div className="absolute inset-x-0 top-[-12px] flex justify-center pointer-events-none z-0">
-            <div className="w-[520px] h-[100px] relative">
-              <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-[2px] w-3/4 blur-sm" />
-              <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-px w-3/4" />
-              <div className="absolute inset-x-32 top-0 bg-gradient-to-r from-transparent via-orange-400 to-transparent h-[4px] w-1/4 blur-sm" />
-              <div className="absolute inset-x-32 top-0 bg-gradient-to-r from-transparent via-orange-400 to-transparent h-px w-1/4" />
-              <SparklesCore
-                background="transparent"
-                minSize={0.4}
-                maxSize={1}
-                particleDensity={700}
-                className="w-full h-full"
-                particleColor="#f97316"
-              />
-              <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(300px_100px_at_top,transparent_20%,white)]" />
-            </div>
-          </div>
-        </div>
-
-        {/* Section heading */}
-        <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-10 lg:mb-14 tracking-tight text-center">
-          {activeTab === 'big5' ? (
-            <><span className="font-normal">The</span> Big 5</>
-          ) : activeTab === 'agency6' ? (
-            <><span className="font-normal">Agency</span> 6</>
-          ) : (
-            <><span className="font-normal">WaaS</span> + Klarna</>
-          )}
-        </h2>
-
-        {/* Service card grid */}
-        {activeTab === 'big5' ? (
-          <ServicesList />
-        ) : activeTab === 'agency6' ? (
-          <Agency6Section />
+        {activeTab === 'home' ? (
+          <StartHereSection />
         ) : (
-          <WaasKlarnaSection />
-        )}
+          <>
+            {/* Hero intro */}
+            <div className="relative mb-2">
+              <div className="relative z-10 flex flex-col gap-1 items-center text-center">
+                <p className="text-foreground/60 text-xs font-normal tracking-wide">
+                  A-La-Carte Automation Workflow Services
+                </p>
+                <h1 className="text-primary font-serif italic text-lg font-medium leading-snug">
+                  {activeTab === 'big5' ? (
+                    <>
+                      5 Extremely{" "}
+                      <span className="inline-flex items-baseline">
+                        <FlipWords
+                          words={["boring", "useful", "functional", "convenient", "nifty", "fruitful"]}
+                          duration={3000}
+                          className="text-primary italic"
+                        />
+                      </span>
+                      {" "}Services Your Business Actually Needs.
+                    </>
+                  ) : activeTab === 'agency6' ? (
+                    <>6 AI Systems Built for Agencies That Sell Automation.</>
+                  ) : (
+                    <>Premium Sites That Convert at the Payment Screen.</>
+                  )}
+                </h1>
+                <p className="text-foreground/35 italic text-xs mt-0.5">( Backed by Research &amp; Studies )</p>
+                {/* Keyboard image — desktop hero centerpiece */}
+                <div className="img-protected-wrap mt-5">
+                  <Image
+                    src="/keyboard.png"
+                    alt="Keyboard"
+                    width={340}
+                    height={200}
+                    className="object-contain img-protected animate-float"
+                    draggable={false}
+                  />
+                </div>
+              </div>
+              {/* Sparkle glow layer */}
+              <div className="absolute inset-x-0 top-[-12px] flex justify-center pointer-events-none z-0">
+                <div className="w-[520px] h-[100px] relative">
+                  <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                  <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent h-px w-3/4" />
+                  <div className="absolute inset-x-32 top-0 bg-gradient-to-r from-transparent via-orange-400 to-transparent h-[4px] w-1/4 blur-sm" />
+                  <div className="absolute inset-x-32 top-0 bg-gradient-to-r from-transparent via-orange-400 to-transparent h-px w-1/4" />
+                  <SparklesCore
+                    background="transparent"
+                    minSize={0.4}
+                    maxSize={1}
+                    particleDensity={700}
+                    className="w-full h-full"
+                    particleColor="#f97316"
+                  />
+                  <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(300px_100px_at_top,transparent_20%,white)]" />
+                </div>
+              </div>
+            </div>
 
-        {/* Desktop CTA */}
-        <div className="mt-8 flex flex-col items-center gap-4 text-center">
-          <p className="text-foreground/65 text-sm leading-relaxed">
-            Speak with Lara to find out how to get this set-up / implemented.
-          </p>
-          <InquireModal
-            trigger={
-              <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-                Inquire Now
-              </button>
-            }
-          />
-        </div>
+            {/* Section heading */}
+            <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-10 lg:mb-14 tracking-tight text-center">
+              {activeTab === 'big5' ? (
+                <><span className="font-normal">The</span> Big 5</>
+              ) : activeTab === 'agency6' ? (
+                <><span className="font-normal">Agency</span> 6</>
+              ) : (
+                <><span className="font-normal">WaaS</span> + Klarna</>
+              )}
+            </h2>
+
+            {/* Service card grid */}
+            {activeTab === 'big5' ? (
+              <ServicesList />
+            ) : activeTab === 'agency6' ? (
+              <Agency6Section />
+            ) : (
+              <WaasKlarnaSection />
+            )}
+
+            {/* Desktop CTA */}
+            <div className="mt-8 flex flex-col items-center gap-4 text-center">
+              <p className="text-foreground/65 text-sm leading-relaxed">
+                Speak with Lara to find out how to get this set-up / implemented.
+              </p>
+              <InquireModal
+                trigger={
+                  <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Inquire Now
+                  </button>
+                }
+              />
+            </div>
+          </>
+        )}
 
       </div>
 
