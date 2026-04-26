@@ -19,7 +19,7 @@ export function DesktopMain() {
   const [activeTab, setActiveTab] = useState<Tab>('home')
 
   return (
-    <div className="hidden md:flex h-screen overflow-hidden">
+    <div className="hidden md:flex h-screen overflow-hidden lg:h-[calc(100vh-80px)] lg:mt-[36px]">
 
       {/* === LEFT RAIL === */}
       <div className="relative flex flex-col justify-between w-[270px] flex-shrink-0 py-10 px-8 border-r border-primary/20 shadow-[1px_0_6px_rgba(255,122,0,0.06)]">
