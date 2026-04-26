@@ -6,15 +6,25 @@ export function StartHereSection() {
   return (
     <div className="flex flex-col">
 
-      {/* Video hero — negative margins bleed past content-area padding */}
-      <div className="relative -mx-10 lg:-mx-14 -mt-10 overflow-hidden" style={{ height: '45vh', borderRadius: '12px' }}>
+      {/* Video hero — contained card, centred */}
+      <div
+        className="relative overflow-hidden"
+        style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          padding: '0 2rem',
+          aspectRatio: '16/9',
+          borderRadius: '12px',
+          width: '100%',
+        }}
+      >
         <video
           src="/herovideo.mp4"
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
 
         {/* Overlay */}
