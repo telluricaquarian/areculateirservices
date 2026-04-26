@@ -49,8 +49,10 @@ export function DesktopMain() {
           <div className="flex flex-col gap-2">
             <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-0.5">Services</p>
 
-            {/* Inline pill row */}
-            <div className="flex items-center gap-2">
+            {/* Pills — Big 5 + Agency 6 inline, WaaS + Klarna on its own row */}
+            <div className="flex flex-col gap-2">
+              {/* Row 1: The Big 5 + Agency 6 side by side */}
+              <div className="flex items-center gap-2">
               {/* The Big 5 pill */}
               <button
                 onClick={() => setActiveTab('big5')}
@@ -88,8 +90,9 @@ export function DesktopMain() {
                   activeTab === 'agency6' ? "text-foreground/80" : "text-foreground/30",
                 ].join(' ')}>Agency 6</span>
               </button>
+              </div>
 
-              {/* WaaS + Klarna pill */}
+              {/* Row 2: WaaS + Klarna pill */}
               <button
                 onClick={() => setActiveTab('waas')}
                 className={[
