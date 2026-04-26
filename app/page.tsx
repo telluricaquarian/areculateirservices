@@ -6,10 +6,16 @@ import { SparklesCore } from "@/components/ui/sparkles"
 import { MobileHeader } from "@/components/MobileHeader"
 import { DesktopMain } from "@/components/DesktopMain"
 import { FloatingCTA } from "@/components/FloatingCTA"
+import { HeroVideo } from "@/components/HeroVideo"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+
+      {/* ============================================================
+          HERO VIDEO — full-width, above all layout sections
+          ============================================================ */}
+      <HeroVideo />
 
       {/* ============================================================
           DESKTOP LAYOUT — sidebar + full-width content
