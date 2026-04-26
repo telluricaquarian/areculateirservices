@@ -7,7 +7,7 @@ export function StartHereSection() {
     <div className="flex flex-col">
 
       {/* Video hero — negative margins bleed past content-area padding */}
-      <div className="relative -mx-10 lg:-mx-14 -mt-10 overflow-hidden" style={{ height: '70vh' }}>
+      <div className="relative -mx-10 lg:-mx-14 -mt-10 overflow-hidden" style={{ height: '70vh', borderRadius: '12px' }}>
         <video
           src="/herovideo.mp4"
           autoPlay
