@@ -2,63 +2,70 @@
 
 import { InquireModal } from '@/components/InquireModal'
 
-type ServiceCard = {
-  title: string
-  investment: string
-  description: string
-}
-
-const CARDS: ServiceCard[] = [
+const ENTRY_POINTS = [
   {
-    title: 'Premium Site Build',
-    investment: 'Investment from $500/month',
-    description:
-      'Turn your web presence into your strongest trust signal. Custom built, brand-elevated, mobile-optimised.',
+    index: '①',
+    label: 'Starting from scratch',
+    description: 'Full premium site build + Klarna integration',
+    investment: 'Investment from $800/month',
   },
   {
-    title: 'WaaS + Klarna Integration',
-    investment: 'Investment from $800/month',
-    description:
-      'Add Klarna to your booking flow and turn your $1,200 treatment into $100/month at the point of decision. We build the site and wire the integration together.',
+    index: '②',
+    label: 'You have a site, need Klarna',
+    description: 'Klarna merchant setup, payment flow integration, and ongoing support — no full rebuild needed',
+    investment: 'Investment from $500/month',
+  },
+  {
+    index: '③',
+    label: 'You have Klarna, need the site',
+    description: 'Premium site build that showcases and maximises your existing Klarna or Afterpay setup',
+    investment: 'Investment from $500/month',
   },
 ]
 
-function WaasCard({ card }: { card: ServiceCard }) {
+export function WaasKlarnaSection() {
   return (
-    <div className="relative isolate flex flex-col rounded-xl border border-primary/20 bg-background/60 hover:outline hover:outline-1 hover:outline-[#FF7900]/25 p-5 gap-3 transition-all">
+    <div className="relative isolate flex flex-col rounded-xl border border-primary/20 bg-background/60 p-6 gap-6">
+
+      {/* Header */}
       <div className="flex flex-col gap-1">
-        <h3 className="text-foreground/90 text-sm font-medium leading-snug">{card.title}</h3>
-        <p className="text-[#FF7900] text-[10px] uppercase tracking-widest font-medium">{card.investment}</p>
+        <h3 className="text-foreground/90 text-sm font-medium leading-snug">WaaS + Klarna</h3>
+        <p className="text-foreground/40 text-xs leading-relaxed">
+          Premium Sites That Convert at the Payment Screen
+        </p>
       </div>
-      <p className="text-foreground/50 text-xs leading-relaxed">{card.description}</p>
+
+      {/* Entry points */}
+      <div className="flex flex-col divide-y divide-primary/10">
+        {ENTRY_POINTS.map((ep) => (
+          <div key={ep.index} className="flex gap-3 py-4 first:pt-0 last:pb-0">
+            <span className="text-[#FF7900]/50 text-xs leading-none mt-0.5 flex-shrink-0 w-4">{ep.index}</span>
+            <div className="flex flex-col gap-1 min-w-0">
+              <p className="text-foreground/80 text-xs font-medium leading-snug">{ep.label}</p>
+              <p className="text-foreground/40 text-[11px] leading-relaxed">{ep.description}</p>
+              <p className="text-[#FF7900] text-[10px] uppercase tracking-widest font-medium mt-0.5">{ep.investment}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Discrete note */}
+      <p className="text-foreground/25 text-[10px] leading-relaxed italic border-t border-primary/10 pt-4">
+        Not sure which applies to you? Book a free 15-minute call and we&apos;ll tell you exactly what you need — and what you don&apos;t.
+      </p>
+
+      {/* CTA */}
       <InquireModal
         trigger={
-          <button className="mt-auto flex items-center gap-1.5 text-[10px] font-bold italic text-[#FF7900] hover:text-[#FF7900]/80 transition-colors w-fit">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-2.5 h-2.5">
+          <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
             Inquire Now
           </button>
         }
       />
-    </div>
-  )
-}
 
-export function WaasKlarnaSection() {
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1 text-center">
-        <h2 className="text-foreground/90 text-base font-medium">Premium Sites That Convert</h2>
-        <p className="text-foreground/40 text-xs leading-relaxed max-w-md mx-auto">
-          Built for high-ticket service businesses that lose bookings at the payment screen.
-        </p>
-      </div>
-      <div className="grid grid-cols-2 gap-3 mt-2">
-        {CARDS.map((card) => (
-          <WaasCard key={card.title} card={card} />
-        ))}
-      </div>
     </div>
   )
 }
