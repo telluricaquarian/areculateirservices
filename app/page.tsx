@@ -6,7 +6,6 @@ import { SparklesCore } from "@/components/ui/sparkles"
 import { MobileHeader } from "@/components/MobileHeader"
 import { DesktopMain } from "@/components/DesktopMain"
 import { DesktopHeader } from "@/components/DesktopHeader"
-import { DesktopFooter } from "@/components/DesktopFooter"
 import { FloatingCTA } from "@/components/FloatingCTA"
 
 export default function Home() {
@@ -20,9 +19,6 @@ export default function Home() {
           DESKTOP LAYOUT — sidebar + full-width content
           ============================================================ */}
       <DesktopMain />
-
-      {/* Desktop sticky footer — lg+ only */}
-      <DesktopFooter />
 
       {/* ============================================================
           MOBILE LAYOUT — unchanged
