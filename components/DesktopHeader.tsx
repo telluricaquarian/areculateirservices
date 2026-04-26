@@ -24,10 +24,8 @@ export function DesktopHeader() {
 
   return (
     <header
-      className="hidden lg:flex fixed top-0 z-50 items-center"
+      className="hidden lg:flex fixed top-0 inset-x-0 z-50 items-center"
       style={{
-        left: '270px',
-        width: 'calc(100% - 270px)',
         height: '36px',
         fontSize: '11px',
         color: 'rgba(255,255,255,0.5)',
