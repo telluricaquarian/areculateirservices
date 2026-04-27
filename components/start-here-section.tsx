@@ -240,11 +240,11 @@ export function StartHereSection() {
             padding: '0 1rem',
           }}
         >
-          <blockquote className="text-white text-sm leading-relaxed font-light italic mb-2">
+          <blockquote className="text-white text-sm leading-relaxed font-light italic mb-2 text-center">
             &ldquo;{QUOTES[index].text}&rdquo;
           </blockquote>
           <p
-            className="text-white/50 text-[10px] not-italic"
+            className="text-white/50 text-[10px] not-italic text-center"
             style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
           >
             {QUOTES[index].attribution}
