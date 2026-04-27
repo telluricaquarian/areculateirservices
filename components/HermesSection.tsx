@@ -13,18 +13,18 @@ interface TerminalLine {
 }
 
 const SEQUENCE: TerminalLine[] = [
-  { text: '$ areculateirhermes init',                              style: 'command', pauseAfter: 800  },
+  { text: '$ zeratul init',                              style: 'command', pauseAfter: 800  },
   { text: '> Scanning prospect database...',                       style: 'output',  pauseAfter: 600  },
   { text: '> Found 47 qualified leads in Sydney',                  style: 'output',  pauseAfter: 600  },
   { text: '> Generating personalised outreach sequences...',       style: 'output',  pauseAfter: 1000 },
   { text: '',                                                       style: 'blank',   pauseAfter: 200  },
-  { text: '$ areculateirhermes content --generate --platform instagram', style: 'command', pauseAfter: 800 },
+  { text: '$ zeratul content --generate --platform instagram', style: 'command', pauseAfter: 800 },
   { text: '> Analysing brand voice...',                            style: 'output',  pauseAfter: 600  },
   { text: '> Drafting 3 posts for Instagram...',                   style: 'output',  pauseAfter: 600  },
   { text: '> Generating captions + hashtags...',                   style: 'output',  pauseAfter: 600  },
   { text: '> Scheduling posts... done',                            style: 'output',  pauseAfter: 1000 },
   { text: '',                                                       style: 'blank',   pauseAfter: 200  },
-  { text: '$ areculateirhermes inbox --auto-respond',              style: 'command', pauseAfter: 800  },
+  { text: '$ zeratul inbox --auto-respond',              style: 'command', pauseAfter: 800  },
   { text: '> 2 new inquiries detected',                            style: 'output',  pauseAfter: 600  },
   { text: '> Drafting responses...',                               style: 'output',  pauseAfter: 600  },
   { text: '> Ready for review',                                    style: 'output',  pauseAfter: 2000 },
@@ -89,7 +89,7 @@ function Terminal() {
         <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
         <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
         <span className="flex-1 text-center text-[11px] text-foreground/30 font-mono -ml-16">
-          areculateirhermes — zsh
+          zeratul — zsh
         </span>
       </div>
 
@@ -121,9 +121,9 @@ export function HermesSection() {
 
       {/* Header */}
       <div className="text-center">
-        <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Proprietary Agent</p>
+        <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Custom Agent</p>
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl tracking-tight">
-          Hermes
+          Zeratul
         </h2>
       </div>
 
@@ -132,7 +132,7 @@ export function HermesSection() {
 
       {/* Description */}
       <p className="text-foreground/50 text-sm leading-relaxed text-center max-w-md mx-auto">
-        Hermes is Areculateir&apos;s proprietary AI agent. It sources leads, generates content,
+        Zeratul is Areculateir&apos;s custom AI agent, built on Nous Research&apos;s Hermes. It sources leads, generates content,
         and handles inbox responses — autonomously.
       </p>
 
