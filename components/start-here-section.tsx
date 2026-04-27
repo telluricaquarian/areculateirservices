@@ -78,14 +78,14 @@ export function StartHereSection() {
           className='block md:hidden w-16 h-16 object-contain mx-auto mb-4'
         />
         <h1
-          className='block md:hidden text-center text-3xl tracking-widest uppercase mb-4'
+          className='block md:hidden text-center text-xl tracking-widest uppercase mb-4'
           style={{
             fontFamily: 'visitor1, monospace',
             background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            letterSpacing: '0.2em',
+            letterSpacing: '0.08em',
           }}
         >
           BUILD PREMIUM SITES
