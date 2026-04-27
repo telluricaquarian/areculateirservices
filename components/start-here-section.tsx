@@ -51,6 +51,18 @@ export function StartHereSection() {
         }
       `}</style>
 
+      <div className='block md:hidden text-center px-6 pt-6 pb-8'>
+        <h1 style={{ fontFamily: 'visitor1, monospace', letterSpacing: '0.15em', textTransform: 'uppercase' }} className='text-white text-3xl font-normal mb-6'>
+          BUILD PREMIUM SITES
+        </h1>
+        <p className='text-primary text-base leading-relaxed mb-6'>
+          It&apos;s one thing to have a nice site, it&apos;s another to have one that is serving a functional purpose.
+        </p>
+        <p className='text-white text-base'>
+          Win the Game of Business
+        </p>
+      </div>
+
       {/* Outer wrapper — max-width + centering + side padding */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%', marginTop: '1.5rem' }}>
 
