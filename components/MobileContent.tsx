@@ -8,13 +8,19 @@ import { SparklesCore } from '@/components/ui/sparkles'
 import { Agency6Section } from '@/components/agency-6-section'
 import { WaasKlarnaSection } from '@/components/waas-klarna-section'
 import { StartHereSection } from '@/components/start-here-section'
+import { LeadGenSection } from '@/components/LeadGenSection'
+import { HermesSection } from '@/components/HermesSection'
 
 export function MobileContent() {
   const { activeTab } = useTab()
 
   return (
     <div className="md:hidden px-6 pt-[52px] pb-20">
-      {activeTab === 'agency6' ? (
+      {activeTab === 'leadgen' ? (
+        <LeadGenSection />
+      ) : activeTab === 'hermes' ? (
+        <HermesSection />
+      ) : activeTab === 'agency6' ? (
         <Agency6Section />
       ) : activeTab === 'waas' ? (
         <WaasKlarnaSection />

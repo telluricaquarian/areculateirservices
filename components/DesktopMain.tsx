@@ -9,6 +9,8 @@ import { ServicesList } from "@/components/services-list"
 import { Agency6Section } from "@/components/agency-6-section"
 import { WaasKlarnaSection } from "@/components/waas-klarna-section"
 import { StartHereSection } from "@/components/start-here-section"
+import { LeadGenSection } from "@/components/LeadGenSection"
+import { HermesSection } from "@/components/HermesSection"
 import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
 import { useTab } from "@/components/TabProvider"
@@ -131,6 +133,46 @@ export function DesktopMain() {
               </button>
             </div>
           </div>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-foreground/25 text-[9px] uppercase tracking-widest mb-0.5">Proprietary</p>
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={() => setActiveTab('leadgen')}
+                className={[
+                  "flex items-center gap-1.5 px-2.5 py-1 rounded-full border w-fit transition-colors",
+                  activeTab === 'leadgen'
+                    ? "border-[#FF7900]/55"
+                    : "border-foreground/15 hover:border-foreground/30",
+                ].join(' ')}
+              >
+                {activeTab === 'leadgen' && (
+                  <span className="w-1 h-1 rounded-full bg-[#FF7900] flex-shrink-0" />
+                )}
+                <span className={[
+                  "text-[10px] leading-none whitespace-nowrap",
+                  activeTab === 'leadgen' ? "text-foreground/80" : "text-foreground/30",
+                ].join(' ')}>Lead Gen System</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('hermes')}
+                className={[
+                  "flex items-center gap-1.5 px-2.5 py-1 rounded-full border w-fit transition-colors",
+                  activeTab === 'hermes'
+                    ? "border-[#FF7900]/55"
+                    : "border-foreground/15 hover:border-foreground/30",
+                ].join(' ')}
+              >
+                {activeTab === 'hermes' && (
+                  <span className="w-1 h-1 rounded-full bg-[#FF7900] flex-shrink-0" />
+                )}
+                <span className={[
+                  "text-[10px] leading-none whitespace-nowrap",
+                  activeTab === 'hermes' ? "text-foreground/80" : "text-foreground/30",
+                ].join(' ')}>Hermes Agent</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Bottom: compliance footer */}
@@ -161,6 +203,10 @@ export function DesktopMain() {
 
         {activeTab === 'home' ? (
           <StartHereSection />
+        ) : activeTab === 'leadgen' ? (
+          <LeadGenSection />
+        ) : activeTab === 'hermes' ? (
+          <HermesSection />
         ) : (
           <>
             {/* Hero intro */}

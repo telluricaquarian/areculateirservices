@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from 'react'
 
-export type Tab = 'home' | 'big5' | 'agency6' | 'waas'
+export type Tab = 'home' | 'big5' | 'agency6' | 'waas' | 'leadgen' | 'hermes'
 
 interface TabContextValue {
   activeTab: Tab

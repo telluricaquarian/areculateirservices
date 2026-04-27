@@ -46,6 +46,8 @@ const NAV_LINKS = [
   { label: 'The Big 5',     tab: 'big5'    },
   { label: 'Agency 6',      tab: 'agency6' },
   { label: 'WaaS + Klarna', tab: 'waas'    },
+  { label: 'Lead Gen System', tab: 'leadgen' },
+  { label: 'Hermes Agent',    tab: 'hermes'  },
 ]
 
 export function MobileHeader() {
@@ -115,7 +117,7 @@ export function MobileHeader() {
         {/* ── Slide-down drawer ── */}
         <div
           className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            open ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+            open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
           <nav className="flex flex-col border-t border-primary/10 bg-background/95 backdrop-blur-sm">
