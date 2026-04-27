@@ -74,6 +74,36 @@ export function StartHereSection() {
         </h1>
       </div>
 
+      <div className='block md:hidden w-full overflow-hidden py-4 mb-2'>
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 18s linear infinite;
+          }
+        `}</style>
+        <div className='marquee-track'>
+          {[
+            'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Radix UI',
+            'Vercel', 'Recharts', 'React Hook Form', 'Zod', 'Lucide',
+            'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Radix UI',
+            'Vercel', 'Recharts', 'React Hook Form', 'Zod', 'Lucide',
+          ].map((tech, i) => (
+            <span
+              key={i}
+              className='mx-4 text-xs font-mono tracking-widest uppercase whitespace-nowrap'
+              style={{ color: 'rgba(255,255,255,0.25)' }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* 2. Video wrapper — shared mobile + desktop */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%', marginTop: '1.5rem' }}>
         <div
