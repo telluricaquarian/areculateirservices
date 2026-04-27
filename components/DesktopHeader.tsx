@@ -37,7 +37,7 @@ export function DesktopHeader() {
       }}
     >
       <div
-        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.5rem', width: '100%' }}
+        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1.5rem', width: '100%', paddingLeft: '256px' }}
       >
       <span className="flex items-center gap-1.5">
         <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 flex-shrink-0" style={{ color: '#f97316' }}>
