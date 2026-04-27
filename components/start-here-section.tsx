@@ -2,6 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import { InquireModal } from '@/components/InquireModal'
+import {
+  siNextdotjs,
+  siReact,
+  siTypescript,
+  siTailwindcss,
+  siRadixui,
+  siVercel,
+  siZod,
+  siLucide,
+} from 'simple-icons'
 
 const QUOTES = [
   {
@@ -49,6 +59,15 @@ export function StartHereSection() {
           background: linear-gradient(var(--angle), #f97316, #ea580c, #000000, #f97316);
           animation: borderRotate 3s linear infinite;
         }
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+          display: flex;
+          width: max-content;
+          animation: marquee 18s linear infinite;
+        }
       `}</style>
 
       {/* 1. Mobile-only: h1 */}
@@ -75,31 +94,44 @@ export function StartHereSection() {
       </div>
 
       <div className='block md:hidden w-full overflow-hidden py-4 mb-2'>
-        <style>{`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: marquee 18s linear infinite;
-          }
-        `}</style>
         <div className='marquee-track'>
           {[
-            'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Radix UI',
-            'Vercel', 'Recharts', 'React Hook Form', 'Zod', 'Lucide',
-            'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Radix UI',
-            'Vercel', 'Recharts', 'React Hook Form', 'Zod', 'Lucide',
-          ].map((tech, i) => (
-            <span
+            { icon: siNextdotjs,   label: 'Next.js' },
+            { icon: siReact,       label: 'React' },
+            { icon: siTypescript,  label: 'TypeScript' },
+            { icon: siTailwindcss, label: 'Tailwind CSS' },
+            { icon: siRadixui,     label: 'Radix UI' },
+            { icon: siVercel,      label: 'Vercel' },
+            { icon: siZod,         label: 'Zod' },
+            { icon: siLucide,      label: 'Lucide' },
+            { icon: siNextdotjs,   label: 'Next.js' },
+            { icon: siReact,       label: 'React' },
+            { icon: siTypescript,  label: 'TypeScript' },
+            { icon: siTailwindcss, label: 'Tailwind CSS' },
+            { icon: siRadixui,     label: 'Radix UI' },
+            { icon: siVercel,      label: 'Vercel' },
+            { icon: siZod,         label: 'Zod' },
+            { icon: siLucide,      label: 'Lucide' },
+          ].map(({ icon, label }, i) => (
+            <div
               key={i}
-              className='mx-4 text-xs font-mono tracking-widest uppercase whitespace-nowrap'
-              style={{ color: 'rgba(255,255,255,0.25)' }}
+              className='mx-6 flex flex-col items-center gap-1.5 whitespace-nowrap'
             >
-              {tech}
-            </span>
+              <svg
+                role='img'
+                viewBox='0 0 24 24'
+                className='w-6 h-6 fill-current'
+                style={{ color: 'rgba(255,255,255,0.35)' }}
+              >
+                <path d={icon.path} />
+              </svg>
+              <span
+                className='text-[9px] font-mono tracking-widest uppercase'
+                style={{ color: 'rgba(255,255,255,0.25)' }}
+              >
+                {label}
+              </span>
+            </div>
           ))}
         </div>
       </div>
