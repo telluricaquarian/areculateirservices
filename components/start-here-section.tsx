@@ -78,17 +78,16 @@ export function StartHereSection() {
           alt='Areculateir'
           className='block md:hidden w-16 h-16 object-contain mx-auto mb-4'
         />
-        <div className='block md:hidden text-center mb-4'>
+        <div className='block md:hidden text-center mb-4' style={{
+          background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+        }}>
           <PixelHeading
             as='h1'
             initialFont='square'
             className='text-2xl tracking-widest uppercase'
-            style={{
-              background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
           >
             BUILD PREMIUM SITES
           </PixelHeading>
