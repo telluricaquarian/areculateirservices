@@ -27,6 +27,20 @@ export function DeployedOn() {
         <div style={{ width: 28, height: 28, borderRadius: 6, background: '#111', border: '1px solid rgba(249,115,22,0.4)', boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <svg viewBox='0 0 116 100' style={{ width: 14, height: 14, fill: 'white' }}><path d='M57.5 0L115 100H0L57.5 0z'/></svg>
         </div>
+        <div style={{
+          width: 28,
+          height: 28,
+          borderRadius: 6,
+          background: '#111',
+          border: '1px solid rgba(249,115,22,0.4)',
+          boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+        }}>
+          <img src='/coolifylogo.jpg' alt='Coolify' style={{ width: 20, height: 20, objectFit: 'contain' }} />
+        </div>
       </div>
     </div>
     </>
