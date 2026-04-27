@@ -337,13 +337,16 @@ export function ApplySwipeTrigger({ onOpen }: { onOpen: () => void }) {
     <button
       type="button"
       onClick={onOpen}
-      className="group relative flex items-center justify-center rounded-full overflow-hidden transition-all duration-500 bg-white text-black hover:bg-[#FF7900] hover:text-white pl-6 pr-14 hover:pl-14 hover:pr-6 py-3 shadow-[0_0_24px_2px_rgba(249,115,22,0.30)]"
+      className="group relative flex items-center justify-center rounded-full overflow-hidden transition-all duration-500 bg-[#0c0c0c] text-[#FF7900] border border-[#FF7900]/60 hover:border-[#FF7900] pl-6 pr-14 hover:pl-14 hover:pr-6 py-3 shadow-[0_0_20px_2px_rgba(255,121,0,0.25)] hover:shadow-[0_0_32px_4px_rgba(255,121,0,0.45)]"
     >
       <span className="font-bold italic text-sm whitespace-nowrap">Apply for a site</span>
-      <span className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-full bg-black text-white transition-all duration-500 group-hover:right-[calc(100%-40px)] group-hover:rotate-45 group-hover:bg-white group-hover:text-[#FF7900]">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-          <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+      <span className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-500 group-hover:right-[calc(100%-40px)] group-hover:rotate-45"
+        style={{
+          background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+          boxShadow: '0 0 10px rgba(249,115,22,0.5)',
+        }}
+      >
+        <img src="/blackaa.png" alt="" aria-hidden="true" style={{ width: 18, height: 18, objectFit: 'contain' }} />
       </span>
     </button>
   )
