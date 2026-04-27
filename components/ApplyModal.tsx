@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, ReactNode, InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from 'react'
+import { useState, ReactNode, InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from 'react'
 import * as RadixDialog from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import { DialogOverlay, DialogPortal } from '@/components/ui/dialog'
@@ -333,91 +333,19 @@ export function ApplyModal({ trigger, open: controlledOpen, onOpenChange: contro
 // ── Swipe trigger button ───────────────────────────────────────────────────
 
 export function ApplySwipeTrigger({ onOpen }: { onOpen: () => void }) {
-  const touchStartX = useRef<number | null>(null)
-  const [dragX, setDragX] = useState(0)
-  const [hinting, setHinting] = useState(false)
-
-  useEffect(() => {
-    const t = setTimeout(() => setHinting(true), 600)
-    return () => clearTimeout(t)
-  }, [])
-
-  function handleTouchStart(e: React.TouchEvent) {
-    touchStartX.current = e.touches[0].clientX
-    setDragX(0)
-  }
-
-  function handleTouchMove(e: React.TouchEvent) {
-    if (touchStartX.current === null) return
-    const delta = e.touches[0].clientX - touchStartX.current
-    setDragX(Math.min(Math.max(delta, 0), 100))
-  }
-
-  function handleTouchEnd(e: React.TouchEvent) {
-    if (touchStartX.current === null) return
-    const delta = e.changedTouches[0].clientX - touchStartX.current
-    touchStartX.current = null
-    setDragX(0)
-    if (delta >= 80) onOpen()
-  }
-
-  const glowIntensity = dragX / 100
-  const glowShadow = dragX > 0
-    ? `0 0 ${24 + glowIntensity * 24}px ${2 + glowIntensity * 6}px rgba(249,115,22,${0.30 + glowIntensity * 0.45})`
-    : '0 0 24px 2px rgba(249,115,22,0.30)'
-
   return (
-    <>
-      <style>{`
-        @keyframes swipe-hint {
-          0%   { transform: translateX(0); }
-          30%  { transform: translateX(8px); }
-          60%  { transform: translateX(0); }
-          100% { transform: translateX(0); }
-        }
-        .swipe-hint-anim {
-          animation: swipe-hint 0.7s ease-in-out 1 forwards;
-        }
-      `}</style>
-      <button
-        type="button"
-        onClick={onOpen}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        className={`flex items-center gap-3 w-fit${hinting && dragX === 0 ? ' swipe-hint-anim' : ''}`}
-        style={{
-          padding: '12px 20px',
-          borderRadius: '12px',
-          border: '1px solid transparent',
-          backgroundImage: 'linear-gradient(#0c0c0c, #0c0c0c), linear-gradient(90deg, #f97316, #ea580c)',
-          backgroundOrigin: 'border-box',
-          backgroundClip: 'padding-box, border-box',
-          boxShadow: glowShadow,
-          transform: dragX > 0 ? `translateX(${dragX}px)` : undefined,
-          transition: dragX > 0 ? 'box-shadow 0.05s' : 'transform 0.3s ease, box-shadow 0.3s ease',
-          willChange: 'transform',
-        }}
-      >
-        <div style={{
-          width: 32,
-          height: 32,
-          borderRadius: 8,
-          background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
-          boxShadow: '0 0 12px rgba(249,115,22,0.5)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexShrink: 0,
-        }}>
-          <img src='/blackaa.png' alt='Areculateir' style={{ width: 22, height: 22, objectFit: 'contain' }} />
-        </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" className="w-4 h-4 flex-shrink-0">
+    <button
+      type="button"
+      onClick={onOpen}
+      className="group relative flex items-center justify-center rounded-full overflow-hidden transition-all duration-500 bg-white text-black hover:bg-[#FF7900] hover:text-white pl-6 pr-14 hover:pl-14 hover:pr-6 py-3 shadow-[0_0_24px_2px_rgba(249,115,22,0.30)]"
+    >
+      <span className="font-bold italic text-sm whitespace-nowrap">Apply for a site</span>
+      <span className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-full bg-black text-white transition-all duration-500 group-hover:right-[calc(100%-40px)] group-hover:rotate-45 group-hover:bg-white group-hover:text-[#FF7900]">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
           <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <span className="font-bold italic text-sm text-white/90">Swipe right to apply</span>
-      </button>
-    </>
+      </span>
+    </button>
   )
 }
 
