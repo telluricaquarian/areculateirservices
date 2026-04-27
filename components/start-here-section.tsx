@@ -45,7 +45,7 @@ export function StartHereSection() {
   }, [])
 
   return (
-    <div className="relative overflow-hidden flex flex-col">
+    <div className="relative flex flex-col">
 
       {/* Mobile-only sidebar atmosphere — hidden on desktop to avoid layering with DesktopMain's own atmosphere */}
       <SidebarAtmosphereBackground className="md:hidden" particleDensity={40} />

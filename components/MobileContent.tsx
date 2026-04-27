@@ -15,7 +15,7 @@ export function MobileContent() {
   const { activeTab } = useTab()
 
   return (
-    <div className="md:hidden px-6 pt-[52px] pb-20">
+    <div className="md:hidden px-6 pt-[52px] pb-52">
       {activeTab === 'leadgen' ? (
         <LeadGenSection />
       ) : activeTab === 'hermes' ? (
