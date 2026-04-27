@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, ReactNode, InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from 'react'
+import { useState, useEffect, useRef, ReactNode, InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from 'react'
 import * as RadixDialog from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import { DialogOverlay, DialogPortal } from '@/components/ui/dialog'
@@ -334,39 +334,90 @@ export function ApplyModal({ trigger, open: controlledOpen, onOpenChange: contro
 
 export function ApplySwipeTrigger({ onOpen }: { onOpen: () => void }) {
   const touchStartX = useRef<number | null>(null)
+  const [dragX, setDragX] = useState(0)
+  const [hinting, setHinting] = useState(false)
+
+  useEffect(() => {
+    const t = setTimeout(() => setHinting(true), 600)
+    return () => clearTimeout(t)
+  }, [])
 
   function handleTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.touches[0].clientX
+    setDragX(0)
+  }
+
+  function handleTouchMove(e: React.TouchEvent) {
+    if (touchStartX.current === null) return
+    const delta = e.touches[0].clientX - touchStartX.current
+    setDragX(Math.min(Math.max(delta, 0), 100))
   }
 
   function handleTouchEnd(e: React.TouchEvent) {
     if (touchStartX.current === null) return
     const delta = e.changedTouches[0].clientX - touchStartX.current
-    if (delta >= 60) onOpen()
     touchStartX.current = null
+    setDragX(0)
+    if (delta >= 80) onOpen()
   }
 
+  const glowIntensity = dragX / 100
+  const glowShadow = dragX > 0
+    ? `0 0 ${24 + glowIntensity * 24}px ${2 + glowIntensity * 6}px rgba(249,115,22,${0.30 + glowIntensity * 0.45})`
+    : '0 0 24px 2px rgba(249,115,22,0.30)'
+
   return (
-    <button
-      type="button"
-      onClick={onOpen}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-      className="flex items-center gap-3 px-5 py-3 rounded-full w-fit transition-all hover:scale-[1.02] active:scale-[0.98]"
-      style={{
-        border: '1px solid transparent',
-        backgroundImage: 'linear-gradient(#0c0c0c, #0c0c0c), linear-gradient(90deg, #f97316, #ea580c)',
-        backgroundOrigin: 'border-box',
-        backgroundClip: 'padding-box, border-box',
-        boxShadow: '0 0 24px 2px rgba(249,115,22,0.30)',
-      }}
-    >
-      <img src="/aafolder.png" alt="" aria-hidden="true" style={{ width: 24, height: 24, objectFit: 'contain' }} />
-      <svg viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" className="w-4 h-4 flex-shrink-0">
-        <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      <span className="font-bold italic text-sm text-white/90">Swipe right to apply</span>
-    </button>
+    <>
+      <style>{`
+        @keyframes swipe-hint {
+          0%   { transform: translateX(0); }
+          30%  { transform: translateX(8px); }
+          60%  { transform: translateX(0); }
+          100% { transform: translateX(0); }
+        }
+        .swipe-hint-anim {
+          animation: swipe-hint 0.7s ease-in-out 1 forwards;
+        }
+      `}</style>
+      <button
+        type="button"
+        onClick={onOpen}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        className={`flex items-center gap-3 w-fit${hinting && dragX === 0 ? ' swipe-hint-anim' : ''}`}
+        style={{
+          padding: '12px 20px',
+          borderRadius: '12px',
+          border: '1px solid transparent',
+          backgroundImage: 'linear-gradient(#0c0c0c, #0c0c0c), linear-gradient(90deg, #f97316, #ea580c)',
+          backgroundOrigin: 'border-box',
+          backgroundClip: 'padding-box, border-box',
+          boxShadow: glowShadow,
+          transform: dragX > 0 ? `translateX(${dragX}px)` : undefined,
+          transition: dragX > 0 ? 'box-shadow 0.05s' : 'transform 0.3s ease, box-shadow 0.3s ease',
+          willChange: 'transform',
+        }}
+      >
+        <div style={{
+          width: 32,
+          height: 32,
+          borderRadius: 8,
+          background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
+          boxShadow: '0 0 12px rgba(249,115,22,0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexShrink: 0,
+        }}>
+          <img src='/blackaa.png' alt='Areculateir' style={{ width: 22, height: 22, objectFit: 'contain' }} />
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" className="w-4 h-4 flex-shrink-0">
+          <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span className="font-bold italic text-sm text-white/90">Swipe right to apply</span>
+      </button>
+    </>
   )
 }
 
