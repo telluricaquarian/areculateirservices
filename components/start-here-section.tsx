@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { InquireModal } from '@/components/InquireModal'
+import { SidebarAtmosphereBackground } from '@/components/SidebarAtmosphereBackground'
 import {
   siNextdotjs,
   siReact,
@@ -44,7 +45,10 @@ export function StartHereSection() {
   }, [])
 
   return (
-    <div className="flex flex-col">
+    <div className="relative overflow-hidden flex flex-col">
+
+      {/* Mobile-only sidebar atmosphere — hidden on desktop to avoid layering with DesktopMain's own atmosphere */}
+      <SidebarAtmosphereBackground className="md:hidden" particleDensity={40} />
 
       <style>{`
         @property --angle {
@@ -69,6 +73,8 @@ export function StartHereSection() {
           animation: marquee 18s linear infinite;
         }
       `}</style>
+
+      <div className="relative z-10 flex flex-col">
 
       {/* 1. Mobile-only: h1 */}
       <div className="block md:hidden text-center px-6 pt-6 pb-4">
@@ -273,6 +279,7 @@ export function StartHereSection() {
         </div>
       </div>
 
+      </div>{/* end relative z-10 content wrapper */}
     </div>
   )
 }

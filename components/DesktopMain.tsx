@@ -11,6 +11,7 @@ import { WaasKlarnaSection } from "@/components/waas-klarna-section"
 import { StartHereSection } from "@/components/start-here-section"
 import { LeadGenSection } from "@/components/LeadGenSection"
 import { HermesSection } from "@/components/HermesSection"
+import { SidebarAtmosphereBackground } from "@/components/SidebarAtmosphereBackground"
 import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
 import { useTab } from "@/components/TabProvider"
@@ -25,23 +26,7 @@ export function DesktopMain() {
       <div className="relative flex flex-col justify-between w-[270px] flex-shrink-0 py-10 px-8 border-r border-primary/20 shadow-[1px_0_6px_rgba(255,122,0,0.06)] z-[60]">
 
         {/* Sidebar atmosphere — overflow-hidden scoped to this layer only so popup can escape */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          {/* Base: dark charcoal gradient, slightly lighter at top */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] via-[#080808] to-[#050505]" />
-          {/* Warm orange radial — bottom-left anchor, very faint */}
-          <div className="absolute bottom-0 left-0 w-full h-[55%] bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,122,0,0.07)_0%,transparent_70%)]" />
-          {/* Subtle upper warm whisper */}
-          <div className="absolute top-0 right-0 w-[80%] h-[30%] bg-[radial-gradient(ellipse_at_top_right,rgba(255,122,0,0.04)_0%,transparent_70%)]" />
-          {/* Low-density particles — very sparse, atmospheric only */}
-          <SparklesCore
-            background="transparent"
-            minSize={0.2}
-            maxSize={0.6}
-            particleDensity={60}
-            className="w-full h-full opacity-50"
-            particleColor="#f97316"
-          />
-        </div>
+        <SidebarAtmosphereBackground />
 
         {/* Top: logo + nav */}
         <div className="relative z-10 flex flex-col gap-6">
