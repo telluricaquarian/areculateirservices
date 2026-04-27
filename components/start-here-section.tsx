@@ -207,9 +207,26 @@ export function StartHereSection() {
         <p className="text-primary text-base leading-relaxed mb-6">
           It&apos;s one thing to have a nice site, it&apos;s another to have one that is serving a functional purpose.
         </p>
-        <p className="text-white text-base">
-          Win the Game of Business
-        </p>
+        <div className='block md:hidden flex justify-center mb-6'>
+          <span
+            style={{
+              display: 'inline-block',
+              padding: '6px 20px',
+              borderRadius: '999px',
+              border: '1px solid transparent',
+              backgroundImage: 'linear-gradient(#000, #000), linear-gradient(90deg, #f97316, #ea580c)',
+              backgroundOrigin: 'border-box',
+              backgroundClip: 'padding-box, border-box',
+              boxShadow: '0 0 16px 2px rgba(249,115,22,0.35)',
+              color: 'rgba(255,255,255,0.85)',
+              fontSize: '13px',
+              letterSpacing: '0.05em',
+              fontWeight: 400,
+            }}
+          >
+            Win the Game of Business
+          </span>
+        </div>
       </div>
 
       {/* 5. Mobile-only: quote block */}
