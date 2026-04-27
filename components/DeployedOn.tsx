@@ -16,7 +16,7 @@ export function DeployedOn() {
       }}
     />
     <div
-      className='md:hidden fixed bottom-12 inset-x-0 z-40 flex items-center justify-between px-5 py-3'
+      className='md:hidden fixed bottom-10 inset-x-0 z-40 flex items-center justify-between px-5 py-2'
     >
       <span style={{ fontFamily: 'SaltyFeathers, cursive', fontSize: 28, color: 'rgba(212,165,80,0.85)' }}>
         Areculateir
