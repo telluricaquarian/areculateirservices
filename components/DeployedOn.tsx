@@ -17,11 +17,6 @@ export function DeployedOn() {
     />
     <div
       className='md:hidden fixed bottom-12 inset-x-0 z-40 flex items-center justify-between px-5 py-3'
-      style={{
-        background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, transparent 100%)',
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
-      }}
     >
       <span style={{ fontFamily: 'SaltyFeathers, cursive', fontSize: 28, color: 'rgba(212,165,80,0.85)' }}>
         Areculateir
