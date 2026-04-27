@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { InquireModal } from '@/components/InquireModal'
-import { PixelHeading } from '@/components/ui/pixel-heading-word'
 import {
   siNextdotjs,
   siReact,
@@ -78,15 +77,19 @@ export function StartHereSection() {
           alt='Areculateir'
           className='block md:hidden w-16 h-16 object-contain mx-auto mb-4'
         />
-        <div className='block md:hidden text-center mb-4'>
-          <PixelHeading
-            as='h1'
-            initialFont='square'
-            className='text-2xl tracking-widest uppercase text-white'
-          >
-            BUILD PREMIUM SITES
-          </PixelHeading>
-        </div>
+        <h1
+          className='block md:hidden text-center text-3xl tracking-widest uppercase mb-4'
+          style={{
+            fontFamily: 'visitor1, monospace',
+            background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            letterSpacing: '0.2em',
+          }}
+        >
+          BUILD PREMIUM SITES
+        </h1>
       </div>
 
       <div className='block md:hidden w-full overflow-hidden py-4 mb-2'>
