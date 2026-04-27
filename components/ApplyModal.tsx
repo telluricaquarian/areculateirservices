@@ -346,7 +346,9 @@ export function ApplySwipeTrigger({ onOpen }: { onOpen: () => void }) {
           boxShadow: '0 0 10px rgba(249,115,22,0.5)',
         }}
       >
-        <img src="/blackaa.png" alt="" aria-hidden="true" style={{ width: 18, height: 18, objectFit: 'contain' }} />
+        <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2.5" width="14" height="14" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
       </span>
     </button>
   )
