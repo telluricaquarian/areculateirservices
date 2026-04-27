@@ -340,7 +340,7 @@ export function ApplySwipeTrigger({ onOpen }: { onOpen: () => void }) {
       className="group relative flex items-center justify-center rounded-full overflow-hidden transition-all duration-500 bg-[#0c0c0c] text-[#FF7900] border border-[#FF7900]/60 hover:border-[#FF7900] pl-6 pr-14 hover:pl-14 hover:pr-6 py-3 shadow-[0_0_20px_2px_rgba(255,121,0,0.25)] hover:shadow-[0_0_32px_4px_rgba(255,121,0,0.45)]"
     >
       <span className="font-bold italic text-sm whitespace-nowrap">Apply for a site</span>
-      <span className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-500 group-hover:right-[calc(100%-40px)] group-hover:rotate-45"
+      <span className="absolute right-1 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-500 group-hover:right-[calc(100%-40px)] group-hover:rotate-45"
         style={{
           background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)',
           boxShadow: '0 0 10px rgba(249,115,22,0.5)',
