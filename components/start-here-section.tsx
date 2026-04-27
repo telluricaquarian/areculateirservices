@@ -75,9 +75,10 @@ export function StartHereSection() {
       {/* 1. Mobile-only: h1 */}
       <div className="block md:hidden text-center px-6 pt-6 pb-4">
         <img
-          src='/aafolder.png'
+          src='/aclrpixel.png'
           alt='Areculateir'
-          className='block md:hidden w-16 h-16 object-contain mx-auto mb-4'
+          className='block md:hidden w-20 h-20 mx-auto mb-4'
+          style={{ imageRendering: 'pixelated' }}
         />
         <h1
           className='block md:hidden text-center text-xl tracking-widest uppercase mb-4'
