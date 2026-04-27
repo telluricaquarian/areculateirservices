@@ -40,6 +40,12 @@ export function BottomCTA() {
 
           {/* CTA Button */}
           <ApplyButton />
+
+          <div className='flex justify-center mt-8 mb-6'>
+            <span style={{ fontFamily: 'SaltyFeathers, cursive', fontSize: 28, color: 'rgba(212,165,80,0.85)' }}>
+              Areculateir
+            </span>
+          </div>
         </div>
       </div>
 
