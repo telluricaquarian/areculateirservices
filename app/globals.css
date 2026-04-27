@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'SaltyFeathers';
+  src: url('/Salty Feathers Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
