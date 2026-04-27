@@ -51,43 +51,26 @@ export function StartHereSection() {
         }
       `}</style>
 
-      <div className='block md:hidden text-center px-6 pt-6 pb-8'>
-        <h1 style={{ fontFamily: 'visitor1, monospace', letterSpacing: '0.15em', textTransform: 'uppercase', background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} className='text-white text-3xl font-normal mb-6'>
+      {/* 1. Mobile-only: h1 */}
+      <div className="block md:hidden text-center px-6 pt-6 pb-4">
+        <h1
+          style={{
+            fontFamily: 'visitor1, monospace',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+          className="text-white text-3xl font-normal mb-6"
+        >
           BUILD PREMIUM SITES
         </h1>
-        <p className='text-primary text-base leading-relaxed mb-6'>
-          It&apos;s one thing to have a nice site, it&apos;s another to have one that is serving a functional purpose.
-        </p>
-        <p className='text-white text-base'>
-          Win the Game of Business
-        </p>
       </div>
 
-      {/* Outer wrapper — max-width + centering + side padding */}
+      {/* 2. Video wrapper — shared mobile + desktop */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%', marginTop: '1.5rem' }}>
-
-        {/* Mobile-only quote block — above video */}
-        <div className="block md:hidden mb-4">
-          <div
-            style={{
-              opacity: visible ? 1 : 0,
-              transition: 'opacity 500ms ease',
-              padding: '0 1rem',
-            }}
-          >
-            <blockquote className="text-white text-sm leading-relaxed font-light italic mb-2">
-              &ldquo;{QUOTES[index].text}&rdquo;
-            </blockquote>
-            <p
-              className="text-white/50 text-[10px] not-italic"
-              style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
-            >
-              {QUOTES[index].attribution}
-            </p>
-          </div>
-        </div>
-
-        {/* Animated gradient border wrapper */}
         <div
           className="video-gradient-border"
           style={{
@@ -98,7 +81,6 @@ export function StartHereSection() {
             padding: '2px',
           }}
         >
-          {/* Video card */}
           <div
             style={{
               borderRadius: '12px',
@@ -123,39 +105,69 @@ export function StartHereSection() {
 
             {/* Quote carousel — bottom-left, desktop only */}
             <div className="hidden md:block">
-            <div
-              className="absolute bottom-6 left-6 max-w-[480px]"
-              style={{
-                background: 'rgba(0,0,0,0.62)',
-                backdropFilter: 'blur(8px)',
-                borderRadius: '8px',
-                padding: '1.5rem',
-              }}
-            >
               <div
+                className="absolute bottom-6 left-6 max-w-[480px]"
                 style={{
-                  opacity: visible ? 1 : 0,
-                  transition: 'opacity 500ms ease',
+                  background: 'rgba(0,0,0,0.62)',
+                  backdropFilter: 'blur(8px)',
+                  borderRadius: '8px',
+                  padding: '1.5rem',
                 }}
               >
-                <blockquote className="text-white text-sm leading-relaxed font-light italic mb-3">
-                  &ldquo;{QUOTES[index].text}&rdquo;
-                </blockquote>
-                <p
-                  className="text-white/50 text-[10px] not-italic"
-                  style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+                <div
+                  style={{
+                    opacity: visible ? 1 : 0,
+                    transition: 'opacity 500ms ease',
+                  }}
                 >
-                  {QUOTES[index].attribution}
-                </p>
+                  <blockquote className="text-white text-sm leading-relaxed font-light italic mb-3">
+                    &ldquo;{QUOTES[index].text}&rdquo;
+                  </blockquote>
+                  <p
+                    className="text-white/50 text-[10px] not-italic"
+                    style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+                  >
+                    {QUOTES[index].attribution}
+                  </p>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
-
       </div>
 
-      {/* Below-video content */}
+      {/* 3 & 4. Mobile-only: orange subtext + Win the Game of Business */}
+      <div className="block md:hidden text-center px-6 pt-6 pb-4">
+        <p className="text-primary text-base leading-relaxed mb-6">
+          It&apos;s one thing to have a nice site, it&apos;s another to have one that is serving a functional purpose.
+        </p>
+        <p className="text-white text-base">
+          Win the Game of Business
+        </p>
+      </div>
+
+      {/* 5. Mobile-only: quote block */}
+      <div className="block md:hidden px-8 mb-4">
+        <div
+          style={{
+            opacity: visible ? 1 : 0,
+            transition: 'opacity 500ms ease',
+            padding: '0 1rem',
+          }}
+        >
+          <blockquote className="text-white text-sm leading-relaxed font-light italic mb-2">
+            &ldquo;{QUOTES[index].text}&rdquo;
+          </blockquote>
+          <p
+            className="text-white/50 text-[10px] not-italic"
+            style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+          >
+            {QUOTES[index].attribution}
+          </p>
+        </div>
+      </div>
+
+      {/* 6. Below-video content */}
       <div className="flex flex-col items-center gap-4 text-center mt-12">
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl tracking-tight">
           <span className="font-normal">Where to</span> Start
