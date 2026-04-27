@@ -69,6 +69,12 @@ export function StartHereSection() {
         </h1>
       </div>
 
+      <img
+        src='/aafolder.png'
+        alt='Areculateir'
+        className='block md:hidden w-24 h-24 object-contain mx-auto mb-4'
+      />
+
       {/* 2. Video wrapper — shared mobile + desktop */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%', marginTop: '1.5rem' }}>
         <div
