@@ -10,12 +10,18 @@ import { WaasKlarnaSection } from '@/components/waas-klarna-section'
 import { StartHereSection } from '@/components/start-here-section'
 import { LeadGenSection } from '@/components/LeadGenSection'
 import { HermesSection } from '@/components/HermesSection'
+import { SidebarAtmosphereBackground } from '@/components/SidebarAtmosphereBackground'
 
 export function MobileContent() {
   const { activeTab } = useTab()
 
   return (
-    <div className="md:hidden px-6 pt-[52px] pb-52">
+    <>
+    {/* Full-bleed mobile atmosphere — fixed behind all mobile content */}
+    <div className="md:hidden fixed inset-0 z-[1] pointer-events-none overflow-hidden">
+      <SidebarAtmosphereBackground particleDensity={40} />
+    </div>
+    <div className="md:hidden relative z-[2] px-6 pt-[52px] pb-52">
       {activeTab === 'leadgen' ? (
         <LeadGenSection />
       ) : activeTab === 'hermes' ? (
@@ -35,5 +41,6 @@ export function MobileContent() {
 
       {activeTab === 'home' && <BottomCTA />}
     </div>
+    </>
   )
 }

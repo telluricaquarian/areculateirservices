@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { InquireModal } from '@/components/InquireModal'
-import { SidebarAtmosphereBackground } from '@/components/SidebarAtmosphereBackground'
 import {
   siNextdotjs,
   siReact,
@@ -46,9 +45,6 @@ export function StartHereSection() {
 
   return (
     <div className="relative flex flex-col">
-
-      {/* Mobile-only sidebar atmosphere — hidden on desktop to avoid layering with DesktopMain's own atmosphere */}
-      <SidebarAtmosphereBackground className="md:hidden" particleDensity={40} />
 
       <style>{`
         @property --angle {
