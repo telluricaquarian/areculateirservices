@@ -15,13 +15,30 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'A-La-Carte Automation Workflow Services',
-  description: '5 Extremely Boring Services Your Business Actually Needs. Backed by Research & Studies.',
-  generator: 'v0.app',
+  title: 'Areculateir — Premium Web & Automation Systems for Local Business',
+  description: 'Areculateir builds premium websites and automation systems for local businesses losing revenue to slower, better-looking competitors. Founded by Llewellyn Y. Fisher, Sydney.',
+  metadataBase: new URL('https://areculateirservices.vercel.app'),
+  openGraph: {
+    title: 'Areculateir — Premium Web & Automation Systems',
+    description: 'We build premium sites and automation systems for local businesses that deserve to look as good as they actually are. Founded by Llewellyn Y. Fisher.',
+    url: 'https://areculateirservices.vercel.app',
+    siteName: 'Areculateir',
+    locale: 'en_AU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Areculateir — Premium Web & Automation Systems',
+    description: 'Premium websites and automation systems for local businesses. Founded by Llewellyn Y. Fisher, Sydney AU.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
-    icon:     '/roundedservicesfavicon.png?v=3',
+    icon: '/roundedservicesfavicon.png?v=3',
     shortcut: '/roundedservicesfavicon.png?v=3',
-    apple:    '/roundedservicesfavicon.png?v=3',
+    apple: '/roundedservicesfavicon.png?v=3',
   },
 }
 
