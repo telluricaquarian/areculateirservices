@@ -87,7 +87,7 @@ export function StartHereSection() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}
-          className="text-white text-3xl font-normal mb-6"
+          className="text-white text-2xl font-normal mb-6"
         >
           BUILD PREMIUM SITES
         </h1>
