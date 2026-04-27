@@ -52,7 +52,7 @@ export function StartHereSection() {
       `}</style>
 
       <div className='block md:hidden text-center px-6 pt-6 pb-8'>
-        <h1 style={{ fontFamily: 'visitor1, monospace', letterSpacing: '0.15em', textTransform: 'uppercase' }} className='text-white text-3xl font-normal mb-6'>
+        <h1 style={{ fontFamily: 'visitor1, monospace', letterSpacing: '0.15em', textTransform: 'uppercase', background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} className='text-white text-3xl font-normal mb-6'>
           BUILD PREMIUM SITES
         </h1>
         <p className='text-primary text-base leading-relaxed mb-6'>
