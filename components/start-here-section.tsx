@@ -80,15 +80,6 @@ export function StartHereSection() {
           className='block md:hidden w-20 h-20 mx-auto mb-4'
           style={{ imageRendering: 'pixelated' }}
         />
-        <a href='/portfolio' className='inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm mb-4'>
-          <svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
-            <rect x='3' y='3' width='7' height='7'/>
-            <rect x='14' y='3' width='7' height='7'/>
-            <rect x='3' y='14' width='7' height='7'/>
-            <rect x='14' y='14' width='7' height='7'/>
-          </svg>
-          View Site Portfolio
-        </a>
         <h1
           className='block md:hidden text-center text-xl tracking-widest uppercase mb-4'
           style={{
@@ -283,12 +274,6 @@ export function StartHereSection() {
             }
           />
         </div>
-      </div>
-
-      <div className='flex justify-center mt-8 mb-6 block md:hidden'>
-        <span style={{ fontFamily: 'SaltyFeathers, cursive', fontSize: 28, color: 'rgba(212,165,80,0.85)' }}>
-          Areculateir
-        </span>
       </div>
 
       </div>{/* end relative z-10 content wrapper */}
