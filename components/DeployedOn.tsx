@@ -2,17 +2,10 @@
 
 export function DeployedOn() {
   return (
-    <div className='md:hidden fixed bottom-12 inset-x-0 z-40 flex items-center justify-center gap-3 py-2'>
+    <div className='md:hidden fixed bottom-12 inset-x-0 z-40 flex items-center justify-end gap-3 py-2 pr-4'>
       <span className='text-white/30 text-[9px] tracking-widest uppercase'>Deployed on</span>
       <div className='flex items-center gap-2'>
-        <div style={{
-          width: 28, height: 28, borderRadius: 6,
-          background: '#f97316',
-          boxShadow: '0 0 12px 2px rgba(249,115,22,0.5)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center'
-        }}>
-          <span style={{ color: 'white', fontWeight: 700, fontSize: 14 }}>S</span>
-        </div>
+        <img src='/sevallalogo.png' alt='Sevalla' style={{ width: 28, height: 28, borderRadius: 6, objectFit: 'contain' }} />
         <div style={{
           width: 28, height: 28, borderRadius: 6,
           background: '#111',
