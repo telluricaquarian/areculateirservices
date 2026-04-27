@@ -19,7 +19,10 @@ export function MobileContent() {
       ) : activeTab === 'waas' ? (
         <WaasKlarnaSection />
       ) : activeTab === 'big5' ? (
-        <ServicesList />
+        <>
+          <IntroBlock />
+          <ServicesList />
+        </>
       ) : (
         <StartHereSection />
       )}
