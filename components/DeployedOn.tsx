@@ -41,6 +41,20 @@ export function DeployedOn() {
         }}>
           <img src='/coolifylogo.jpg' alt='Coolify' style={{ width: 20, height: 20, objectFit: 'contain' }} />
         </div>
+        <div style={{
+          width: 28,
+          height: 28,
+          borderRadius: 6,
+          background: '#111',
+          border: '1px solid rgba(249,115,22,0.4)',
+          boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+        }}>
+          <img src='/nousresearch.jpg' alt='Nous Research' style={{ width: 20, height: 20, objectFit: 'contain' }} />
+        </div>
       </div>
     </div>
     </>
