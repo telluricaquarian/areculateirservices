@@ -2,6 +2,19 @@
 
 export function DeployedOn() {
   return (
+    <>
+    <div
+      className='md:hidden fixed inset-x-0 z-[39] pointer-events-none'
+      style={{
+        bottom: 40,
+        height: 140,
+        background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 100%)',
+        backdropFilter: 'blur(6px)',
+        WebkitBackdropFilter: 'blur(6px)',
+        maskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
+      }}
+    />
     <div
       className='md:hidden fixed bottom-12 inset-x-0 z-40 flex items-center justify-between px-5 py-3'
       style={{
@@ -21,5 +34,6 @@ export function DeployedOn() {
         </div>
       </div>
     </div>
+    </>
   )
 }
