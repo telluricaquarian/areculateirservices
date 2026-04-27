@@ -54,6 +54,27 @@ export function StartHereSection() {
       {/* Outer wrapper — max-width + centering + side padding */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', width: '100%', marginTop: '1.5rem' }}>
 
+        {/* Mobile-only quote block — above video */}
+        <div className="block md:hidden mb-4">
+          <div
+            style={{
+              opacity: visible ? 1 : 0,
+              transition: 'opacity 500ms ease',
+              padding: '0 1rem',
+            }}
+          >
+            <blockquote className="text-white text-sm leading-relaxed font-light italic mb-2">
+              &ldquo;{QUOTES[index].text}&rdquo;
+            </blockquote>
+            <p
+              className="text-white/50 text-[10px] not-italic"
+              style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+            >
+              {QUOTES[index].attribution}
+            </p>
+          </div>
+        </div>
+
         {/* Animated gradient border wrapper */}
         <div
           className="video-gradient-border"
@@ -88,7 +109,8 @@ export function StartHereSection() {
             {/* Overlay */}
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
 
-            {/* Quote carousel — bottom-left, box stays visible, text fades */}
+            {/* Quote carousel — bottom-left, desktop only */}
+            <div className="hidden md:block">
             <div
               className="absolute bottom-6 left-6 max-w-[480px]"
               style={{
@@ -114,6 +136,7 @@ export function StartHereSection() {
                   {QUOTES[index].attribution}
                 </p>
               </div>
+            </div>
             </div>
           </div>
         </div>
