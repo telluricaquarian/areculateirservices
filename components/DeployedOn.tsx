@@ -2,7 +2,16 @@
 
 export function DeployedOn() {
   return (
-    <div className='md:hidden fixed bottom-12 inset-x-0 z-40 flex items-center justify-end gap-3 py-2 pr-4'>
+    <div
+      className='md:hidden fixed bottom-12 inset-x-0 z-40 flex items-center justify-end gap-3 py-3 pr-6'
+      style={{
+        background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+        maskImage: 'linear-gradient(to right, transparent 0%, black 30%)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 30%)',
+      }}
+    >
       <span className='text-white/30 text-[9px] tracking-widest uppercase'>Deployed on</span>
       <div className='flex items-center gap-2'>
         <img src='/sevallalogo.png' alt='Sevalla' style={{ width: 28, height: 28, borderRadius: 6, objectFit: 'contain' }} />
