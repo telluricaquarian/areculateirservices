@@ -56,7 +56,7 @@ export function StartHereSection() {
         <img
           src='/aafolder.png'
           alt='Areculateir'
-          className='block md:hidden w-32 h-32 object-contain mx-auto mb-6'
+          className='block md:hidden w-16 h-16 object-contain mx-auto mb-4'
         />
         <h1
           style={{
