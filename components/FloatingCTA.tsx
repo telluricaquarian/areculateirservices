@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { InquireModal } from '@/components/InquireModal'
+import { ArrowRight } from 'lucide-react'
 
 /**
  * FloatingCTA — mobile-only sticky inquiry button.
@@ -49,9 +50,7 @@ export function FloatingCTA() {
         <InquireModal
           trigger={
             <button className="flex items-center gap-2 bg-[#FF7900] text-black px-5 py-2.5 rounded-full text-xs font-bold italic shadow-[0_4px_24px_rgba(255,121,0,0.45)] hover:shadow-[0_4px_36px_rgba(255,121,0,0.65)] hover:scale-[1.02] transition-all">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg>
+              <ArrowRight className="w-3 h-3" />
               Inquire Now
             </button>
           }
