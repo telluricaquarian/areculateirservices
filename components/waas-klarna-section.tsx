@@ -25,22 +25,21 @@ const ENTRY_POINTS = [
 
 export function WaasKlarnaSection() {
   return (
-    <div className="relative isolate flex flex-col rounded-xl border border-primary/20 bg-background/60 p-6 gap-6">
-
-      {/* Hero pairing visual */}
-      <div className="flex flex-col items-center text-center -mx-6 -mt-6 mb-2">
+    <>
+      <section className="flex flex-col items-center text-center pt-8 pb-12 px-4">
         <img
           src="/aaklarnapair.png"
           alt="Areculateir + Klarna"
-          className="w-full rounded-t-xl object-cover"
+          className="w-full max-w-sm md:max-w-md mx-auto mb-8"
+          style={{ imageRendering: 'auto' }}
         />
-        <div className="pt-5 pb-1 px-4">
-          <h2 className="text-lg md:text-xl italic text-white/90 leading-snug mb-1">
-            The duo you didn&apos;t know you needed&hellip;
-          </h2>
-          <p className="text-xs italic text-white/40">(Until now)</p>
-        </div>
-      </div>
+        <h2 className="text-2xl md:text-4xl italic text-white mb-2">
+          The Duo you didn&apos;t know you needed&hellip;
+        </h2>
+        <p className="text-base italic text-white/50">(Until Now)</p>
+      </section>
+
+    <div className="relative isolate flex flex-col rounded-xl border border-primary/20 bg-background/60 p-6 gap-6">
 
       {/* Header */}
       <div className="flex flex-col gap-1">
@@ -82,5 +81,6 @@ export function WaasKlarnaSection() {
       />
 
     </div>
+    </>
   )
 }
