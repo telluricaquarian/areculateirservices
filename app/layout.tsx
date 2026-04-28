@@ -3,6 +3,7 @@ import { Geist, Playfair_Display } from 'next/font/google'
 import { GeistPixelSquare, GeistPixelGrid, GeistPixelCircle, GeistPixelTriangle, GeistPixelLine } from 'geist/font/pixel'
 import { Analytics } from '@vercel/analytics/next'
 import { PageLoader } from '@/components/PageLoader'
+import { AssetProtection } from '@/components/AssetProtection'
 import './globals.css'
 
 const geist = Geist({ 
@@ -55,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geist.variable} ${playfair.variable} ${GeistPixelSquare.variable} ${GeistPixelGrid.variable} ${GeistPixelCircle.variable} ${GeistPixelTriangle.variable} ${GeistPixelLine.variable} font-sans antialiased bg-background text-foreground lg:h-screen lg:overflow-hidden`}>
+        <AssetProtection />
         <PageLoader />
         {children}
         <Analytics />
