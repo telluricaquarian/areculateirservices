@@ -27,12 +27,19 @@ export function WaasKlarnaSection() {
   return (
     <>
       <section className="flex flex-col items-center text-center pt-8 pb-12 px-4">
-        <img
-          src="/aaklarnapair.png"
-          alt="Areculateir + Klarna"
-          className="w-full max-w-sm md:max-w-md mx-auto mb-8"
-          style={{ imageRendering: 'auto' }}
-        />
+        <div className="flex items-center justify-center gap-6 mb-8">
+          <img
+            src="/aafolder.png"
+            alt="Areculateir"
+            className="w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_0_30px_rgba(255,121,0,0.4)]"
+          />
+          <span className="text-3xl md:text-4xl text-white/80 font-light">+</span>
+          <img
+            src="/klarna.jpeg"
+            alt="Klarna"
+            className="w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_0_30px_rgba(254,179,199,0.5)]"
+          />
+        </div>
         <h2 className="text-2xl md:text-4xl italic text-white mb-2">
           The Duo you didn&apos;t know you needed&hellip;
         </h2>
