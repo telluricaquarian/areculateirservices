@@ -46,7 +46,7 @@ function Cursor() {
 function Terminal() {
   const [visibleLines, setVisibleLines] = useState<TerminalLine[]>([])
   const indexRef = useRef(0)
-  const bottomRef = useRef<HTMLDivElement>(null)
+  const outputRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -77,7 +77,9 @@ function Terminal() {
   }, [])
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (outputRef.current) {
+      outputRef.current.scrollTop = outputRef.current.scrollHeight
+    }
   }, [visibleLines])
 
   return (
@@ -94,7 +96,7 @@ function Terminal() {
       </div>
 
       {/* Output */}
-      <div className="p-5 font-mono text-[12px] leading-relaxed overflow-y-auto" style={{ minHeight: '260px', maxHeight: '340px' }}>
+      <div ref={outputRef} className="p-5 font-mono text-[12px] leading-relaxed overflow-y-auto" style={{ minHeight: '260px', maxHeight: '340px' }}>
         {visibleLines.map((line, i) => {
           if (line.style === 'blank') return <div key={i} className="h-3" />
           return (
@@ -107,7 +109,6 @@ function Terminal() {
           <span className="text-[#FF7900]">$ </span>
           <Cursor />
         </div>
-        <div ref={bottomRef} />
       </div>
     </div>
   )
@@ -125,6 +126,12 @@ export function HermesSection() {
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl tracking-tight">
           Zeratul
         </h2>
+        <img
+          src='/aclrpixel.png'
+          alt='Areculateir'
+          className='w-16 h-16 mx-auto mt-4 mb-2'
+          style={{ imageRendering: 'pixelated' }}
+        />
       </div>
 
       {/* Terminal */}
