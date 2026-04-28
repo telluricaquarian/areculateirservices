@@ -408,6 +408,33 @@ export function LeadGenSection() {
         </div>
       </div>
 
+      {/* Demo video */}
+      <div>
+        <div className="text-center mb-6">
+          <p className="text-xs uppercase tracking-wider text-white/50 mb-2">5-minute walkthrough</p>
+          <h3 className="text-xl text-white/80">Watch the system in action</h3>
+        </div>
+        <div
+          className="relative rounded-xl overflow-hidden border border-white/[0.07] hover:border-orange-500/40 transition-colors"
+          style={{ paddingBottom: '56.25%', height: 0 }}
+        >
+          <iframe
+            src="https://cap.so/embed/850mc9cr3x11jk2"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; fullscreen; encrypted-media"
+            title="Areculateir Lead Gen System Demo"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        </div>
+      </div>
+
       {/* Waitlist */}
       <div className="flex flex-col items-center gap-4 text-center border-t border-white/[0.06] pt-8">
         <h3 className="font-serif italic text-primary text-2xl tracking-tight">
