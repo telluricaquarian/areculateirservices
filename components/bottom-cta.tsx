@@ -13,7 +13,7 @@ export function BottomCTA() {
           {/* Profile image */}
           <div className="relative inline-flex img-protected-wrap">
             <Image
-              src="/displaytypebeats.png"
+              src="/lewfish.png"
               alt="Llewellyn Y. Fisher"
               width={56}
               height={56}
