@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, ReactNode, InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from 'react'
+import { useState, useRef, ReactNode, InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from 'react'
 import * as RadixDialog from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import { DialogOverlay, DialogPortal } from '@/components/ui/dialog'
@@ -265,11 +265,37 @@ export function ApplyModal({ trigger, open: controlledOpen, onOpenChange: contro
   const [s2, setS2] = useState<Step2Data>({ revenue: '', problem: '', outcome: '' })
   const [s3, setS3] = useState<Step3Data>({ name: '', email: '', source: '', notes: '' })
 
+  const step1SubmittedRef = useRef(false)
+
   function reset() {
     setStep(1); setSubmitting(false)
     setS1({ businessName: '', industry: '', location: '', website: '' })
     setS2({ revenue: '', problem: '', outcome: '' })
     setS3({ name: '', email: '', source: '', notes: '' })
+    step1SubmittedRef.current = false
+  }
+
+  function advanceFromStep1() {
+    if (!step1SubmittedRef.current) {
+      step1SubmittedRef.current = true
+      const url = process.env.NEXT_PUBLIC_START_HERE_APPS_SCRIPT_URL
+      if (url) {
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            type: 'premium-application-step-1',
+            stage: 'about-your-business',
+            businessName: s1.businessName,
+            industry: s1.industry,
+            location: s1.location,
+            website: s1.website,
+            submittedAt: new Date().toISOString(),
+          }),
+        }).catch((err) => console.warn('[ApplyModal] Step 1 partial send failed:', err))
+      }
+    }
+    setStep(2)
   }
 
   function handleOpenChange(v: boolean) {
@@ -319,7 +345,7 @@ export function ApplyModal({ trigger, open: controlledOpen, onOpenChange: contro
 
           <div key={String(step)}
             className="animate-in fade-in-0 slide-in-from-bottom-1 duration-200 px-6 py-5">
-            {step === 1 && <Step1 data={s1} set={d => setS1(p => ({ ...p, ...d }))} onNext={() => setStep(2)} />}
+            {step === 1 && <Step1 data={s1} set={d => setS1(p => ({ ...p, ...d }))} onNext={advanceFromStep1} />}
             {step === 2 && <Step2 data={s2} set={d => setS2(p => ({ ...p, ...d }))} onBack={() => setStep(1)} onNext={() => setStep(3)} />}
             {step === 3 && <Step3 data={s3} set={d => setS3(p => ({ ...p, ...d }))} onBack={() => setStep(2)} onSubmit={handleSubmit} submitting={submitting} />}
             {step === 'success' && <SuccessState onClose={() => handleOpenChange(false)} />}
