@@ -132,6 +132,9 @@ export function HermesSection() {
           className='w-16 h-16 mx-auto mt-4 mb-2'
           style={{ imageRendering: 'pixelated' }}
         />
+        <p className='text-center text-xs italic text-white/50 -mt-1 mb-4'>
+          baby zeratul (in training)
+        </p>
       </div>
 
       {/* Terminal */}
@@ -142,6 +145,12 @@ export function HermesSection() {
         Zeratul is Areculateir&apos;s custom AI agent, built on Nous Research&apos;s Hermes. It sources leads, generates content,
         and handles inbox responses — autonomously.
       </p>
+
+      <div className='max-w-2xl mx-auto mt-8 pt-8 border-t border-white/10'>
+        <p className='text-center text-white/70 text-sm leading-relaxed'>
+          In the StarCraft universe, Zeratul is a Dark Prelate — a stealthy sage who fights from the shadows. Ours is more of a <em>baby Zeratul</em> right now. He&apos;s still learning the ropes, but he runs behind the scenes sourcing leads, drafting outreach, and handling replies while you focus on the work that actually needs you. He&apos;s not a Dark Prelate yet. But he&apos;s getting there.
+        </p>
+      </div>
 
     </div>
   )
