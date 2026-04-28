@@ -26,10 +26,10 @@ const ENTRY_POINTS = [
 export function WaasKlarnaSection() {
   return (
     <>
-      <section className="flex flex-col items-center text-center pt-8 pb-12 px-4">
-        <div className="flex items-center justify-center gap-6 mb-8">
+      <section className="flex flex-col items-start text-left pt-8 pb-12 px-6">
+        <div className="flex items-center justify-start gap-6 mb-8">
           <img
-            src="/aafolder.png"
+            src="/aaklarnapair.png"
             alt="Areculateir"
             className="w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-[0_0_30px_rgba(255,121,0,0.4)]"
           />
