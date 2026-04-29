@@ -254,8 +254,8 @@ export function StartHereSection() {
         </div>
       </div>
 
-      {/* 6. Below-video content */}
-      <div className="flex flex-col items-center gap-4 text-center mt-12">
+      {/* 6. Below-video content — mobile only (founder card is desktop CTA) */}
+      <div className="md:hidden flex flex-col items-center gap-4 text-center mt-12">
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl tracking-tight">
           <span className="font-normal">Where to</span> Start
         </h2>
