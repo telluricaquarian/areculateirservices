@@ -2,7 +2,6 @@ import { FooterMeta } from "@/components/footer-meta"
 import { MobileHeader } from "@/components/MobileHeader"
 import { DesktopMain } from "@/components/DesktopMain"
 import { DesktopHeader } from "@/components/DesktopHeader"
-import { FloatingCTA } from "@/components/FloatingCTA"
 import { TabProvider } from "@/components/TabProvider"
 import { MobileContent } from "@/components/MobileContent"
 import { DeployedOn } from "@/components/DeployedOn"
@@ -27,10 +26,7 @@ export default function Home() {
 
       <MobileContent />
 
-      {/* Floating inquiry CTA — mobile only, hides when BottomCTA is in view */}
-      <FloatingCTA />
-
-      {/* Deployed on badge — mobile only, sits above footer */}
+{/* Deployed on badge — mobile only, sits above footer */}
       <DeployedOn />
 
       {/* Sticky glass footer — mobile only, fixed at bottom */}
