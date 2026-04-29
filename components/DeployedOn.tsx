@@ -16,7 +16,7 @@ export function DeployedOn() {
       }}
     />
     <div
-      className='md:hidden fixed bottom-10 inset-x-0 z-40 flex items-center justify-between px-5 py-2'
+      className='flex items-center justify-between px-4 py-2 md:px-6 md:py-3 md:fixed md:bottom-10 md:inset-x-0 md:z-50 md:bg-black/40 md:backdrop-blur-md md:border-t md:border-white/10'
     >
       <a href='#' className='inline-flex items-center gap-1.5 text-foreground/50 text-[10px] tracking-wide hover:text-foreground/80 transition-colors'>
         <svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#FF7900' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='flex-shrink-0' aria-hidden='true'>

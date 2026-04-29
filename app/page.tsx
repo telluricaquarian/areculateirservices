@@ -9,7 +9,7 @@ import { DeployedOn } from "@/components/DeployedOn"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden">
+    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden md:pb-24">
       <TabProvider>
 
       {/* Desktop sticky header — lg+ only */}
