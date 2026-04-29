@@ -273,9 +273,9 @@ export function DesktopMain() {
             )}
 
             {/* Desktop CTA */}
-            <div className="mt-8 flex flex-col items-center gap-4 text-center">
+            {activeTab !== 'waas' && <div className="mt-8 flex flex-col items-center gap-4 text-center">
               <p className="text-foreground/65 text-sm leading-relaxed">
-                Speak with Lara to find out how to get this set-up / implemented.
+                Speak with Llewellyn to find out how to get this set-up / implemented.
               </p>
               <InquireModal
                 trigger={
@@ -287,7 +287,7 @@ export function DesktopMain() {
                   </button>
                 }
               />
-            </div>
+            </div>}
           </>
         )}
 
