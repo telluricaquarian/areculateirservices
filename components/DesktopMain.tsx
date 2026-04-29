@@ -194,8 +194,8 @@ export function DesktopMain() {
           <HermesSection />
         ) : (
           <>
-            {/* Hero intro */}
-            <div className="relative mb-2">
+            {/* Hero intro — hidden on waas tab (WaasKlarnaSection has its own pairing hero) */}
+            {activeTab !== 'waas' && <div className="relative mb-2">
               <div className="relative z-10 flex flex-col gap-1 items-center text-center">
                 <p className="text-foreground/60 text-xs font-normal tracking-wide">
                   A-La-Carte Automation Workflow Services
@@ -250,18 +250,18 @@ export function DesktopMain() {
                   <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(300px_100px_at_top,transparent_20%,white)]" />
                 </div>
               </div>
-            </div>
+            </div>}
 
-            {/* Section heading */}
-            <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-10 lg:mb-14 tracking-tight text-center">
-              {activeTab === 'big5' ? (
-                <><span className="font-normal">The</span> Big 5</>
-              ) : activeTab === 'agency6' ? (
-                <><span className="font-normal">Agency</span> 6</>
-              ) : (
-                <><span className="font-normal">WaaS</span> + Klarna</>
-              )}
-            </h2>
+            {/* Section heading — hidden on waas tab (WaasKlarnaSection has its own heading) */}
+            {activeTab !== 'waas' && (
+              <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-10 lg:mb-14 tracking-tight text-center">
+                {activeTab === 'big5' ? (
+                  <><span className="font-normal">The</span> Big 5</>
+                ) : (
+                  <><span className="font-normal">Agency</span> 6</>
+                )}
+              </h2>
+            )}
 
             {/* Service card grid */}
             {activeTab === 'big5' ? (
