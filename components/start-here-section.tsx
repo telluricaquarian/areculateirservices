@@ -72,16 +72,16 @@ export function StartHereSection() {
 
       <div className="relative z-10 flex flex-col">
 
-      {/* 1. Mobile-only: h1 */}
-      <div className="block md:hidden text-center px-6 pt-6 pb-4">
+      {/* 1. Hero: pixel monster + headline */}
+      <div className="text-center px-6 pt-6 pb-4">
         <img
           src='/aclrpixel.png'
           alt='Areculateir'
-          className='block md:hidden w-20 h-20 mx-auto mb-4'
+          className='w-20 h-20 md:w-28 md:h-28 mx-auto mb-4 md:mb-6'
           style={{ imageRendering: 'pixelated' }}
         />
         <h1
-          className='block md:hidden text-center text-xl tracking-widest uppercase mb-4'
+          className='text-center text-xl tracking-widest uppercase mb-4'
           style={{
             fontFamily: 'visitor1, monospace',
             background: 'linear-gradient(180deg, #ffffff 0%, #888888 100%)',
@@ -95,7 +95,7 @@ export function StartHereSection() {
         </h1>
       </div>
 
-      <div className='block md:hidden w-full overflow-hidden py-4 mb-2'>
+      <div className='w-full overflow-hidden py-4 mb-2'>
         <div className='marquee-track'>
           {[
             { icon: siNextdotjs,   label: 'Next.js' },
