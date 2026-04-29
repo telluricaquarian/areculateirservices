@@ -1,3 +1,4 @@
+import { FooterMeta } from "@/components/footer-meta"
 import { MobileHeader } from "@/components/MobileHeader"
 import { DesktopMain } from "@/components/DesktopMain"
 import { DesktopHeader } from "@/components/DesktopHeader"
@@ -5,12 +6,10 @@ import { FloatingCTA } from "@/components/FloatingCTA"
 import { TabProvider } from "@/components/TabProvider"
 import { MobileContent } from "@/components/MobileContent"
 import { DeployedOn } from "@/components/DeployedOn"
-import { FooterMeta } from "@/components/footer-meta"
-
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden pb-12 md:pb-16">
+    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden">
       <TabProvider>
 
       {/* Desktop sticky header — lg+ only */}
@@ -31,13 +30,11 @@ export default function Home() {
       {/* Floating inquiry CTA — mobile only, hides when BottomCTA is in view */}
       <FloatingCTA />
 
-      {/* Single-row glass footer — portfolio link + deployed-on logos */}
+      {/* Deployed on badge — mobile only, sits above footer */}
       <DeployedOn />
 
-      {/* Mobile-only: compliance / Areculateir.com / copyright row */}
-      <div className="md:hidden">
-        <FooterMeta />
-      </div>
+      {/* Sticky glass footer — mobile only, fixed at bottom */}
+      <FooterMeta />
 
       </TabProvider>
     </main>
