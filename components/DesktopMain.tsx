@@ -15,6 +15,7 @@ import { SidebarAtmosphereBackground } from "@/components/SidebarAtmosphereBackg
 import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
 import { useTab } from "@/components/TabProvider"
+import { BottomCTA } from "@/components/bottom-cta"
 
 export function DesktopMain() {
   const { activeTab, setActiveTab } = useTab()
@@ -187,7 +188,10 @@ export function DesktopMain() {
         </div>
 
         {activeTab === 'home' ? (
-          <StartHereSection />
+          <>
+            <StartHereSection />
+            <BottomCTA />
+          </>
         ) : activeTab === 'leadgen' ? (
           <LeadGenSection />
         ) : activeTab === 'hermes' ? (

@@ -206,12 +206,12 @@ export function StartHereSection() {
         </div>
       </div>
 
-      {/* 3 & 4. Mobile-only: orange subtext + Win the Game of Business */}
-      <div className="block md:hidden text-center px-6 pt-6 pb-4">
+      {/* 3 & 4. Orange subtext + Win the Game of Business */}
+      <div className="text-center px-6 pt-6 pb-4">
         <p className="text-primary text-base leading-relaxed mb-6">
           It&apos;s one thing to have a nice site, it&apos;s another to have one that is serving a functional purpose.
         </p>
-        <div className='block md:hidden flex justify-center mb-6'>
+        <div className='flex justify-center mb-6'>
           <span
             style={{
               display: 'inline-block',

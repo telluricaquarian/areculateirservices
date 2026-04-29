@@ -6,8 +6,7 @@ import { ApplyButton } from "@/components/ApplyModal"
 export function BottomCTA() {
   return (
     <section id="bottom-cta-section" className="relative mt-7 md:mt-20">
-      {/* Mobile: Spartan as background */}
-      <div className="md:hidden relative">
+      <div className="relative">
         {/* Content */}
         <div className="relative z-10 px-6 py-8 flex flex-col items-center gap-3 text-center">
           {/* Profile image */}
