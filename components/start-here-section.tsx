@@ -254,8 +254,8 @@ export function StartHereSection() {
         </div>
       </div>
 
-      {/* 6. Below-video content — mobile only (founder card is desktop CTA) */}
-      <div className="md:hidden flex flex-col items-center gap-4 text-center mt-12">
+      {/* 6. Below-video content */}
+      <div className="flex flex-col items-center gap-4 text-center mt-12">
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl tracking-tight">
           <span className="font-normal">Where to</span> Start
         </h2>
@@ -263,7 +263,7 @@ export function StartHereSection() {
           Areculateir builds premium sites and automation systems for local businesses that are
           losing revenue to slower, better-looking competitors. Start with a free 15-minute call.
         </p>
-        <div className="hidden md:block">
+        <div className="md:hidden">
           <InquireModal
             trigger={
               <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
