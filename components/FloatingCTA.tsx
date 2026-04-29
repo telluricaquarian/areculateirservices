@@ -36,7 +36,7 @@ export function FloatingCTA() {
      * z-50       → above FooterMeta (z-40)
      */
     <div
-      className="hidden md:hidden fixed bottom-14 inset-x-0 z-50 flex justify-center pointer-events-none"
+      className="md:hidden fixed bottom-14 inset-x-0 z-50 flex justify-center pointer-events-none"
       aria-hidden={ctaVisible}
     >
       <div

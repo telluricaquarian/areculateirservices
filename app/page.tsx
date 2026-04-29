@@ -5,11 +5,12 @@ import { FloatingCTA } from "@/components/FloatingCTA"
 import { TabProvider } from "@/components/TabProvider"
 import { MobileContent } from "@/components/MobileContent"
 import { DeployedOn } from "@/components/DeployedOn"
+import { FooterMeta } from "@/components/footer-meta"
 
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden md:pb-16">
+    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden pb-12 md:pb-16">
       <TabProvider>
 
       {/* Desktop sticky header — lg+ only */}
@@ -32,6 +33,11 @@ export default function Home() {
 
       {/* Single-row glass footer — portfolio link + deployed-on logos */}
       <DeployedOn />
+
+      {/* Mobile-only: compliance / Areculateir.com / copyright row */}
+      <div className="md:hidden">
+        <FooterMeta />
+      </div>
 
       </TabProvider>
     </main>
