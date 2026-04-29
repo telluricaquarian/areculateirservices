@@ -1,4 +1,3 @@
-import { FooterMeta } from "@/components/footer-meta"
 import { MobileHeader } from "@/components/MobileHeader"
 import { DesktopMain } from "@/components/DesktopMain"
 import { DesktopHeader } from "@/components/DesktopHeader"
@@ -7,9 +6,10 @@ import { TabProvider } from "@/components/TabProvider"
 import { MobileContent } from "@/components/MobileContent"
 import { DeployedOn } from "@/components/DeployedOn"
 
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden md:pb-24">
+    <main className="min-h-screen bg-background lg:h-screen lg:overflow-hidden md:pb-16">
       <TabProvider>
 
       {/* Desktop sticky header — lg+ only */}
@@ -30,11 +30,8 @@ export default function Home() {
       {/* Floating inquiry CTA — mobile only, hides when BottomCTA is in view */}
       <FloatingCTA />
 
-      {/* Deployed on badge — mobile only, sits above footer */}
+      {/* Single-row glass footer — portfolio link + deployed-on logos */}
       <DeployedOn />
-
-      {/* Sticky glass footer — mobile only, fixed at bottom */}
-      <FooterMeta />
 
       </TabProvider>
     </main>

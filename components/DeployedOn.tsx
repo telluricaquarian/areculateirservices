@@ -2,21 +2,8 @@
 
 export function DeployedOn() {
   return (
-    <>
     <div
-      className='md:hidden fixed inset-x-0 z-[39] pointer-events-none'
-      style={{
-        bottom: 40,
-        height: 140,
-        background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 100%)',
-        backdropFilter: 'blur(6px)',
-        WebkitBackdropFilter: 'blur(6px)',
-        maskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 100%)',
-      }}
-    />
-    <div
-      className='flex items-center justify-between px-4 py-2 md:px-6 md:py-3 md:fixed md:bottom-10 md:inset-x-0 md:z-50 md:bg-black/40 md:backdrop-blur-md md:border-t md:border-white/10'
+      className='flex items-center justify-between px-4 py-2 md:px-6 md:py-3 bg-black/40 backdrop-blur-md border-t border-white/10 md:fixed md:bottom-0 md:inset-x-0 md:z-50'
     >
       <a href='#' className='inline-flex items-center gap-1.5 text-foreground/50 text-[10px] tracking-wide hover:text-foreground/80 transition-colors'>
         <svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#FF7900' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='flex-shrink-0' aria-hidden='true'>
@@ -63,6 +50,5 @@ export function DeployedOn() {
         </div>
       </div>
     </div>
-    </>
   )
 }
