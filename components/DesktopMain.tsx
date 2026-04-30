@@ -295,29 +295,37 @@ export function DesktopMain() {
           </>
         )}
 
-        {/* Desktop footer strip — in-flow, content column only, no fixed positioning */}
-        <div className="hidden md:flex md:sticky md:bottom-0 md:z-40 items-center justify-between -mx-10 lg:-mx-14 mt-8 px-6 py-4 bg-black/40 backdrop-blur-md border-t border-white/10">
-          <a href='#' className='inline-flex items-center gap-1.5 text-foreground/50 text-[10px] tracking-wide hover:text-foreground/80 transition-colors'>
-            <svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#FF7900' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='flex-shrink-0' aria-hidden='true'>
-              <rect x='3' y='3' width='7' height='7'/>
-              <rect x='14' y='3' width='7' height='7'/>
-              <rect x='3' y='14' width='7' height='7'/>
-              <rect x='14' y='14' width='7' height='7'/>
-            </svg>
-            View Site Portfolio
-          </a>
-          <div className='flex items-center gap-2'>
-            <span className='text-white/30 text-[9px] tracking-widest uppercase'>Deployed on</span>
-            <img src='/sevallalogo.png' alt='Sevalla' style={{ width: 28, height: 28, borderRadius: 6, objectFit: 'contain' }} />
-            <div style={{ width: 28, height: 28, borderRadius: 6, background: '#111', border: '1px solid rgba(249,115,22,0.4)', boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg viewBox='0 0 116 100' style={{ width: 14, height: 14, fill: 'white' }}><path d='M57.5 0L115 100H0L57.5 0z'/></svg>
+        {/* Desktop footer strip — sticky wrapper holds both rows */}
+        <div className="hidden md:flex md:flex-col md:sticky md:bottom-0 md:z-40 -mx-10 lg:-mx-14 mt-8 bg-black/40 backdrop-blur-md border-t border-white/10">
+          {/* Row 1: View Site Portfolio + Deployed On */}
+          <div className="flex items-center justify-between px-6 py-4">
+            <a href='#' className='inline-flex items-center gap-1.5 text-foreground/50 text-[10px] tracking-wide hover:text-foreground/80 transition-colors'>
+              <svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#FF7900' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='flex-shrink-0' aria-hidden='true'>
+                <rect x='3' y='3' width='7' height='7'/>
+                <rect x='14' y='3' width='7' height='7'/>
+                <rect x='3' y='14' width='7' height='7'/>
+                <rect x='14' y='14' width='7' height='7'/>
+              </svg>
+              View Site Portfolio
+            </a>
+            <div className='flex items-center gap-2'>
+              <span className='text-white/30 text-[9px] tracking-widest uppercase'>Deployed on</span>
+              <img src='/sevallalogo.png' alt='Sevalla' style={{ width: 28, height: 28, borderRadius: 6, objectFit: 'contain' }} />
+              <div style={{ width: 28, height: 28, borderRadius: 6, background: '#111', border: '1px solid rgba(249,115,22,0.4)', boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg viewBox='0 0 116 100' style={{ width: 14, height: 14, fill: 'white' }}><path d='M57.5 0L115 100H0L57.5 0z'/></svg>
+              </div>
+              <div style={{ width: 28, height: 28, borderRadius: 6, background: '#111', border: '1px solid rgba(249,115,22,0.4)', boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <img src='/coolifylogo.jpg' alt='Coolify' style={{ width: 20, height: 20, objectFit: 'contain' }} />
+              </div>
+              <div style={{ width: 28, height: 28, borderRadius: 6, background: '#111', border: '1px solid rgba(249,115,22,0.4)', boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <img src='/nousresearch.jpg' alt='Nous Research' style={{ width: 20, height: 20, objectFit: 'contain' }} />
+              </div>
             </div>
-            <div style={{ width: 28, height: 28, borderRadius: 6, background: '#111', border: '1px solid rgba(249,115,22,0.4)', boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-              <img src='/coolifylogo.jpg' alt='Coolify' style={{ width: 20, height: 20, objectFit: 'contain' }} />
-            </div>
-            <div style={{ width: 28, height: 28, borderRadius: 6, background: '#111', border: '1px solid rgba(249,115,22,0.4)', boxShadow: '0 0 12px 2px rgba(249,115,22,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-              <img src='/nousresearch.jpg' alt='Nous Research' style={{ width: 20, height: 20, objectFit: 'contain' }} />
-            </div>
+          </div>
+          {/* Row 2: All Rights Reserved + Privacy Policy */}
+          <div className="flex items-center justify-between px-6 py-2 border-t border-white/5">
+            <span className="text-xs text-[#FF7900]/80">All Rights Reserved</span>
+            <a href='#' className="text-xs text-white/50 hover:text-white/80 transition-colors">Privacy Policy</a>
           </div>
         </div>
 
