@@ -16,6 +16,7 @@ import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
 import { useTab } from "@/components/TabProvider"
 import { BottomCTA } from "@/components/bottom-cta"
+import { StartHereDesktopAtmosphere } from "@/components/StartHereDesktopAtmosphere"
 
 export function DesktopMain() {
   const { activeTab, setActiveTab } = useTab()
@@ -175,20 +176,24 @@ export function DesktopMain() {
       {/* === MAIN CONTENT === */}
       <div className="relative flex flex-col flex-1 pt-10 px-10 lg:px-14 overflow-y-auto">
 
-        {/* Ambient particle field — fills main content column, behind all content */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          <SparklesCore
-            background="transparent"
-            minSize={0.3}
-            maxSize={0.9}
-            particleDensity={120}
-            className="w-full h-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_40%,white_60%,white_82%,transparent_100%)]"
-            particleColor="#f97316"
-          />
-        </div>
+        {/* Background layer — atmosphere for home tab, ambient particles otherwise */}
+        {activeTab === 'home' ? (
+          <StartHereDesktopAtmosphere />
+        ) : (
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+            <SparklesCore
+              background="transparent"
+              minSize={0.3}
+              maxSize={0.9}
+              particleDensity={120}
+              className="w-full h-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_40%,white_60%,white_82%,transparent_100%)]"
+              particleColor="#f97316"
+            />
+          </div>
+        )}
 
-        {/* Inner content wrapper carries pb-10 so sticky footer pins flush to bottom-0 */}
-        <div className="pb-10">
+        {/* Inner content wrapper — relative z-10 keeps content above background layer */}
+        <div className="relative z-10 pb-10">
         {activeTab === 'home' ? (
           <>
             <StartHereSection />

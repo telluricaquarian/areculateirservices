@@ -176,6 +176,25 @@
   }
 }
 
+/* ── Start Here desktop atmosphere orb drift ─────────────────────────────── */
+@keyframes sh-orb-drift-1 {
+  0%,  100% { transform: translate(0px,   0px)  scale(1);    }
+  33%       { transform: translate(32px, -22px) scale(1.05); }
+  66%       { transform: translate(-18px, 28px) scale(0.97); }
+}
+@keyframes sh-orb-drift-2 {
+  0%,  100% { transform: translate(0px,   0px)  scale(1);    }
+  40%       { transform: translate(-28px, 18px) scale(1.04); }
+  72%       { transform: translate(22px, -12px) scale(0.96); }
+}
+@keyframes sh-orb-drift-3 {
+  0%,  100% { transform: translate(0px,  0px)  scale(1);    }
+  50%       { transform: translate(14px, 20px) scale(1.06); }
+}
+.sh-orb-tl { animation: sh-orb-drift-1 14s ease-in-out infinite; }
+.sh-orb-cr { animation: sh-orb-drift-2 18s ease-in-out infinite; }
+.sh-orb-bc { animation: sh-orb-drift-3 20s ease-in-out infinite; }
+
 /* ── PageLoader keyframes ─────────────────────────────────────────────────── */
 @keyframes loader-logo-in {
   from {
