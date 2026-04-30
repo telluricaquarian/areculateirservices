@@ -173,7 +173,7 @@ export function DesktopMain() {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <div className="relative flex flex-col flex-1 py-10 px-10 lg:px-14 overflow-y-auto">
+      <div className="relative flex flex-col flex-1 pt-10 px-10 lg:px-14 overflow-y-auto">
 
         {/* Ambient particle field — fills main content column, behind all content */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -187,6 +187,8 @@ export function DesktopMain() {
           />
         </div>
 
+        {/* Inner content wrapper carries pb-10 so sticky footer pins flush to bottom-0 */}
+        <div className="pb-10">
         {activeTab === 'home' ? (
           <>
             <StartHereSection />
@@ -294,6 +296,7 @@ export function DesktopMain() {
             </div>}
           </>
         )}
+        </div>{/* end inner content wrapper */}
 
         {/* Desktop footer strip — sticky wrapper holds both rows */}
         <div className="hidden md:flex md:flex-col md:sticky md:bottom-0 md:z-40 -mx-10 lg:-mx-14 mt-8 bg-black/40 backdrop-blur-md border-t border-white/10">
