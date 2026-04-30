@@ -16,7 +16,7 @@ import { InquireModal } from "@/components/InquireModal"
 import { AaParticleLogo } from "@/components/aa-particle-logo"
 import { useTab } from "@/components/TabProvider"
 import { BottomCTA } from "@/components/bottom-cta"
-import { StartHereDesktopAtmosphere } from "@/components/StartHereDesktopAtmosphere"
+import { StartHereDesktopAtmosphereBackground } from "@/components/StartHereDesktopAtmosphereBackground"
 
 export function DesktopMain() {
   const { activeTab, setActiveTab } = useTab()
@@ -178,7 +178,7 @@ export function DesktopMain() {
 
         {/* Background layer — atmosphere for home tab, ambient particles otherwise */}
         {activeTab === 'home' ? (
-          <StartHereDesktopAtmosphere />
+          <StartHereDesktopAtmosphereBackground />
         ) : (
           <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             <SparklesCore
