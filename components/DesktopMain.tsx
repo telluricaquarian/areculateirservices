@@ -296,7 +296,7 @@ export function DesktopMain() {
         )}
 
         {/* Desktop footer strip — in-flow, content column only, no fixed positioning */}
-        <div className="hidden md:flex items-center justify-between -mx-10 lg:-mx-14 mt-8 px-6 py-4 bg-black/40 backdrop-blur-md border-t border-white/10">
+        <div className="hidden md:flex md:sticky md:bottom-0 md:z-40 items-center justify-between -mx-10 lg:-mx-14 mt-8 px-6 py-4 bg-black/40 backdrop-blur-md border-t border-white/10">
           <a href='#' className='inline-flex items-center gap-1.5 text-foreground/50 text-[10px] tracking-wide hover:text-foreground/80 transition-colors'>
             <svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#FF7900' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='flex-shrink-0' aria-hidden='true'>
               <rect x='3' y='3' width='7' height='7'/>
