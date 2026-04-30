@@ -4,7 +4,10 @@ import { StarsBackground } from '@/components/backgrounds/StarsBackground'
 
 export function StartHereDesktopAtmosphereBackground() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+
+      {/* Base gradient — lifted charcoal matching Hermes <main> */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #242424, #111111)' }} />
 
       {/* Stars — animate-ui StarsBackground */}
       <StarsBackground
