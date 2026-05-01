@@ -129,7 +129,7 @@ export function HermesSection() {
         <img
           src='/aclrpixel.png'
           alt='Areculateir'
-          className='w-16 h-16 mx-auto mt-4 mb-2'
+          className='w-16 h-16 mx-auto mt-4 mb-2 animate-float'
           style={{ imageRendering: 'pixelated' }}
         />
         <p className='text-center text-xs italic text-white/50 -mt-1 mb-4'>

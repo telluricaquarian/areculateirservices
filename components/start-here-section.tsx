@@ -77,7 +77,7 @@ export function StartHereSection() {
         <img
           src='/aclrpixel.png'
           alt='Areculateir'
-          className='w-20 h-20 md:w-28 md:h-28 mx-auto mb-4 md:mb-6'
+          className='w-20 h-20 md:w-28 md:h-28 mx-auto mb-4 md:mb-6 animate-float'
           style={{ imageRendering: 'pixelated' }}
         />
         <h1
