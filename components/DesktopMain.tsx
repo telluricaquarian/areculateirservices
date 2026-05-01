@@ -174,28 +174,36 @@ export function DesktopMain() {
       </div>
 
       {/* === MAIN CONTENT === */}
-      <div
-        className={`relative flex flex-col flex-1 pt-10 px-10 lg:px-14 overflow-y-auto${activeTab === 'home' ? ' bg-gradient-to-b from-[#242424] via-[#171717] to-[#111111]' : ''}`}
-      >
+      {/*
+        Two-layer structure:
+          Outer wrapper  — owns base gradient + atmosphere (not a scroll container, so absolute
+                           children do NOT scroll away with content)
+          Inner scroller — transparent overflow-y-auto sitting on top via z-10
+      */}
+      <div className={`relative flex-1 overflow-hidden${activeTab === 'home' ? ' bg-gradient-to-b from-[#242424] via-[#171717] to-[#111111]' : ''}`}>
 
-        {/* Background layer — atmosphere for home tab, ambient particles otherwise */}
-        {activeTab === 'home' ? (
-          <StartHereDesktopAtmosphereBackground />
-        ) : (
-          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-            <SparklesCore
-              background="transparent"
-              minSize={0.3}
-              maxSize={0.9}
-              particleDensity={120}
-              className="w-full h-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_40%,white_60%,white_82%,transparent_100%)]"
-              particleColor="#f97316"
-            />
-          </div>
-        )}
+        {/* Atmosphere — absolute inside non-scroll outer wrapper, persists across all scroll */}
+        {activeTab === 'home' && <StartHereDesktopAtmosphereBackground />}
 
-        {/* Inner content wrapper — relative z-20 keeps content above background layer */}
-        <div className="relative z-20 pb-10">
+        {/* Scroll container — transparent, full height, content scrolls inside */}
+        <div className="absolute inset-0 flex flex-col pt-10 px-10 lg:px-14 overflow-y-auto z-10">
+
+          {/* Non-home ambient particles — stays inside scroll container (existing behaviour) */}
+          {activeTab !== 'home' && (
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+              <SparklesCore
+                background="transparent"
+                minSize={0.3}
+                maxSize={0.9}
+                particleDensity={120}
+                className="w-full h-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_40%,white_60%,white_82%,transparent_100%)]"
+                particleColor="#f97316"
+              />
+            </div>
+          )}
+
+          {/* Content wrapper */}
+          <div className="relative z-20 pb-10">
         {activeTab === 'home' ? (
           <>
             <StartHereSection />
@@ -303,9 +311,9 @@ export function DesktopMain() {
             </div>}
           </>
         )}
-        </div>{/* end inner content wrapper */}
+          </div>{/* end content wrapper */}
 
-        {/* Desktop footer strip — sticky wrapper holds both rows */}
+          {/* Desktop footer strip — sticky wrapper holds both rows */}
         <div className="hidden md:flex md:flex-col md:sticky md:bottom-0 md:z-40 -mx-10 lg:-mx-14 mt-8 bg-black/40 backdrop-blur-md border-t border-white/10">
           {/* Row 1: View Site Portfolio + Deployed On */}
           <div className="flex items-center justify-between px-6 py-4">
@@ -337,9 +345,11 @@ export function DesktopMain() {
             <span className="text-xs text-[#FF7900]/80">All Rights Reserved</span>
             <a href='#' className="text-xs text-white/50 hover:text-white/80 transition-colors">Privacy Policy</a>
           </div>
-        </div>
+        </div>{/* end sticky footer */}
 
-      </div>
+        </div>{/* end inner scroll container */}
+
+      </div>{/* end outer wrapper */}
 
     </div>
   )
