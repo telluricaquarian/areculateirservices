@@ -175,8 +175,7 @@ export function DesktopMain() {
 
       {/* === MAIN CONTENT === */}
       <div
-        className="relative flex flex-col flex-1 pt-10 px-10 lg:px-14 overflow-y-auto"
-        style={activeTab === 'home' ? { background: 'linear-gradient(to bottom, #242424, #111111)' } : undefined}
+        className={`relative flex flex-col flex-1 pt-10 px-10 lg:px-14 overflow-y-auto${activeTab === 'home' ? ' bg-gradient-to-b from-[#242424] via-[#171717] to-[#111111]' : ''}`}
       >
 
         {/* Background layer — atmosphere for home tab, ambient particles otherwise */}
