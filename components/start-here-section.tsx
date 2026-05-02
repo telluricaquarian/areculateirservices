@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { Phone } from 'lucide-react'
 import { InquireModal } from '@/components/InquireModal'
 import { ApplyButton } from '@/components/ApplyModal'
 import {
@@ -269,18 +270,18 @@ export function StartHereSection() {
           Areculateir builds premium sites and automation systems for local businesses that are
           losing revenue to slower, better-looking competitors. Start with a free 15-minute call.
         </p>
-        <div className="hidden">
-          <InquireModal
-            trigger={
-              <button className="flex items-center gap-2 bg-white text-[#111] border border-[#FF7900] px-5 py-2.5 rounded-full w-fit text-xs font-bold italic shadow-[0_0_30px_rgba(255,121,0,0.35)] hover:shadow-[0_0_44px_rgba(255,121,0,0.55)] hover:scale-[1.02] transition-all">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#FF7900]">
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-                Inquire Now
-              </button>
-            }
-          />
-        </div>
+        {/* Mobile-only phone button — sits between subtext and the profile CTA block below */}
+        <a
+          href="#contact"
+          aria-label="Call or schedule a call"
+          className="md:hidden flex items-center justify-center w-16 h-16 rounded-full transition-shadow duration-300 hover:shadow-[0_0_28px_rgba(255,107,43,0.55)]"
+          style={{
+            border: '2px solid #FF6B2B',
+            boxShadow: '0 0 20px rgba(255,107,43,0.4)',
+          }}
+        >
+          <Phone className="w-7 h-7 text-[#FF6B2B]" strokeWidth={1.75} />
+        </a>
       </div>
 
       </div>{/* end relative z-10 content wrapper */}
