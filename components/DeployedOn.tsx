@@ -1,6 +1,11 @@
 'use client'
 
+import { useState } from 'react'
+import SitePortfolioModal from '@/components/portfolio/SitePortfolioModal'
+
 export function DeployedOn() {
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false)
+
   return (
     <>
     <div
@@ -18,7 +23,11 @@ export function DeployedOn() {
     <div
       className='md:hidden fixed bottom-10 inset-x-0 z-40 flex items-center justify-between px-5 py-2'
     >
-      <a href='#' className='inline-flex items-center gap-1.5 text-foreground/50 text-[10px] tracking-wide hover:text-foreground/80 transition-colors'>
+      <button
+        type="button"
+        onClick={() => setIsPortfolioOpen(true)}
+        className='inline-flex items-center gap-1.5 text-foreground/50 text-[10px] tracking-wide hover:text-foreground/80 transition-colors cursor-pointer'
+      >
         <svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#FF7900' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='flex-shrink-0' aria-hidden='true'>
           <rect x='3' y='3' width='7' height='7'/>
           <rect x='14' y='3' width='7' height='7'/>
@@ -26,7 +35,10 @@ export function DeployedOn() {
           <rect x='14' y='14' width='7' height='7'/>
         </svg>
         View Site Portfolio
-      </a>
+      </button>
+
+      <SitePortfolioModal open={isPortfolioOpen} onOpenChange={setIsPortfolioOpen} />
+
       <div className='flex items-center gap-2'>
         <span className='text-white/30 text-[9px] tracking-widest uppercase'>Deployed on</span>
         <img src='/sevallalogo.png' alt='Sevalla' style={{ width: 28, height: 28, borderRadius: 6, objectFit: 'contain' }} />
