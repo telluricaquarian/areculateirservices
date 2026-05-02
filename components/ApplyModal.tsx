@@ -362,7 +362,7 @@ export function ApplySwipeTrigger({ onOpen }: { onOpen: () => void }) {
   return (
     <button
       type="button"
-      onClick={onOpen}
+      onClick={(e) => { e.stopPropagation(); onOpen() }}
       className="group relative flex items-center justify-center rounded-full overflow-hidden transition-all duration-500 bg-[#0c0c0c] text-[#FF7900] border border-[#FF7900]/60 hover:border-[#FF7900] pl-6 pr-14 hover:pl-14 hover:pr-6 py-3 shadow-[0_0_20px_2px_rgba(255,121,0,0.25)] hover:shadow-[0_0_32px_4px_rgba(255,121,0,0.45)]"
     >
       <span className="font-bold italic text-sm whitespace-nowrap">Apply for a site</span>

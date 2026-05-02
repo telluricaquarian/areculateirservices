@@ -5,13 +5,15 @@ import { useEffect, useRef, useState } from 'react'
 const HREF = 'https://www.areculateir.com'
 
 /**
- * Desktop: show preview card on hover over the link.
- *          Moving into the card keeps it open.
- *          Clicking the link navigates normally.
+ * Desktop: preview card opens after a 100ms mouseenter delay on the link itself.
+ *          Moving into the card cancels the close timer — card stays open.
+ *          Leaving the card or the link closes immediately.
+ *          The outer container div carries NO mouse handlers (tight hit-box).
  *
- * Mobile:  first tap opens preview, second tap navigates.
+ * Mobile:  first tap opens preview (via onClick), second tap navigates.
  *          Tapping outside closes preview.
- *          A "Visit site →" button inside the card also navigates.
+ *          onClick is used (not onTouchEnd) so stopPropagation on child
+ *          buttons works correctly.
  *
  * popupPosition:
  *   'above' (default) — card appears above the link, centered. Use in footer rows.
@@ -22,10 +24,20 @@ interface Props {
 }
 
 export default function AreculateirHoverPreview({ popupPosition = 'above' }: Props) {
-  const [visible, setVisible]   = useState(false)
-  const tapCount                = useRef(0)
-  const videoRef                = useRef<HTMLVideoElement>(null)
-  const containerRef            = useRef<HTMLDivElement>(null)
+  const [visible, setVisible]     = useState(false)
+  const tapCount                  = useRef(0)
+  const videoRef                  = useRef<HTMLVideoElement>(null)
+  const containerRef              = useRef<HTMLDivElement>(null)
+  const openTimerRef              = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeTimerRef             = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // ── Cleanup timers on unmount ───────────────────────────────────────────
+  useEffect(() => {
+    return () => {
+      if (openTimerRef.current)  clearTimeout(openTimerRef.current)
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
+    }
+  }, [])
 
   // ── Play / pause video with visibility ─────────────────────────────────
   useEffect(() => {
@@ -63,21 +75,41 @@ export default function AreculateirHoverPreview({ popupPosition = 'above' }: Pro
   }, [visible])
 
   function close() {
+    if (openTimerRef.current)  clearTimeout(openTimerRef.current)
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
     setVisible(false)
     tapCount.current = 0
   }
 
-  // ── Desktop hover ──────────────────────────────────────────────────────
-  function onMouseEnter() {
-    setVisible(true)
+  // ── Desktop: link mouseenter → open after 100ms delay ──────────────────
+  function onLinkMouseEnter() {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
+    openTimerRef.current = setTimeout(() => setVisible(true), 100)
   }
 
-  function onMouseLeave() {
-    setVisible(false)
+  // ── Desktop: link mouseleave → give 150ms grace to reach the card ──────
+  function onLinkMouseLeave() {
+    if (openTimerRef.current) clearTimeout(openTimerRef.current)
+    closeTimerRef.current = setTimeout(() => close(), 150)
+  }
+
+  // ── Desktop: entering card cancels the pending close ───────────────────
+  function onCardMouseEnter() {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
+  }
+
+  // ── Desktop: leaving card closes immediately ───────────────────────────
+  function onCardMouseLeave() {
+    close()
   }
 
   // ── Mobile tap on link ─────────────────────────────────────────────────
-  function onTouchEnd(e: React.TouchEvent<HTMLAnchorElement>) {
+  function onLinkClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    // Only intercept on touch devices (pointer: coarse).
+    // On desktop the hover already handled open; let the click navigate normally.
+    const isTouch = window.matchMedia('(pointer: coarse)').matches
+    if (!isTouch) return
+
     tapCount.current += 1
     if (tapCount.current === 1) {
       e.preventDefault()
@@ -87,18 +119,19 @@ export default function AreculateirHoverPreview({ popupPosition = 'above' }: Pro
   }
 
   return (
+    // Outer container: NO mouse handlers — tight hit-box is on child elements
     <div
       ref={containerRef}
       className="relative inline-block"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
-      {/* The footer link */}
+      {/* The footer link — carries all mouse + tap triggers */}
       <a
         href={HREF}
         target="_blank"
         rel="noopener noreferrer"
-        onTouchEnd={onTouchEnd}
+        onMouseEnter={onLinkMouseEnter}
+        onMouseLeave={onLinkMouseLeave}
+        onClick={onLinkClick}
         className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/60 rounded-sm"
       >
         Areculateir.com
@@ -106,6 +139,8 @@ export default function AreculateirHoverPreview({ popupPosition = 'above' }: Pro
 
       {/* ── Preview card ───────────────────────────────────────────────── */}
       <div
+        onMouseEnter={onCardMouseEnter}
+        onMouseLeave={onCardMouseLeave}
         className={[
           // Positioning — above+centered (default) or to the right of the link (sidebar)
           popupPosition === 'right'
