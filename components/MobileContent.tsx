@@ -41,7 +41,7 @@ export function MobileContent() {
 
         {/* Background mode toggle — home tab only, floats top-right */}
         {activeTab === 'home' && (
-          <div className="absolute top-4 right-4 z-30">
+          <div className="absolute top-12 right-4 z-30">
             <button
               onClick={() => setBgMode(m => m === 'dark' ? 'atmosphere' : 'dark')}
               aria-label={bgMode === 'dark' ? 'Switch to atmosphere mode' : 'Switch to dark mode'}
