@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { InquireModal } from '@/components/InquireModal'
+import { ApplyButton } from '@/components/ApplyModal'
 import {
   siNextdotjs,
   siReact,
@@ -204,6 +205,11 @@ export function StartHereSection() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Mobile-only Apply CTA — between hero video and functional-purpose text */}
+      <div className="md:hidden flex justify-center py-6">
+        <ApplyButton />
       </div>
 
       {/* 3 & 4. Orange subtext + Win the Game of Business */}
