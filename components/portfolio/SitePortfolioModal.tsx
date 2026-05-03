@@ -18,7 +18,7 @@ const PROJECTS = [
   {
     name: 'AvantSavant',
     description: 'Edu. Site for the Aquarian Age',
-    src: '/avantsavant.png',
+    src: '/Avantsavantportfolio.png',
   },
   {
     name: 'IdeationStation',
