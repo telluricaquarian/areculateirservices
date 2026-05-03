@@ -33,7 +33,7 @@ const PROJECTS = [
   {
     name: 'Negentropic AI',
     description: 'IDE Built Automations',
-    src: '/naithumbnail.png',
+    src: '/NegentropicIntelportfolio.png',
   },
   {
     name: 'Opaquely',
