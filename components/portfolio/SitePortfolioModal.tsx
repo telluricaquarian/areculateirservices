@@ -36,9 +36,10 @@ const PROJECTS = [
     src: '/naithumbnail.png',
   },
   {
-    name: 'TheThinkingSpirit',
-    description: 'Kangen Water Edu. / Landing Page',
-    src: '/ttslaptop.png',
+    name: 'Opaquely',
+    description: 'Premium Product Infrastructure',
+    src: '/opaquelyportfolio.png',
+    url: 'https://opaquelydesign.vercel.app/',
   },
   {
     name: 'Quote Template',
@@ -81,33 +82,55 @@ function ModalContent() {
           </DialogHeader>
 
           <div className="grid grid-cols-2 gap-3">
-            {PROJECTS.map(({ name, description, src }) => (
-              <div
-                key={name}
-                className="group relative isolate flex flex-col gap-2 rounded-lg border border-[#1f1f1f] hover:border-[#FF7900]/40 bg-[#0a0a0a] transition-all duration-300 hover:outline hover:outline-1 hover:outline-[#FF7900]/25"
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect()
-                  e.currentTarget.style.setProperty('--glow-x', `${e.clientX - rect.left}px`)
-                  e.currentTarget.style.setProperty('--glow-y', `${e.clientY - rect.top}px`)
-                }}
-              >
-                <GlowingEffect />
-                <div className="relative w-full aspect-video overflow-hidden">
-                  <Image
-                    src={src}
-                    alt={name}
-                    fill
-                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
-                    sizes="(max-width: 560px) 50vw, 260px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            {PROJECTS.map(({ name, description, src, url }) => {
+              const cardInner = (
+                <>
+                  <GlowingEffect />
+                  <div className="relative w-full aspect-video overflow-hidden">
+                    <Image
+                      src={src}
+                      alt={name}
+                      fill
+                      className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-300"
+                      sizes="(max-width: 560px) 50vw, 260px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  </div>
+                  <div className="px-3 pb-3 flex flex-col gap-0.5">
+                    <span className="text-white text-xs font-medium tracking-tight">{name}</span>
+                    <span className="text-[#555] text-[10px] leading-snug">{description}</span>
+                  </div>
+                </>
+              )
+
+              const sharedClass = "group relative isolate flex flex-col gap-2 rounded-lg border border-[#1f1f1f] hover:border-[#FF7900]/40 bg-[#0a0a0a] transition-all duration-300 hover:outline hover:outline-1 hover:outline-[#FF7900]/25"
+              const onMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+                const rect = e.currentTarget.getBoundingClientRect()
+                e.currentTarget.style.setProperty('--glow-x', `${e.clientX - rect.left}px`)
+                e.currentTarget.style.setProperty('--glow-y', `${e.clientY - rect.top}px`)
+              }
+
+              return url ? (
+                <a
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={sharedClass}
+                  onMouseMove={onMouseMove}
+                >
+                  {cardInner}
+                </a>
+              ) : (
+                <div
+                  key={name}
+                  className={sharedClass}
+                  onMouseMove={onMouseMove}
+                >
+                  {cardInner}
                 </div>
-                <div className="px-3 pb-3 flex flex-col gap-0.5">
-                  <span className="text-white text-xs font-medium tracking-tight">{name}</span>
-                  <span className="text-[#555] text-[10px] leading-snug">{description}</span>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <p className="text-[#444] text-xs leading-relaxed border-t border-[#1a1a1a] pt-4">
