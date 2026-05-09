@@ -21,6 +21,17 @@ export const metadata = {
 
 export default function AiUgcCreativesPage() {
   return (
+    <>
+    {/* Locked overlay — fixed so it covers the full viewport regardless of parent CSS */}
+    <div className="fixed inset-0 z-50 backdrop-blur-sm bg-black/55 flex items-center justify-center pointer-events-none select-none">
+      <div className="flex flex-col items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-white/40">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+        <p className="text-white/30 text-[10px] uppercase tracking-[0.18em]">Coming Soon</p>
+      </div>
+    </div>
     <ProductPageShell>
 
       {/* Back */}
@@ -179,5 +190,6 @@ export default function AiUgcCreativesPage() {
       </section>
 
     </ProductPageShell>
+    </>
   )
 }
