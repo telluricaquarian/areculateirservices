@@ -297,7 +297,7 @@ export function DesktopMain() {
             )}
 
             {/* Desktop CTA */}
-            {activeTab !== 'waas' && <div className="mt-8 flex flex-col items-center gap-4 text-center">
+            {activeTab !== 'waas' && activeTab !== 'agency6' && <div className="mt-8 flex flex-col items-center gap-4 text-center">
               <p className="text-foreground/65 text-sm leading-relaxed">
                 Speak with Llewellyn to find out how to get this set-up / implemented.
               </p>

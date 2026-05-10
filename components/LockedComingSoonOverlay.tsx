@@ -1,17 +1,24 @@
 interface Props {
+  /**
+   * "absolute" (default) — positions relative to nearest `relative` ancestor.
+   *   Use inside SPA tab content (Agency 6 grid, WaaS card).
+   * "fixed" — covers the entire viewport.
+   *   Use on standalone page routes (/agency6/*).
+   */
+  variant?: 'absolute' | 'fixed'
   /** Extra classes forwarded to the overlay div — e.g. "rounded-xl" */
   className?: string
 }
 
-export function LockedComingSoonOverlay({ className }: Props) {
+export function LockedComingSoonOverlay({ variant = 'absolute', className }: Props) {
+  const base =
+    variant === 'fixed'
+      ? 'fixed inset-0 z-50 backdrop-blur-sm bg-black/55 flex items-center justify-center'
+      : 'absolute inset-0 z-10 backdrop-blur-sm bg-black/55 flex items-center justify-center'
+
   return (
     <div
-      className={[
-        'absolute inset-0 z-10 backdrop-blur-sm bg-black/55 flex items-center justify-center',
-        className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
+      className={[base, className].filter(Boolean).join(' ')}
     >
       <div className="flex flex-col items-center gap-3 select-none pointer-events-none">
         <svg
