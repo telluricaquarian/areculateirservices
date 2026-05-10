@@ -218,8 +218,8 @@ export function DesktopMain() {
           <HermesSection />
         ) : (
           <>
-            {/* Hero intro — hidden on waas tab (WaasKlarnaSection has its own pairing hero) */}
-            {activeTab !== 'waas' && <div className="relative mb-2">
+            {/* Hero intro — hidden on waas tab (own pairing hero) and agency6 tab (locked) */}
+            {activeTab !== 'waas' && activeTab !== 'agency6' && <div className="relative mb-2">
               <div className="relative z-10 flex flex-col gap-1 items-center text-center">
                 <p className="text-foreground/60 text-xs font-normal tracking-wide">
                   A-La-Carte Automation Workflow Services
@@ -276,8 +276,8 @@ export function DesktopMain() {
               </div>
             </div>}
 
-            {/* Section heading — hidden on waas tab (WaasKlarnaSection has its own heading) */}
-            {activeTab !== 'waas' && (
+            {/* Section heading — hidden on waas tab (own heading) and agency6 tab (locked) */}
+            {activeTab !== 'waas' && activeTab !== 'agency6' && (
               <h2 className="font-serif italic text-primary text-4xl lg:text-5xl mb-10 lg:mb-14 tracking-tight text-center">
                 {activeTab === 'big5' ? (
                   <><span className="font-normal">The</span> Big 5</>
