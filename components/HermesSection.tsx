@@ -121,8 +121,8 @@ export function HermesSection() {
     <div className="flex flex-col gap-8 w-full max-w-2xl mx-auto">
 
       {/* Header */}
-      <div className="text-center">
-        <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Custom Agent</p>
+      <div className="text-center md:pt-10">
+        <p className="text-foreground/40 text-xs uppercase tracking-widest mb-3">Custom Agent</p>
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl tracking-tight">
           Zeratul
         </h2>

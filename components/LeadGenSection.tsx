@@ -360,8 +360,8 @@ export function LeadGenSection() {
     <div className="flex flex-col gap-8 w-full">
 
       {/* Header */}
-      <div className="text-center">
-        <p className="text-foreground/40 text-xs uppercase tracking-widest mb-1">Proprietary System</p>
+      <div className="text-center md:pt-10">
+        <p className="text-foreground/40 text-xs uppercase tracking-widest mb-3">Proprietary System</p>
         <h2 className="font-serif italic text-primary text-4xl lg:text-5xl tracking-tight">
           <span className="font-normal">Lead Gen</span> System
         </h2>
