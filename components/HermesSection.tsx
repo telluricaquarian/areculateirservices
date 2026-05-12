@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-// ── Video URL — replace VIDEO_ID_HERE with the real YouTube video ID ──────
-const HERMES_LEAD_SOURCING_VIDEO_URL = 'https://www.youtube.com/embed/VIDEO_ID_HERE'
+const HERMES_LEAD_SOURCING_VIDEO_URL = 'https://cap.so/embed/28p59yhdnn769rw'
 
 // ── Terminal sequence ──────────────────────────────────────────────────────
 
@@ -174,7 +173,7 @@ export function HermesSection() {
               src={HERMES_LEAD_SOURCING_VIDEO_URL}
               title="Hermes lead sourcing demonstration"
               className="h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              frameBorder="0"
               allowFullScreen
             />
           </div>
