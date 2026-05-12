@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+// ── Video URL — replace VIDEO_ID_HERE with the real YouTube video ID ──────
+const HERMES_LEAD_SOURCING_VIDEO_URL = 'https://www.youtube.com/embed/VIDEO_ID_HERE'
+
 // ── Terminal sequence ──────────────────────────────────────────────────────
 
 type LineStyle = 'command' | 'output' | 'blank'
@@ -150,6 +153,32 @@ export function HermesSection() {
         <p className='text-center text-white/70 text-sm leading-relaxed'>
           In the StarCraft universe, Zeratul is a Dark Prelate — a stealthy sage who fights from the shadows. Ours is more of a <em>baby Zeratul</em> right now. He&apos;s still learning the ropes, but he runs behind the scenes sourcing leads, drafting outreach, and handling replies while you focus on the work that actually needs you. He&apos;s not a Dark Prelate yet. But he&apos;s getting there.
         </p>
+      </div>
+
+      {/* Video: Hermes lead sourcing demo */}
+      <div className="w-full border-t border-white/10 pt-8">
+        <div className="text-center mb-6">
+          <p className="text-[#FF7900]/60 text-xs uppercase tracking-widest mb-3">
+            Lead Sourcing Protocol
+          </p>
+          <h3 className="font-serif italic text-white text-2xl lg:text-3xl tracking-tight mb-3">
+            From the Shadows: Hermes Sources the Leads
+          </h3>
+          <p className="text-foreground/40 text-xs leading-relaxed max-w-md mx-auto">
+            A behind-the-scenes look at how Hermes scrapes, qualifies, and prepares outreach targets — while you stay focused on delivery.
+          </p>
+        </div>
+        <div className="rounded-xl overflow-hidden border border-white/10 bg-white/[0.03] shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+          <div className="aspect-video w-full">
+            <iframe
+              src={HERMES_LEAD_SOURCING_VIDEO_URL}
+              title="Hermes lead sourcing demonstration"
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
       </div>
 
     </div>
