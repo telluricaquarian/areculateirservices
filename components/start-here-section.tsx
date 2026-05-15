@@ -95,6 +95,20 @@ export function StartHereSection() {
         >
           BUILD PREMIUM SITES
         </h1>
+        <p
+          className="mx-auto text-center"
+          style={{
+            fontFamily: 'visitor1, monospace',
+            color: 'rgba(255,255,255,0.5)',
+            fontSize: '11px',
+            letterSpacing: '0.05em',
+            maxWidth: '300px',
+            marginTop: '0',
+            marginBottom: '0',
+          }}
+        >
+          We Design premium sites — and the systems behind them.
+        </p>
       </div>
 
       <div className='w-full overflow-hidden py-4 mb-2'>
