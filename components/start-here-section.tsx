@@ -96,16 +96,8 @@ export function StartHereSection() {
           BUILD PREMIUM SITES
         </h1>
         <p
-          className="mx-auto text-center"
-          style={{
-            fontFamily: 'visitor1, monospace',
-            color: 'rgba(255,255,255,0.5)',
-            fontSize: '11px',
-            letterSpacing: '0.05em',
-            maxWidth: '300px',
-            marginTop: '0',
-            marginBottom: '0',
-          }}
+          className="mx-auto text-center text-sm font-normal leading-relaxed text-white/55 tracking-[0.01em]"
+          style={{ maxWidth: '300px' }}
         >
           We Design premium sites — and the systems behind them.
         </p>
