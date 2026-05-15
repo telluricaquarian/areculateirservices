@@ -96,7 +96,7 @@ export function StartHereSection() {
           BUILD PREMIUM SITES
         </h1>
         <p
-          className="mx-auto text-center text-sm font-normal leading-relaxed text-white/55 tracking-[0.01em]"
+          className="mx-auto text-center text-sm font-normal leading-relaxed text-white tracking-[0.01em]"
           style={{ maxWidth: '300px' }}
         >
           We Design premium sites — and the systems behind them.
